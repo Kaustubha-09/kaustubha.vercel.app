@@ -26,6 +26,14 @@ jobs:
 
       - run: npm install
       - run: npm run build
+      
+      - name: Verify build output
+        run: |
+          echo "Build output verification:"
+          ls -la dist/
+          ls -la dist/assets/ | head -10
+          echo "Checking index.html references:"
+          grep -E "(src=|href=)" dist/index.html || echo "No asset references found"
 
       - uses: actions/upload-pages-artifact@v3
         with:
