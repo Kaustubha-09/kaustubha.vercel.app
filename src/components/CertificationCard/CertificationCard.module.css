@@ -1,0 +1,189 @@
+.card {
+  background: rgba(30, 41, 59, 0.4);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  backdrop-filter: blur(10px);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(100, 255, 218, 0.3);
+  box-shadow: 0 8px 30px rgba(100, 255, 218, 0.2);
+}
+
+.logoContainer {
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(100, 255, 218, 0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  transition: all 0.3s ease;
+}
+
+.card:hover .logoContainer {
+  background: rgba(100, 255, 218, 0.15);
+  border-color: rgba(100, 255, 218, 0.4);
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  padding: 0.5rem;
+}
+
+.content {
+  flex: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #64ffda;
+  letter-spacing: -0.01em;
+  flex: 1;
+}
+
+.date {
+  color: #64ffda;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.issuer {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ccd6f6;
+}
+
+.description {
+  margin: 0 0 1rem 0;
+  color: #8892b0;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.highlights {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: #8892b0;
+  line-height: 1.8;
+  font-size: 0.9rem;
+}
+
+.highlights li {
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.highlights li::marker {
+  color: #64ffda;
+}
+
+.highlights li:last-child {
+  margin-bottom: 0;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .card {
+    padding: 1.75rem;
+  }
+  
+  .title {
+    font-size: 1.2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    padding: clamp(1.5rem, 4vw, 1.75rem);
+    gap: 1rem;
+  }
+  
+  .logoContainer {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .title {
+    font-size: clamp(1.1rem, 3vw, 1.2rem);
+  }
+  
+  .date {
+    font-size: 0.85rem;
+    white-space: normal;
+  }
+  
+  .highlights {
+    padding-left: 1.25rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .card {
+    padding: 1.25rem;
+  }
+  
+  .logoContainer {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .title {
+    font-size: 1rem;
+  }
+  
+  .highlights {
+    padding-left: 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1920px) {
+  .card {
+    padding: 2.5rem;
+  }
+  
+  .logoContainer {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .title {
+    font-size: 1.4rem;
+  }
+}

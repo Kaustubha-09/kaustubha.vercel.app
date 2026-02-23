@@ -1,0 +1,118 @@
+[
+  {
+    "company": "Smith-Kettlewell Eye Research Institute",
+    "location": "San Francisco, CA",
+    "logo": "/assets/experience/smith-kettlewell-eye.webp",
+    "website": "https://www.ski.org/",
+    "roles": [
+      {
+        "title": "Lead SWE (AI/ML, Web & Mobile) – YouDescribeX",
+        "period": "Sep. 2025 – Dec. 2025",
+        "projectLink": "https://ydx.youdescribe.org/home",
+        "bullets": [
+          "Promoted to lead engineering efforts across AI/ML, web, and mobile platforms, overseeing end-to-end system design, implementation, and deployment.",
+          "Led a cross-functional team of researchers, engineers, and accessibility specialists to deliver new features with biweekly releases while maintaining a crash rate below 1%.",
+          "Architected multi-platform accessibility features across web, iOS, and Android apps, ensuring scalability and consistent user experience.",
+          "Defined technical roadmap and mentored junior developers, fostering best practices in AI integration, mobile development, and accessibility-first design.",
+          "Key Achievements: Elevated YouDescribeX from research prototype to production-ready platform adopted by 40+ blind/low-vision users in pilot testing."
+        ]
+      },
+      {
+        "title": "Research Assistant – YouDescribeX",
+        "period": "Jul. 2025 – Dec. 2025",
+        "projectLink": "https://ydx.youdescribe.org/home",
+        "appStoreLink": "https://apps.apple.com/us/app/youdescribe/id1177344886",
+        "bullets": [
+          "Developed YouDescribeX (App Store) to improve accessibility for blind and visually impaired users; optimized API and client flows for 15% faster page loads and 20% higher 30-day retention.",
+          "Integrated a new backend inference path for AI-generated descriptions by updating API and service layers while maintaining backward compatibility.",
+          "Built ML pipelines for generating and refining audio description prompts; prompt tuning and ranking methods improved relevance by 18%.",
+          "Implemented Infobot for in-video Q&A with temporal grounding; achieved a top-3 hit rate of 86% on a 300-question benchmark.",
+          "Tested accessibility with NVDA and VoiceOver, achieving 100% keyboard navigation coverage and AA+ contrast compliance.",
+          "Conducted usability sessions with 25 BVI users, reducing task time for common actions by 28%."
+        ]
+      }
+    ]
+  },
+  {
+    "company": "Evenness, Inc.",
+    "location": "Atlanta, GA",
+    "logo": "/assets/organizations/evenness-logo.webp",
+    "roles": [
+      {
+        "title": "Lead – Data & Compliance Squad",
+        "period": "Sep. 2025 – Dec. 2025",
+        "bullets": [
+          "Led development of an AI-powered accessibility analysis platform with agent workflows and real-time evaluation across WCAG 2.0/2.1/2.2 standards.",
+          "Expanded accessibility rules and analysis logic to achieve 100% WCAG 2.1 coverage.",
+          "Added multi-standard compliance support (EEA, ADA, AODA) with unified scoring and reporting.",
+          "Implemented performance optimizations reducing end-to-end analysis runtime by 60–70%.",
+          "Key Achievements: Delivered a production-ready compliance analysis system adopted as the primary accessibility evaluation workflow."
+        ]
+      },
+      {
+        "title": "Agentic AI Engineer Intern",
+        "period": "Jun. 2025 – Dec. 2025",
+        "bullets": [
+          "Built a RAG-backed vector knowledge base and integrated versioned compliance selection for accessibility analysis.",
+          "Integrated agent workflows into 4 production microservices, maintaining 99.9% uptime and p95 latency under 300ms.",
+          "Automated multi-step audit pipelines, reducing review cycle time from 15 min → 9 min and saving ~120 hrs/quarter.",
+          "Developed monitoring dashboards to track agent execution and system health, reducing MTTR by 30%.",
+          "Improved dashboard UX and assistant experience (KASHA AI Assistant) with supporting architecture and user-flow documentation.",
+          "Key Achievements: Shipped and stabilized agentic workflows used in production accessibility audits."
+        ]
+      }
+    ]
+  },
+  {
+    "company": "Northeastern University – Khoury College of Computer Sciences",
+    "location": "San Jose, CA",
+    "logo": "/assets/organizations/northeastern-logo.webp",
+    "website": "https://www.khoury.northeastern.edu/",
+    "roles": [
+      {
+        "title": "Teaching Assistant – CS 5520 Mobile Application Development",
+        "period": "Sep. 2024 – Aug. 2025",
+        "bullets": [
+          "Mentored 30+ graduate students on Android development (Java, Firebase, MVVM), contributing to an average 15% improvement in assignment scores.",
+          "Built Python-based auto-graders and grading rubrics, reducing grading time by 40% and standardizing feedback turnaround within 48 hours.",
+          "Led weekly labs on Android lifecycle, networking, and local storage; 90% of students shipped fully functional final projects.",
+          "Worked with faculty to redesign two major assignments aligned with industry patterns (offline-first design, push notifications), increasing completion rates by 12 percentage points.",
+          "Key Achievements: Improved course delivery efficiency and student project quality through tooling, structured mentoring, and assignment design."
+        ]
+      }
+    ]
+  },
+  {
+    "company": "Folio.Works",
+    "location": "New York, CA",
+    "logo": "/assets/organizations/folio-logo.webp",
+    "roles": [
+      {
+        "title": "Technical Product Development Intern",
+        "period": "Dec. 2023 – Jul. 2024",
+        "bullets": [
+          "Implemented and optimized cross-platform mobile features in Flutter for iOS and Android, improving app startup time by ~400ms and reducing crash rate by 35%.",
+          "Contributed to feature planning and prioritization by translating user feedback and product requirements into shipped functionality.",
+          "Owned QA testing across 6 production releases, creating and executing 60+ manual and automated test cases to increase regression coverage to 80%.",
+          "Analyzed competitor apps and app store trends to inform feature iterations, supporting releases that reached 65% MAU adoption within 30 days.",
+          "Key Achievements: Shipped and validated 6 production releases while supporting growth of an AI-powered internship-matching platform used by 200+ fellows."
+        ]
+      }
+    ]
+  },
+  {
+    "company": "bimgrafX",
+    "location": "Phoenix, AZ",
+    "logo": "/assets/organizations/bimgrafX-logo.webp",
+    "roles": [
+      {
+        "title": "Graduate BIM Engineer",
+        "period": "Nov. 2020 – Mar. 2022",
+        "bullets": [
+          "Produced and delivered 12+ Building Information Models (BIM) using Revit, coordinating multidisciplinary inputs and achieving 99% design specification accuracy.",
+          "Key Achievements: Promoted from intern to full-time engineer within 12 months."
+        ]
+      }
+    ]
+  }
+]

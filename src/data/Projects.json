@@ -1,0 +1,149 @@
+[
+  {
+    "title": "Semantic Diff Prompting for Video Understanding",
+    "description": "Proposed Semantic Diff Prompting, a prompt-level method for Vision-Language Models that focuses on semantic changes between consecutive video frames.",
+    "highlights": [
+      "Designed structured prompts to capture object state changes and motion events, reducing redundant frame-level descriptions",
+      "Built an experimental pipeline for frame extraction, caption generation, and offline metric evaluation without model fine-tuning",
+      "Evaluated the approach on short action videos, measuring token usage, lexical redundancy, and action-focused information density"
+    ],
+    "tags": ["Generative AI", "Computer Vision", "NLP", "Research", "Python", "PyTorch"],
+    "links": {
+      "github": "https://github.com/Kaustubha-09/semantic-diff-prompting"
+    },
+    "image": "/assets/projects/semantic-diff.webp",
+    "period": "Sep. 2025 – Dec. 2025",
+    "organization": "Northeastern University"
+  },
+  {
+    "title": "Notification Urgency Classification",
+    "description": "Built a supervised text classification system to categorize notifications as Urgent, Important, or Ignore using message content alone.",
+    "highlights": [
+      "Designed an end-to-end ML pipeline with text normalization, TF-IDF feature extraction, and classical classifiers",
+      "Evaluated multiple models using accuracy, precision, recall, F1-score, and confusion matrices",
+      "Identified linguistic patterns correlated with urgency through model analysis and error inspection"
+    ],
+    "tags": ["Machine Learning", "NLP", "Text Classification", "Python", "scikit-learn"],
+    "links": {
+      "github": "https://github.com/Kaustubha-09/notification-urgency-classification"
+    },
+    "image": "/assets/projects/notification-classification.webp",
+    "period": "Sep. 2025 – Dec. 2025",
+    "organization": "Northeastern University"
+  },
+  {
+    "title": "Echolin.AI – Deepfake Image Detection",
+    "description": "Built an image forensics prototype for deepfake detection using CNN-based models and ensemble classification techniques.",
+    "highlights": [
+      "Curated and preprocessed a large-scale dataset of real and synthetic images with augmentation pipelines",
+      "Evaluated model performance using accuracy, false-positive rate, and held-out test sets",
+      "Applied Grad-CAM visualizations to support qualitative inspection and interpretability",
+      "Designed a low-latency inference architecture using FastAPI with GPU-backed execution"
+    ],
+    "tags": ["Deep Learning", "Computer Vision", "CNN", "FastAPI", "Python", "PyTorch"],
+    "links": {
+      "github": "https://github.com/Kaustubha-09/echolin-ai",
+      "website": "https://echolin.ai"
+    },
+    "image": "/assets/projects/echolin-ai.webp",
+    "period": "Jun. 2025 – Jul. 2025",
+    "organization": "Independent Research"
+  },
+  {
+    "title": "RapidTriage AI – Emergency Care Prioritization",
+    "description": "Built a triage classification prototype using structured and free-text clinical-style data to predict patient priority levels.",
+    "highlights": [
+      "Developed preprocessing, embedding, and feature pipelines to support reproducible experiments and 20% faster training iterations",
+      "Improved macro-F1 by +0.12 through model selection, hyperparameter tuning, and class-imbalance handling",
+      "Applied probability calibration and error analysis to reduce overconfident predictions on minority classes",
+      "Simulated emergency department workflows using a dashboard-based prototype"
+    ],
+    "tags": ["Machine Learning", "Healthcare", "Classification", "Python", "scikit-learn"],
+    "links": {
+      "github": "https://github.com/Kaustubha-09/rapidtriage-ai"
+    },
+    "image": "/assets/projects/rapidtriage.webp",
+    "period": "Jan. 2025 – Apr. 2025",
+    "organization": "Northeastern University"
+  },
+  {
+    "title": "NEUQuest – Student Event & Travel Companion App",
+    "description": "Built an Android app using Firebase Realtime Database with authentication, maps, and push notifications.",
+    "highlights": [
+      "Implemented offline caching and responsive layouts, achieving 90%+ Lighthouse performance and accessibility scores",
+      "Supported onboarding of 200+ users and tracked engagement metrics such as notification click-through rate",
+      "Reduced common support issues by adding in-app verification and deep-link flows"
+    ],
+    "tags": ["Android", "Firebase", "Java", "Mobile Development"],
+    "links": {
+      "github": "https://github.com/Kaustubha-09/neuquest"
+    },
+    "image": "/assets/projects/neuquest.webp",
+    "period": "May. 2024 – Aug. 2024",
+    "organization": "Northeastern University"
+  },
+  {
+    "title": "Husky Mingle – Campus Networking Platform",
+    "description": "Designed and built a mobile-first campus networking platform supporting groups, projects, and real-time chat.",
+    "highlights": [
+      "Implemented Firebase authentication and push notifications to support post-event engagement",
+      "Improved onboarding flow, reducing time-to-first-connection from 4.2 days to 1.6 days",
+      "Tracked engagement metrics during pilot usage, including increases in post-event connections"
+    ],
+    "tags": ["Mobile Development", "Firebase", "React Native", "Networking"],
+    "links": {
+      "github": "https://github.com/Kaustubha-09/husky-mingle"
+    },
+    "image": "/assets/projects/husky-mingle.webp",
+    "period": "Jan. 2024 – Apr. 2024",
+    "organization": "Northeastern University"
+  },
+  {
+    "title": "Course Scheduling Optimization",
+    "description": "Modeled course scheduling conflicts as a graph-coloring problem and implemented Greedy and Welsh–Powell algorithms.",
+    "highlights": [
+      "Reduced simulated scheduling conflicts by 40% and improved room utilization by 12%",
+      "Generated feasible schedules efficiently in practice, with typical datasets completing in under 2 seconds",
+      "Used as a teaching case in CS 5800 Algorithms to demonstrate practical applications of graph coloring"
+    ],
+    "tags": ["Algorithms", "Graph Theory", "Optimization", "Python"],
+    "links": {
+      "github": "https://github.com/Kaustubha-09/course-scheduling-optimization"
+    },
+    "image": "/assets/projects/course-scheduling.webp",
+    "period": "Mar. 2024 – Apr. 2024",
+    "organization": "Northeastern University"
+  },
+  {
+    "title": "Impact of Online Images on Gender Bias",
+    "description": "Analyzed a large-scale image-text dataset using computer vision features and text embeddings to study gender bias.",
+    "highlights": [
+      "Developed bias metrics to compare gender-related signals in textual embeddings and image-derived representations",
+      "Conducted controlled online survey experiments to evaluate alignment between model outputs and human perceptions",
+      "Presented results at a class research symposium and contributed to follow-on research discussions"
+    ],
+    "tags": ["Research", "Computer Vision", "NLP", "Bias Analysis", "Python"],
+    "links": {
+      "github": "https://github.com/Kaustubha-09/gender-bias-analysis"
+    },
+    "image": "/assets/projects/gender-bias.webp",
+    "period": "Jan. 2024 – Apr. 2024",
+    "organization": "Northeastern University"
+  },
+  {
+    "title": "SPAMbase – Email/SMS Classification",
+    "description": "Built a Naïve Bayes spam classifier using bag-of-words features (CountVectorizer) for email and SMS classification.",
+    "highlights": [
+      "Evaluated model performance using precision, recall, ROC-AUC, and confusion matrices on a benchmark dataset",
+      "Reduced false negatives through threshold tuning, prior adjustment, and token filtering",
+      "Used as a baseline reference in later machine learning coursework"
+    ],
+    "tags": ["Machine Learning", "NLP", "Classification", "Python", "scikit-learn"],
+    "links": {
+      "github": "https://github.com/Kaustubha-09/spambase"
+    },
+    "image": "/assets/projects/spambase.webp",
+    "period": "Oct. 2023 – Nov. 2023",
+    "organization": "Independent Project"
+  }
+]

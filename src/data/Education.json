@@ -1,0 +1,44 @@
+[
+  {
+    "institution": "Northeastern University",
+    "location": "San Jose, CA",
+    "degree": "M.S. in Computer Science",
+    "period": "Aug. 2023 -- Dec. 2025",
+    "logo": "/assets/organizations/northeastern-logo.webp",
+    "website": "https://www.khoury.northeastern.edu/",
+    "featuredLink": "https://siliconvalley.northeastern.edu/kaustubha-eluri-aspiring-product-manager/",
+    "description": "Focused on AI/ML, Generative AI, mobile & web development, cloud computing, and scalable system design.",
+    "courses": {
+      "bridge": [
+        "CS 5001 (Intensive Foundations of CS)",
+        "CS 5002 (Discrete Structures)",
+        "CS 5004 (Object-Oriented Design)",
+        "CS 5008 (Data Structures & Algorithms in Systems)"
+      ],
+      "core": [
+        "CS 5800 (Algorithms)"
+      ],
+      "breadth": [
+        "CS 5520 (Mobile Application Development)",
+        "CS 5610 (Web Development)"
+      ],
+      "aiSystems": [
+        "CS 5100 (Foundations of Artificial Intelligence)",
+        "CS 6140 (Machine Learning)",
+        "CS 6180 (Foundations of Generative AI)",
+        "CS 6620 (Fundamentals of Cloud Computing)"
+      ],
+      "coop": [
+        "CS 6954 (Work Experience)"
+      ]
+    }
+  },
+  {
+    "institution": "Jawaharlal Nehru Architecture and Fine Arts University",
+    "location": "Hyderabad, India",
+    "degree": "B.Tech in Architectural Engineering",
+    "period": "Jun. 2017 -- Jun. 2021",
+    "logo": "/assets/organizations/jnafau-logo.webp",
+    "description": "Bachelor's degree in Architectural Engineering with focus on building design, structural systems, and BIM technologies."
+  }
+]

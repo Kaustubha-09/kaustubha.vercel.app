@@ -1,0 +1,97 @@
+[
+  {
+    "year": "2023",
+    "title": "Graduate Student",
+    "organization": "Northeastern University",
+    "location": "San Jose, CA",
+    "description": "Began Master's in Computer Science, focusing on AI/ML, mobile development, and cloud computing. Started my journey in the U.S. as an international student.",
+    "type": "education"
+  },
+  {
+    "year": "2023",
+    "title": "Discovering Photography",
+    "organization": "Personal Passion",
+    "location": "California",
+    "description": "Picked up photography as a hobby, capturing moments from my travels and daily life. Started sharing my work on Instagram, documenting my journey through the lens.",
+    "type": "personal",
+    "icon": "📸"
+  },
+  {
+    "year": "2023-2024",
+    "title": "Student Ambassador",
+    "organization": "Northeastern University",
+    "location": "San Jose, CA",
+    "description": "Represented the university and helped incoming students navigate their academic journey. Built connections and community while sharing my experiences.",
+    "type": "leadership"
+  },
+  {
+    "year": "2024",
+    "title": "Exploring California",
+    "organization": "Travel Adventures",
+    "location": "California",
+    "description": "Traveled across California, from the tech hubs of Silicon Valley to the scenic coastlines. Photography became a way to document these adventures and share stories.",
+    "type": "personal",
+    "icon": "✈️"
+  },
+  {
+    "year": "2024",
+    "title": "Student Proctor / Supervisor",
+    "organization": "Northeastern University",
+    "location": "San Jose, CA",
+    "description": "Supervised academic activities and ensured smooth operations of university programs. Developed leadership skills while balancing studies and personal interests.",
+    "type": "leadership"
+  },
+  {
+    "year": "2024",
+    "title": "History Enthusiast",
+    "organization": "Personal Interest",
+    "location": "Various",
+    "description": "Deepened my passion for history, reading extensively about world events, cultures, and the stories that shaped our world. Combined this with travel to visit historical sites.",
+    "type": "personal",
+    "icon": "📚"
+  },
+  {
+    "year": "2024-2025",
+    "title": "Teaching Assistant",
+    "organization": "Northeastern University - CS 5520",
+    "location": "San Jose, CA",
+    "description": "Mentored 30+ graduate students in Mobile Application Development, built auto-graders, and redesigned assignments aligned with industry patterns. Found joy in teaching and helping others grow.",
+    "type": "education"
+  },
+  {
+    "year": "2024-2025",
+    "title": "Dog Lover & Photographer",
+    "organization": "Personal Passion",
+    "location": "California",
+    "description": "Developed a special love for dogs and started photographing these wonderful companions. Captured their personalities and the joy they bring, sharing these moments with others.",
+    "type": "personal",
+    "icon": "🐕"
+  },
+  {
+    "year": "2025",
+    "title": "Research Assistant → Lead SWE",
+    "organization": "Smith-Kettlewell Eye Research Institute",
+    "location": "San Francisco, CA",
+    "description": "Promoted to Lead SWE, developing YouDescribeX for AI accessibility. Leading cross-functional teams and delivering production-ready features. Balancing impactful work with personal growth.",
+    "type": "work",
+    "promotion": true
+  },
+  {
+    "year": "2025",
+    "title": "Agentic AI Engineer Intern → Lead",
+    "organization": "Evenness, Inc.",
+    "location": "Atlanta, GA",
+    "description": "Promoted to Lead - Data & Compliance Squad. Deployed AI agents reducing manual effort by 40% and achieving 99.9% uptime. Continued learning and growing both professionally and personally.",
+    "type": "work",
+    "promotion": true
+  },
+  {
+    "year": "2025",
+    "title": "Building My Portfolio",
+    "organization": "Personal Project",
+    "location": "Online",
+    "description": "Created this portfolio website to showcase my work, journey, and passions. Combining my technical skills with my love for photography, travel, and storytelling.",
+    "type": "personal",
+    "icon": "💻"
+  }
+]

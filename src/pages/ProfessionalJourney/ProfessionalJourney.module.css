@@ -1,0 +1,288 @@
+.section {
+  padding: 6rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #0a0e27;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #ccd6f6;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #64ffda, #4dd0e1);
+  border-radius: 2px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #8892b0;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  margin-bottom: 4rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 3rem;
+}
+
+.timelineItem {
+  position: relative;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.timelineMarker {
+  position: absolute;
+  left: -3rem;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.markerDot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--type-color, #64ffda);
+  border: 3px solid #0a0e27;
+  box-shadow: 0 0 0 2px var(--type-color, #64ffda);
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.timelineItem:hover .markerDot {
+  transform: scale(1.3);
+  box-shadow: 0 0 0 4px var(--type-color, #64ffda);
+}
+
+.markerLine {
+  width: 2px;
+  flex: 1;
+  background: linear-gradient(180deg, var(--type-color, #64ffda), rgba(100, 255, 218, 0.2));
+  margin-top: 0.5rem;
+  min-height: 60px;
+}
+
+.timelineContent {
+  background: rgba(30, 41, 59, 0.4);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.timelineItem:hover .timelineContent {
+  border-color: var(--type-color, rgba(100, 255, 218, 0.3));
+  box-shadow: 0 8px 30px rgba(100, 255, 218, 0.1);
+  transform: translateX(5px);
+}
+
+.promotionBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: linear-gradient(135deg, #64ffda, #4dd0e1);
+  color: #0a0e27;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 1;
+}
+
+.timelineHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.year {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--type-color, #64ffda);
+}
+
+.type {
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.3rem 0.8rem;
+  background: rgba(100, 255, 218, 0.1);
+  border-radius: 12px;
+}
+
+.itemTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ccd6f6;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.01em;
+}
+
+.organization {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #64ffda;
+  margin: 0 0 0.5rem 0;
+}
+
+.location {
+  font-size: 0.95rem;
+  color: #8892b0;
+  margin: 0 0 1rem 0;
+}
+
+.description {
+  color: #8892b0;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .section {
+    padding: clamp(4rem, 7vw, 5rem) clamp(1rem, 3vw, 1.5rem);
+  }
+  
+  .timeline {
+    padding-left: 2.5rem;
+  }
+  
+  .timelineMarker {
+    left: -2.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .section {
+    padding: clamp(3rem, 6vw, 4rem) 1rem;
+  }
+  
+  .timeline {
+    padding-left: 2rem;
+  }
+  
+  .timelineMarker {
+    left: -2rem;
+  }
+  
+  .markerDot {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .timelineContent {
+    padding: 1.5rem;
+  }
+  
+  .timelineHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .promotionBadge {
+    position: static;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  
+  .itemTitle {
+    font-size: 1.25rem;
+  }
+  
+  .organization {
+    font-size: 1rem;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .section {
+    padding: 3rem 0.75rem;
+  }
+  
+  .timeline {
+    padding-left: 1.5rem;
+  }
+  
+  .timelineMarker {
+    left: -1.5rem;
+  }
+  
+  .markerDot {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .timelineContent {
+    padding: 1.25rem;
+  }
+  
+  .itemTitle {
+    font-size: 1.1rem;
+  }
+  
+  .year {
+    font-size: 1rem;
+  }
+  
+  .description {
+    font-size: 0.9rem;
+  }
+}
+
+/* Landscape mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .timelineItem {
+    margin-bottom: 2.5rem;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1920px) {
+  .section {
+    max-width: 1200px;
+    padding: 8rem 3rem;
+  }
+  
+  .timelineContent {
+    padding: 2.5rem;
+  }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 2560px) {
+  .section {
+    max-width: 1400px;
+  }
+}

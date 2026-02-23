@@ -1,0 +1,42 @@
+[
+  {
+    "category": "Programming Languages",
+    "items": ["Python", "Java", "JavaScript", "Swift", "Dart", "C"]
+  },
+  {
+    "category": "Mobile Development",
+    "items": ["Android (Java, Firebase, MVVM)", "Flutter", "iOS (Swift/SwiftUI)", "Offline-first Design", "Push Notifications"]
+  },
+  {
+    "category": "Web & Backend Development",
+    "items": ["React.js", "Node.js", "REST APIs", "Flask", "FastAPI"]
+  },
+  {
+    "category": "Databases",
+    "items": ["PostgreSQL", "MongoDB", "Firebase Realtime Database", "SQLite"]
+  },
+  {
+    "category": "DevOps & Tooling",
+    "items": ["Git", "Docker", "GitHub Actions", "CI/CD Pipelines"]
+  },
+  {
+    "category": "AI/ML & Data",
+    "items": ["scikit-learn", "Pandas", "NumPy", "PyTorch", "TensorFlow", "Hugging Face Transformers", "OpenAI APIs", "Prompt Engineering", "Model Evaluation"]
+  },
+  {
+    "category": "Accessibility & UX",
+    "items": ["WCAG (AA+)", "NVDA/VoiceOver Testing", "Responsive Design", "Usability Testing"]
+  },
+  {
+    "category": "Algorithms & CS Fundamentals",
+    "items": ["Data Structures", "Algorithm Design", "Graph Algorithms", "Dynamic Programming", "Complexity Analysis"]
+  },
+  {
+    "category": "Testing & QA",
+    "items": ["Unit Testing", "Integration Testing", "Regression Testing", "Automated Test Scripts"]
+  },
+  {
+    "category": "Other",
+    "items": ["Debugging", "Profiling", "Shell Scripting", "BIM/Revit Modeling"]
+  }
+]

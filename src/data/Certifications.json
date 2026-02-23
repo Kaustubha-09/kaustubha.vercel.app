@@ -1,0 +1,57 @@
+[
+  {
+    "title": "Data Science for Construction, Architecture and Engineering",
+    "issuer": "edX",
+    "date": "Dec. 2024",
+    "description": "Applied machine learning and data analytics techniques to BIM datasets, IoT logs, and construction scheduling problems.",
+    "highlights": [
+      "Built a capstone model to predict energy consumption using features derived from CAD/Revit models",
+      "Completed an end-to-end applied data science capstone in a domain-specific setting"
+    ],
+    "logo": "/assets/organizations/edx-logo.webp"
+  },
+  {
+    "title": "Generative AI for Creativity and Innovation",
+    "issuer": "Adobe",
+    "date": "Nov. 2023",
+    "description": "Explored multimodal generative workflows for creative asset generation using Adobe Firefly.",
+    "highlights": [
+      "Applied generative tools for rapid UI/UX prototyping in student and hackathon projects",
+      "Gained hands-on exposure to multimodal generative design workflows"
+    ],
+    "logo": "/assets/organizations/adobe-logo.webp"
+  },
+  {
+    "title": "Foundations of Cloud Computing",
+    "issuer": "Codecademy",
+    "date": "Feb. 2023",
+    "description": "Hands-on experience with AWS EC2, S3, and Lambda for deploying scalable applications.",
+    "highlights": [
+      "Built small serverless prototypes integrating storage, compute, and event-driven workflows",
+      "Developed a foundational understanding of cloud infrastructure and serverless design patterns"
+    ],
+    "logo": "/assets/organizations/codecademy-logo.webp"
+  },
+  {
+    "title": "Programming Essentials in Python (PCAP)",
+    "issuer": "Cisco",
+    "date": "Aug. 2022",
+    "description": "Covered Python OOP, data structures, exception handling, and file I/O.",
+    "highlights": [
+      "Implemented small utilities and scripts to reinforce core programming concepts",
+      "Established a strong foundation in Python programming fundamentals"
+    ],
+    "logo": "/assets/organizations/cisco-logo.webp"
+  },
+  {
+    "title": "Introduction to Artificial Intelligence",
+    "issuer": "University of Helsinki",
+    "date": "Jul. 2022",
+    "description": "Introduced foundational AI concepts including search, planning, and reasoning under uncertainty.",
+    "highlights": [
+      "Implemented simple Python agents for planning and pathfinding tasks",
+      "Built early familiarity with core AI problem-solving paradigms"
+    ],
+    "logo": "/assets/organizations/helsinki-logo.webp"
+  }
+]

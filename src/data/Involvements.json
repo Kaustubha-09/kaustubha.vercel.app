@@ -1,0 +1,31 @@
+[
+  {
+    "title": "Founding Researcher",
+    "organization": "NEURAI Research Lab",
+    "period": "Mar. 2025 – Dec. 2025",
+    "description": "Contributed to research on interpretable and responsible ML, implementing baseline models and reproducibility workflows. Co-authored a proposal that secured $2k in compute credits.",
+    "logo": "/assets/organizations/neurai-logo.webp",
+    "link": "https://neurai.sites.northeastern.edu/our-team/kaustubha-eluri/"
+  },
+  {
+    "title": "Core Organizer",
+    "organization": "AI/Data Club",
+    "period": "Jan. 2025 – Dec. 2025",
+    "description": "Organized ML study sessions and hands-on workshops covering prompt engineering and API-based model integration. Coordinated internal hackathons and supported teams in shipping functional demos.",
+    "logo": "/assets/organizations/ai-data-club-logo.webp"
+  },
+  {
+    "title": "President",
+    "organization": "Aspiring Product Managers Club (APMC)",
+    "period": "Jan. 2024 – Dec. 2025",
+    "description": "Led a student organization focused on product management interview prep, case practice, and peer mentoring. Grew APMC into a well-established campus organization.",
+    "logo": "/assets/organizations/apmc-logo.webp"
+  },
+  {
+    "title": "Vice President",
+    "organization": "Adobe Creative Campus Club",
+    "period": "Jan. 2024 – May. 2025",
+    "description": "Led workshops introducing students to Adobe creative tools and portfolio workflows. Co-organized design challenges and cross-club creative events.",
+    "logo": "/assets/organizations/adobe-logo.webp"
+  }
+]

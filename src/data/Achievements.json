@@ -1,0 +1,37 @@
+[
+  {
+    "title": "HackUMass Winner",
+    "description": "Won first place in the accessibility track",
+    "date": "2024",
+    "organization": "HackUMass",
+    "icon": "🏆"
+  },
+  {
+    "title": "Top Project - RapidTriage AI",
+    "description": "Selected as a top project during course demo day based on technical depth and evaluation rigor",
+    "date": "2025",
+    "organization": "Northeastern University",
+    "icon": "⭐"
+  },
+  {
+    "title": "Hackathon Winner - Husky Mingle",
+    "description": "Won campus hackathon track for student networking innovation",
+    "date": "2024",
+    "organization": "Northeastern University",
+    "icon": "🎯"
+  },
+  {
+    "title": "Student Leadership Award",
+    "description": "Received student leadership award for APMC",
+    "date": "2025",
+    "organization": "Northeastern University",
+    "icon": "👑"
+  },
+  {
+    "title": "Echolin.AI Open Source",
+    "description": "Open-sourced project earning 120+ GitHub stars and community feedback",
+    "date": "2025",
+    "organization": "GitHub",
+    "icon": "🌟"
+  }
+]
