@@ -1,4 +1,4 @@
-import { Code, Brain, Server, Smartphone, Cloud } from 'lucide-react';
+import { Code, Brain, Server, Smartphone, Cloud, Eye } from 'lucide-react';
 import { Card, CardContent, CardHeader } from './ui/card';
 import { Badge } from './ui/badge';
 import { motion } from 'framer-motion';
@@ -81,6 +81,19 @@ export function Skills() {
         { name: 'PostgreSQL', proficiency: 'Advanced' as Proficiency, image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
         { name: 'MongoDB', proficiency: 'Intermediate' as Proficiency, image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
         { name: 'SQLite', proficiency: 'Advanced' as Proficiency },
+      ],
+    },
+    {
+      category: 'Accessibility',
+      icon: Eye,
+      color: 'teal',
+      image: '/assets/photos/work_collaboration.png',
+      skills: [
+        { name: 'WCAG 2.1 (AA+)', proficiency: 'Expert' as Proficiency },
+        { name: 'Accessibility Auditing', proficiency: 'Expert' as Proficiency },
+        { name: 'NVDA Screen Reader', proficiency: 'Advanced' as Proficiency },
+        { name: 'VoiceOver', proficiency: 'Advanced' as Proficiency },
+        { name: 'Keyboard Navigation', proficiency: 'Expert' as Proficiency },
       ],
     },
   ];

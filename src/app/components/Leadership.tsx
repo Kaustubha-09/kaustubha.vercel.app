@@ -47,6 +47,16 @@ export function Leadership() {
       ownership: 'Guided prospective students, communicated program value, built relationships',
       outcome: 'Selected based on leadership and communication ability; supported admissions',
     },
+    {
+      organization: 'Adobe Creative Campus Club',
+      role: 'Vice President',
+      period: 'Jan. 2024 - May 2025',
+      icon: Award,
+      image: '/assets/photos/work_collaboration.png',
+      initiative: 'Led workshops on Adobe creative tools and portfolio development workflows',
+      ownership: 'Co-organized design challenges and cross-club creative events with faculty',
+      outcome: 'Recognized by Adobe Creative Campus for student engagement initiatives',
+    },
   ];
 
   const containerVariants = {

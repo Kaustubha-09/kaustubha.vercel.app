@@ -6,6 +6,7 @@ import { Projects } from '../components/Projects';
 import { Education } from '../components/Education';
 import { Skills } from '../components/Skills';
 import { Leadership } from '../components/Leadership';
+import { Certifications } from '../components/Certifications';
 import { Contact } from '../components/Contact';
 
 function SectionReveal({ children }: { children: React.ReactNode }) {
@@ -44,6 +45,9 @@ export function Home() {
       </div>
       <div id="leadership" className="scroll-mt-16">
         <SectionReveal><Leadership /></SectionReveal>
+      </div>
+      <div id="certifications" className="scroll-mt-16">
+        <SectionReveal><Certifications /></SectionReveal>
       </div>
       <div id="contact" className="scroll-mt-16">
         <SectionReveal><Contact /></SectionReveal>
