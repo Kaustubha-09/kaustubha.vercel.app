@@ -2,6 +2,8 @@ import { Award, Users, Lightbulb, TrendingUp, Rocket } from 'lucide-react';
 import { Card, CardContent, CardHeader } from './ui/card';
 import { Badge } from './ui/badge';
 import { motion } from 'framer-motion';
+import { SectionHeader } from './SectionHeader';
+import { containerVariants, itemVariants } from '../../lib/animations';
 
 export function Leadership() {
   const leadership = [
@@ -52,33 +54,14 @@ export function Leadership() {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
-
   return (
     <section id="leadership" className="py-24 px-6 bg-white dark:bg-slate-900">
       <div className="max-w-6xl mx-auto">
-        <motion.div
-          className="mb-16"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <p className="section-eyebrow mb-3">06 — Leadership</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
-            Leadership & Involvement
-          </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-400">
-            Leading initiatives that drive impact and build community
-          </p>
-        </motion.div>
+        <SectionHeader
+          eyebrow="06 — Leadership"
+          title="Leadership & Involvement"
+          description="Leading initiatives that drive impact and build community"
+        />
 
         <motion.div
           className="grid md:grid-cols-2 gap-6"

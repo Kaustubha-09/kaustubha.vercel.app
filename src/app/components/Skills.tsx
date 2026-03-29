@@ -1,5 +1,7 @@
 import { Code, Brain, Server, Smartphone, Cloud, Eye } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { SectionHeader } from './SectionHeader';
+import { containerVariants, itemVariants } from '../../lib/animations';
 
 type Proficiency = 'Expert' | 'Advanced' | 'Intermediate';
 
@@ -104,33 +106,14 @@ export function Skills() {
     };
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.08 } },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 16 },
-    visible: { opacity: 1, y: 0 },
-  };
-
   return (
     <section id="skills" className="py-24 px-6 bg-white dark:bg-slate-900">
       <div className="max-w-6xl mx-auto">
-        <motion.div
-          className="mb-16"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <p className="section-eyebrow mb-3">05 — Skills</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
-            Technical Skills
-          </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-400">
-            Technologies and tools I use to build production systems
-          </p>
-        </motion.div>
+        <SectionHeader
+          eyebrow="05 — Skills"
+          title="Technical Skills"
+          description="Technologies and tools I use to build production systems"
+        />
 
         <motion.div
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"

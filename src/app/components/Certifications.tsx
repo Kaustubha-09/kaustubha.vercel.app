@@ -2,6 +2,8 @@ import { Award } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
 import { motion } from 'framer-motion';
+import { SectionHeader } from './SectionHeader';
+import { containerVariants, itemVariants } from '../../lib/animations';
 
 interface Certification {
   name: string;
@@ -66,33 +68,14 @@ export function Certifications() {
     'University of Helsinki': 'bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700',
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.07 } },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 16 },
-    visible: { opacity: 1, y: 0 },
-  };
-
   return (
     <section className="py-24 px-6 bg-slate-50 dark:bg-slate-950">
       <div className="max-w-6xl mx-auto">
-        <motion.div
-          className="mb-16"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <p className="section-eyebrow mb-3">07 — Certifications</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
-            Certifications
-          </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-400">
-            Continuous learning across AI, cloud, and systems domains
-          </p>
-        </motion.div>
+        <SectionHeader
+          eyebrow="07 — Certifications"
+          title="Certifications"
+          description="Continuous learning across AI, cloud, and systems domains"
+        />
 
         <motion.div
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-4"

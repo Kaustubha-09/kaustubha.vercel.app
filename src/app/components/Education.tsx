@@ -1,27 +1,18 @@
-import { GraduationCap } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Card, CardContent, CardHeader } from './ui/card';
 import { Badge } from './ui/badge';
 import { motion } from 'framer-motion';
+import { SectionHeader } from './SectionHeader';
 
 export function Education() {
   return (
     <section id="education" className="py-24 px-6 bg-white dark:bg-slate-900">
       <div className="max-w-6xl mx-auto">
-        <motion.div 
-          className="mb-16"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <p className="section-eyebrow mb-3">04 — Education</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
-            Education
-          </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-400">
-            Academic foundation in computer science and architectural engineering
-          </p>
-        </motion.div>
+        <SectionHeader
+          eyebrow="04 — Education"
+          title="Education"
+          description="Academic foundation in computer science and architectural engineering"
+        />
         <div className="space-y-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

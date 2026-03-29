@@ -1,9 +1,9 @@
-import { ExternalLink } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import { Card, CardContent, CardHeader } from './ui/card';
+import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
+import { SectionHeader } from './SectionHeader';
 
 type ProjectCategory = 'All' | 'AI / ML' | 'Mobile' | 'Systems' | 'Research';
 
@@ -209,20 +209,11 @@ export function Projects() {
   return (
     <section id="projects" className="py-24 px-6 bg-white dark:bg-slate-900">
       <div className="max-w-6xl mx-auto">
-        <motion.div 
-          className="mb-16"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <p className="section-eyebrow mb-3">03 — Projects</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
-            Projects
-          </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-400">
-            Featured work in AI/ML, mobile development, and systems engineering
-          </p>
-        </motion.div>
+        <SectionHeader
+          eyebrow="03 — Projects"
+          title="Projects"
+          description="Featured work in AI/ML, mobile development, and systems engineering"
+        />
 
         {/* Filter Tabs */}
         <motion.div 

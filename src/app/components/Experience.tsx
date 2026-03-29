@@ -1,4 +1,6 @@
 import { Briefcase, Brain, Zap, Users, ChevronDown, ChevronUp, Target, TrendingUp, MapPin, Calendar } from 'lucide-react';
+import { SectionHeader } from './SectionHeader';
+import { containerVariants, itemVariants } from '../../lib/animations';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Card, CardContent, CardHeader } from './ui/card';
 import { Badge } from './ui/badge';
@@ -267,37 +269,15 @@ export function Experience() {
   const featuredExp = sortedExperiences.filter(e => e.featured);
   const otherExp = sortedExperiences.filter(e => !e.featured);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
 
   return (
     <section id="experience" className="py-24 px-6 bg-white dark:bg-slate-900">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <motion.div
-          className="mb-16"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <p className="section-eyebrow mb-3">02 — Experience</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
-            Experience
-          </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-400">
-            Building production AI systems and leading engineering teams
-          </p>
-        </motion.div>
+        <SectionHeader
+          eyebrow="02 — Experience"
+          title="Experience"
+          description="Building production AI systems and leading engineering teams"
+        />
 
         {/* Featured Experiences */}
         {featuredExp.length > 0 && (

@@ -2,6 +2,8 @@ import { Brain, TrendingUp, Target, Rocket } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
 import { motion } from 'framer-motion';
+import { SectionHeader } from './SectionHeader';
+import { containerVariants, itemVariants } from '../../lib/animations';
 
 export function About() {
   const timeline = [
@@ -50,36 +52,14 @@ export function About() {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
-
   return (
     <section id="about" className="py-24 px-6 bg-white dark:bg-slate-900">
       <div className="max-w-6xl mx-auto">
-        <motion.div 
-          className="mb-16"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <p className="section-eyebrow mb-3">01 — About</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
-            About
-          </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-400">
-            From architectural engineering to building intelligent systems
-          </p>
-        </motion.div>
+        <SectionHeader
+          eyebrow="01 — About"
+          title="About"
+          description="From architectural engineering to building intelligent systems"
+        />
         
         {/* Journey Section */}
         <motion.div 
