@@ -286,139 +286,114 @@ export function Projects() {
 
         {showHierarchy ? (
           <>
-            {/* TIER 1 — Featured (2 large cards) */}
-            <div className="grid md:grid-cols-2 gap-6 mb-10">
-              {featured.map((project, idx) => (
-                <motion.div
-                  key={project.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                >
-                  <Card className="card-sweep group h-full overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                    <div className="aspect-video overflow-hidden bg-slate-100 dark:bg-slate-800">
+            {/* Hero card — Echolin.AI, full-width horizontal */}
+            {featured.map((project) => (
+              <motion.div
+                key={project.title}
+                className="mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                <Card className="card-sweep group overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                  style={{ borderColor: 'rgba(0,212,170,0.25)' }}>
+                  <div className="grid md:grid-cols-5 gap-0">
+                    <div className="md:col-span-2 aspect-video md:aspect-auto overflow-hidden bg-slate-100 dark:bg-slate-800">
                       <ImageWithFallback
                         src={project.image}
                         alt={project.title}
                         className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
                       />
                     </div>
-                    <CardContent className="p-6">
-                      <div className="flex flex-wrap gap-1.5 mb-3">
+                    <div className="md:col-span-3 p-8 flex flex-col justify-center">
+                      <div className="flex flex-wrap gap-1.5 mb-4">
                         {project.tracks.map(t => <TrackChip key={t} track={t} />)}
                       </div>
-                      <div className="flex items-start justify-between gap-3 mb-2">
-                        <h3 className="text-lg font-semibold text-slate-900 dark:text-white leading-snug">{project.title}</h3>
+                      <div className="flex items-start justify-between gap-4 mb-2">
+                        <h3 className="text-2xl font-semibold text-slate-900 dark:text-white leading-snug">{project.title}</h3>
                         <Badge variant="secondary" className="text-xs flex-shrink-0">{project.period}</Badge>
                       </div>
-                      <p className="text-xs text-slate-500 dark:text-slate-400 mb-3">{project.role} · {project.organization}</p>
-                      <p className="text-sm text-slate-600 dark:text-slate-400 mb-3 leading-relaxed">{project.problem}</p>
+                      <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">{project.role} · {project.organization}</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">{project.problem}</p>
                       <div className="flex flex-wrap gap-1.5 mb-1">
-                        {project.tags.map((tag) => (
+                        {project.tags.map(tag => (
                           <Badge key={tag} variant="outline" className="text-xs bg-slate-50 dark:bg-slate-800">{tag}</Badge>
                         ))}
                       </div>
                       <ImpactStat text={project.impact} />
                       <LinkRow project={project} />
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* TIER 2 — Secondary (2-col with images) */}
-            <div className="grid md:grid-cols-2 gap-5 mb-10">
-              {secondary.map((project, idx) => (
-                <motion.div
-                  key={project.title}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.08 }}
-                >
-                  <Card className="group h-full overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                    <div className="aspect-video overflow-hidden bg-slate-100 dark:bg-slate-800">
-                      <ImageWithFallback
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
-                      />
                     </div>
-                    <CardContent className="p-5">
-                      <div className="flex flex-wrap gap-1.5 mb-3">
-                        {project.tracks.map(t => <TrackChip key={t} track={t} />)}
-                      </div>
-                      <div className="flex items-start justify-between gap-3 mb-2">
-                        <h3 className="text-base font-semibold text-slate-900 dark:text-white leading-snug">{project.title}</h3>
-                        <Badge variant="secondary" className="text-xs flex-shrink-0">{project.period}</Badge>
-                      </div>
-                      <p className="text-xs text-slate-600 dark:text-slate-400 mb-3 leading-relaxed">{project.problem}</p>
-                      <div className="flex flex-wrap gap-1.5 mb-1">
-                        {project.tags.slice(0, 4).map((tag) => (
-                          <Badge key={tag} variant="outline" className="text-xs bg-slate-50 dark:bg-slate-800">{tag}</Badge>
-                        ))}
-                      </div>
-                      <ImpactStat text={project.impact} />
-                      <LinkRow project={project} />
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
 
-            {/* TIER 3 — Compact grid with images */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {compact.map((project, idx) => (
-                <motion.div
-                  key={project.title}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.06 }}
-                >
-                  <Card className="group h-full overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                    <div className="aspect-video overflow-hidden bg-slate-100 dark:bg-slate-800">
-                      <ImageWithFallback
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
-                      />
-                    </div>
-                    <CardContent className="p-4">
-                      <div className="flex flex-wrap gap-1.5 mb-2">
-                        {project.tracks.map(t => <TrackChip key={t} track={t} />)}
-                      </div>
-                      <h3 className="text-sm font-semibold text-slate-900 dark:text-white leading-snug mb-2">{project.title}</h3>
-                      <div className="flex flex-wrap gap-1 mb-1">
-                        {project.tags.slice(0, 3).map(tag => (
-                          <Badge key={tag} variant="outline" className="text-xs bg-slate-50 dark:bg-slate-800">{tag}</Badge>
-                        ))}
-                      </div>
-                      <ImpactStat text={project.impact} />
-                      <LinkRow project={project} />
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
+            {/* Uniform 2-col grid — all remaining projects */}
+            {(() => {
+              const rest = [...secondary, ...compact];
+              const isOdd = rest.length % 2 !== 0;
+              return (
+                <div className="grid md:grid-cols-2 gap-6">
+                  {rest.map((project, idx) => {
+                    const isLastOrphan = isOdd && idx === rest.length - 1;
+                    return (
+                      <motion.div
+                        key={project.title}
+                        className={isLastOrphan ? 'md:col-span-2 md:max-w-[calc(50%-12px)]' : ''}
+                        initial={{ opacity: 0, y: 16 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: (idx % 2) * 0.08 }}
+                      >
+                        <Card className="group h-full overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                          <div className="aspect-video overflow-hidden bg-slate-100 dark:bg-slate-800">
+                            <ImageWithFallback
+                              src={project.image}
+                              alt={project.title}
+                              className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                            />
+                          </div>
+                          <CardContent className="p-5">
+                            <div className="flex flex-wrap gap-1.5 mb-3">
+                              {project.tracks.map(t => <TrackChip key={t} track={t} />)}
+                            </div>
+                            <div className="flex items-start justify-between gap-3 mb-2">
+                              <h3 className="text-base font-semibold text-slate-900 dark:text-white leading-snug">{project.title}</h3>
+                              <Badge variant="secondary" className="text-xs flex-shrink-0">{project.period}</Badge>
+                            </div>
+                            <p className="text-xs text-slate-600 dark:text-slate-400 mb-3 leading-relaxed">{project.problem}</p>
+                            <div className="flex flex-wrap gap-1.5 mb-1">
+                              {project.tags.slice(0, 4).map(tag => (
+                                <Badge key={tag} variant="outline" className="text-xs bg-slate-50 dark:bg-slate-800">{tag}</Badge>
+                              ))}
+                            </div>
+                            <ImpactStat text={project.impact} />
+                            <LinkRow project={project} />
+                          </CardContent>
+                        </Card>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+              );
+            })()}
           </>
         ) : (
-          /* Filtered view — single unified grid */
+          /* Filtered view — uniform 2-col grid */
           <AnimatePresence mode="wait">
             <motion.div
               key={selectedCategory}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="grid md:grid-cols-2 gap-5"
+              className="grid md:grid-cols-2 gap-6"
             >
               {allFiltered.map((project, idx) => (
                 <motion.div
                   key={project.title}
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: idx * 0.05 }}
+                  transition={{ delay: (idx % 2) * 0.08 }}
                 >
                   <Card className="group h-full overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                     <div className="aspect-video overflow-hidden bg-slate-100 dark:bg-slate-800">
