@@ -1,7 +1,33 @@
 import { Download, Github, Linkedin, ArrowDown } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+
+const THESIS = 'I build AI systems that work for everyone — especially those the defaults forget.';
 
 export function Hero() {
+  const [typed, setTyped] = useState('');
+  const [cursorVisible, setCursorVisible] = useState(true);
+
+  // Typewriter for thesis line
+  useEffect(() => {
+    let i = 0;
+    const delay = setTimeout(() => {
+      const timer = setInterval(() => {
+        i++;
+        setTyped(THESIS.slice(0, i));
+        if (i >= THESIS.length) clearInterval(timer);
+      }, 28);
+      return () => clearInterval(timer);
+    }, 600);
+    return () => clearTimeout(delay);
+  }, []);
+
+  // Blinking cursor
+  useEffect(() => {
+    const cursor = setInterval(() => setCursorVisible(v => !v), 530);
+    return () => clearInterval(cursor);
+  }, []);
+
   const arc = [
     { label: 'Arch. Eng.', active: false },
     { label: 'CS', active: false },
@@ -11,9 +37,12 @@ export function Hero() {
 
   return (
     <section
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-grid-teal"
       style={{ background: '#0F1923' }}
     >
+      {/* Grid sits under everything */}
+      <div className="absolute inset-0 bg-grid-teal pointer-events-none" />
+
       {/* Teal radial glow from top */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -22,6 +51,9 @@ export function Hero() {
             'radial-gradient(ellipse 70% 45% at 50% 0%, rgba(0,212,170,0.13) 0%, transparent 70%)',
         }}
       />
+
+      {/* Scan line */}
+      <div className="hero-scan-line" />
 
       {/* Horizontal rule at bottom */}
       <div
@@ -61,21 +93,28 @@ export function Hero() {
           </span>
         </motion.div>
 
-        {/* Thesis line */}
+        {/* Thesis line — typewriter */}
         <motion.p
-          className="text-slate-400 text-lg md:text-xl font-light mb-8 max-w-2xl mx-auto leading-relaxed"
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
+          className="text-slate-400 text-lg md:text-xl font-light mb-8 max-w-2xl mx-auto leading-relaxed min-h-[3.5rem]"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.3 }}
+          style={{ fontFamily: "'IBM Plex Mono', ui-monospace, monospace", fontSize: '0.95rem' }}
         >
-          I build AI systems that work for everyone —
-          <br className="hidden md:block" />
-          <em className="text-slate-300 not-italic">especially those the defaults forget.</em>
+          {typed}
+          <span
+            className="inline-block w-0.5 h-4 ml-0.5 align-middle"
+            style={{
+              background: '#00D4AA',
+              opacity: typed.length >= THESIS.length && !cursorVisible ? 0 : 1,
+              transition: 'opacity 0.1s',
+            }}
+          />
         </motion.p>
 
-        {/* Name — the statement */}
+        {/* Name — with glow pulse */}
         <motion.h1
-          className="font-black text-white leading-none tracking-tight mb-10"
+          className="font-black text-white leading-none tracking-tight mb-10 animate-glow-pulse"
           style={{
             fontSize: 'clamp(3.5rem, 10vw, 9rem)',
             fontFamily: "'Bricolage Grotesque', system-ui, sans-serif",
@@ -138,6 +177,7 @@ export function Hero() {
                         borderColor: 'rgba(0,212,170,0.45)',
                         color: '#00D4AA',
                         fontWeight: 600,
+                        boxShadow: '0 0 10px rgba(0,212,170,0.2)',
                       }
                     : {
                         fontFamily: "'IBM Plex Mono', ui-monospace, monospace",
@@ -169,7 +209,11 @@ export function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-all hover:opacity-90 hover:scale-[1.02] active:scale-100"
-            style={{ background: '#00D4AA', color: '#0F1923' }}
+            style={{
+              background: '#00D4AA',
+              color: '#0F1923',
+              boxShadow: '0 0 16px rgba(0,212,170,0.3)',
+            }}
           >
             <Download className="w-4 h-4" />
             Resume
@@ -177,24 +221,14 @@ export function Hero() {
 
           {/* Secondary links */}
           {[
-            {
-              href: 'https://github.com/Kaustubha-09',
-              icon: Github,
-              label: 'GitHub',
-              external: true,
-            },
-            {
-              href: 'https://linkedin.com/in/kaustubha-ve',
-              icon: Linkedin,
-              label: 'LinkedIn',
-              external: true,
-            },
-          ].map(({ href, icon: Icon, label, external }) => (
+            { href: 'https://github.com/Kaustubha-09', icon: Github, label: 'GitHub' },
+            { href: 'https://linkedin.com/in/kaustubha-ve', icon: Linkedin, label: 'LinkedIn' },
+          ].map(({ href, icon: Icon, label }) => (
             <a
               key={label}
               href={href}
-              target={external ? '_blank' : undefined}
-              rel={external ? 'noopener noreferrer' : undefined}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-medium transition-all hover:border-slate-500"
               style={{
                 borderWidth: 1,

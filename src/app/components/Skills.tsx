@@ -141,7 +141,7 @@ export function Skills() {
         >
           {skillCategories.map((category) => (
             <motion.div key={category.category} variants={itemVariants}>
-              <div className="h-full rounded-xl border border-slate-200 dark:border-slate-800 p-6 hover:shadow-lg transition-all bg-white dark:bg-slate-900">
+              <div className="card-sweep h-full rounded-xl border border-slate-200 dark:border-slate-800 p-6 hover:shadow-lg transition-all bg-white dark:bg-slate-900">
                 {/* Category header */}
                 <div className="flex items-center gap-3 mb-5">
                   <div className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800">

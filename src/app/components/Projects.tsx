@@ -265,7 +265,7 @@ export function Projects() {
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
                 >
-                  <Card className="group overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <Card className="card-sweep group overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                     <div className="grid md:grid-cols-3 gap-0">
                       <div className="md:col-span-1 aspect-video md:aspect-auto overflow-hidden bg-slate-100 dark:bg-slate-800">
                         <ImageWithFallback

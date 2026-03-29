@@ -310,7 +310,7 @@ export function Experience() {
           >
             {featuredExp.map((exp, expIdx) => (
               <motion.div key={expIdx} variants={itemVariants}>
-                <Card className="border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-xl transition-all duration-300">
+                <Card className="card-sweep border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-xl transition-all duration-300">
                   {/* Company Header */}
                   <div className="bg-gradient-to-r from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 p-6 md:p-8 border-b border-slate-200 dark:border-slate-800">
                     <div className="flex flex-col md:flex-row md:items-center gap-4">

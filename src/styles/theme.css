@@ -245,6 +245,89 @@ body::before {
   vertical-align: middle;
 }
 
+/* ── Dhruv-inspired effects (adapted to teal) ── */
+
+/* Grid background — 44px intervals, 5.5% opacity teal lines */
+.bg-grid-teal {
+  background-image:
+    linear-gradient(rgba(0, 212, 170, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 170, 0.055) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* Name glow pulse */
+@keyframes glow-pulse {
+  0%, 100% {
+    text-shadow:
+      0 0 10px rgba(0, 212, 170, 0.25),
+      0 0 24px rgba(0, 212, 170, 0.1);
+  }
+  50% {
+    text-shadow:
+      0 0 20px rgba(0, 212, 170, 0.55),
+      0 0 48px rgba(0, 212, 170, 0.25),
+      0 0 80px rgba(0, 212, 170, 0.08);
+  }
+}
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Scan line descending */
+@keyframes scan-move {
+  0%   { top: -4%; opacity: 0.6; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { top: 104%; opacity: 0.6; }
+}
+.hero-scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 212, 170, 0.35),
+    rgba(0, 212, 170, 0.7),
+    rgba(0, 212, 170, 0.35),
+    transparent
+  );
+  box-shadow: 0 0 12px rgba(0, 212, 170, 0.4);
+  animation: scan-move 6s linear infinite;
+  z-index: 5;
+}
+
+/* Card inner sweep on hover */
+.card-sweep {
+  position: relative;
+  overflow: hidden;
+}
+.card-sweep::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  width: 60%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 212, 170, 0.055),
+    transparent
+  );
+  transition: none;
+  pointer-events: none;
+}
+.card-sweep:hover::after {
+  animation: sweep-move 0.7s ease-in-out forwards;
+}
+@keyframes sweep-move {
+  0%   { left: -100%; }
+  100% { left: 110%; }
+}
+
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
