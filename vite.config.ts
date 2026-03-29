@@ -1,22 +1,35 @@
 import { defineConfig } from 'vite'
 import path from 'path'
+import { copyFileSync } from 'fs'
+import { join } from 'path'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [
-    // The React and Tailwind plugins are both required for Make, even if
-    // Tailwind is not being actively used – do not remove them
     react(),
     tailwindcss(),
+    {
+      name: 'copy-404',
+      closeBundle() {
+        // Copy 404.html to dist for GitHub Pages SPA routing
+        copyFileSync(
+          join(__dirname, 'public', '404.html'),
+          join(__dirname, 'dist', '404.html')
+        )
+      }
+    }
   ],
+  base: '/',
+  build: {
+    outDir: 'dist',
+    copyPublicDir: true,
+  },
+  publicDir: 'public',
   resolve: {
     alias: {
-      // Alias @ to the src directory
       '@': path.resolve(__dirname, './src'),
     },
   },
-
-  // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
   assetsInclude: ['**/*.svg', '**/*.csv'],
 })
