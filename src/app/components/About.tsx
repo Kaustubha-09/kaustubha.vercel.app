@@ -1,57 +1,18 @@
-import { Brain, TrendingUp, Target, Rocket } from 'lucide-react';
+import { Brain, Target, Rocket, TrendingUp } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
-import { Badge } from './ui/badge';
 import { motion } from 'framer-motion';
 import { SectionHeader } from './SectionHeader';
 import { containerVariants, itemVariants } from '../../lib/animations';
 
+const DIFFERENTIATORS = [
+  { icon: Brain,   label: 'AI + Accessibility', desc: 'Production AI for blind and low-vision users — RAG, VLMs, WCAG AA+' },
+  { icon: Target,  label: 'Research → Production', desc: 'Turned a research prototype into a shipped App Store product used daily' },
+  { icon: Rocket,  label: 'Promoted Twice', desc: 'Intern → Lead at both Smith-Kettlewell and Evenness Inc.' },
+];
+
+const LOOKING_FOR = ['AI/ML Engineering', 'Accessibility Tech', 'Mobile Engineering', 'Full Stack / SDE'];
+
 export function About() {
-  const timeline = [
-    {
-      year: '2021',
-      title: 'Architectural Engineer → Computer Scientist',
-      description: 'Transitioned from building physical structures to designing intelligent systems',
-    },
-    {
-      year: '2023',
-      title: 'M.S. Computer Science @ Northeastern',
-      description: 'Focused on AI/ML, Generative AI, and scalable system design',
-    },
-    {
-      year: '2024',
-      title: 'Teaching Assistant & Product Leader',
-      description: 'Mentored 30+ students, led APMC as President, built mobile apps',
-    },
-    {
-      year: '2025',
-      title: 'Research SWE @ Smith-Kettlewell',
-      description: 'Led AI/ML engineering for YouDescribeX, serving blind/low-vision users',
-    },
-    {
-      year: '2025-2026',
-      title: 'Lead AI Engineer @ Evenness',
-      description: 'Built production AI systems achieving 100% WCAG coverage',
-    },
-  ];
-
-  const problemsICareAbout = [
-    {
-      icon: Brain,
-      title: 'AI + Accessibility',
-      description: 'Building AI systems that make technology accessible to everyone, especially blind and low-vision users',
-    },
-    {
-      icon: Target,
-      title: 'Research → Production',
-      description: 'Bridging the gap between research prototypes and production-ready systems that serve real users',
-    },
-    {
-      icon: Rocket,
-      title: 'Scalable Systems',
-      description: 'Designing systems that scale reliably, from mobile apps to cloud infrastructure',
-    },
-  ];
-
   return (
     <section id="about" className="py-24 px-6 bg-white dark:bg-slate-900">
       <div className="max-w-6xl mx-auto">
@@ -60,80 +21,48 @@ export function About() {
           title="About"
           description="From architectural engineering to building intelligent systems"
         />
-        
-        {/* Journey Section */}
-        <motion.div 
-          className="mb-16"
+
+        {/* 3-paragraph narrative */}
+        <motion.div
+          className="mb-16 max-w-2xl"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <div className="prose prose-lg max-w-none dark:prose-invert">
-            <p className="text-xl text-slate-900 dark:text-white leading-relaxed mb-6 font-medium">
-              I started my career designing buildings. Today, I design intelligent systems.
-            </p>
-            <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-              My background in architectural engineering taught me how to think in structures—how every component connects, supports, and scales. When I transitioned into computer science at Northeastern University, my blueprints became algorithms, APIs, and AI models—but the mindset stayed the same: <strong className="text-slate-900 dark:text-white">build things that work beautifully and reliably.</strong>
-            </p>
-            <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed">
-              Now, I'm a Research Software Engineer focused on building production-ready, accessibility-first platforms. At Smith-Kettlewell, I helped transform YouDescribeX from a research prototype into a real product used by blind and low-vision users. At Evenness, I built and deployed agentic AI workflows across production microservices—achieving 99.9% uptime and reducing audit cycles by 40%.
-            </p>
-          </div>
+          <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-5">
+            I started building things in CAD and Revit — designing structural systems, coordinating drawings, optimizing load paths.
+            Architectural engineering taught me to think in systems: every element has a purpose, every constraint is a design decision.
+          </p>
+          <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-5">
+            Then I asked why the software itself couldn't be smarter. That question led me to computer science, then to AI —
+            and my blueprints became pipelines. At Northeastern, I built mobile apps, trained models, and shipped production systems.
+            At Smith-Kettlewell, I helped make YouDescribeX real — a research prototype that became a product used daily by blind and
+            low-vision users. At Evenness, I built agentic AI workflows that cut compliance audit cycles by 40%.
+          </p>
+          <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+            Today I build AI systems at the intersection of technical precision and human need —
+            <strong className="text-slate-900 dark:text-white"> especially for the people the defaults forget.</strong>
+          </p>
         </motion.div>
 
-        {/* Timeline */}
-        <motion.div 
+        {/* Differentiators */}
+        <motion.div
           className="mb-16"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl font-semibold mb-8 text-slate-900 dark:text-white">Career Timeline</h3>
-          <div className="relative">
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-slate-200 dark:bg-slate-800"></div>
-            <div className="space-y-8">
-              {timeline.map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  className="relative pl-20"
-                  variants={itemVariants}
-                >
-                  <div className="absolute left-6 top-2 w-4 h-4 rounded-full border-4 border-white dark:border-slate-900" style={{ background: '#00D4AA' }}></div>
-                  <Card className="border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all">
-                    <CardContent className="p-6">
-                      <div className="flex items-center gap-3 mb-3">
-                        <Badge variant="secondary" className="text-xs">{item.year}</Badge>
-                      </div>
-                      <h4 className="text-lg font-semibold mb-2 text-slate-900 dark:text-white">{item.title}</h4>
-                      <p className="text-sm text-slate-600 dark:text-slate-400">{item.description}</p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-
-        {/* What I Care About */}
-        <motion.div 
-          className="mb-16"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <h3 className="text-2xl font-semibold mb-8 text-slate-900 dark:text-white">What I Care About</h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            {problemsICareAbout.map((problem, idx) => (
-              <motion.div key={idx} variants={itemVariants}>
+          <div className="grid md:grid-cols-3 gap-5">
+            {DIFFERENTIATORS.map(({ icon: Icon, label, desc }) => (
+              <motion.div key={label} variants={itemVariants}>
                 <Card className="h-full border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all">
                   <CardContent className="p-6">
                     <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style={{ background: 'rgba(0,212,170,0.1)' }}>
-                      <problem.icon size={20} style={{ color: '#00D4AA' }} />
+                      <Icon size={20} style={{ color: '#00D4AA' }} />
                     </div>
-                    <h4 className="text-lg font-semibold mb-2 text-slate-900 dark:text-white">{problem.title}</h4>
-                    <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{problem.description}</p>
+                    <h4 className="text-base font-semibold mb-2 text-slate-900 dark:text-white">{label}</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{desc}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -142,32 +71,31 @@ export function About() {
         </motion.div>
 
         {/* Systems I Build */}
-        <motion.div 
+        <motion.div
           className="mb-16"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl font-semibold mb-8 text-slate-900 dark:text-white">Systems I Build</h3>
           <Card className="border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50">
             <CardContent className="p-8">
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h4 className="text-lg font-semibold mb-4 text-slate-900 dark:text-white">AI/ML Systems</h4>
-                  <ul className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
-                    <li>• RAG pipelines for knowledge retrieval</li>
-                    <li>• Agentic workflows for automation</li>
-                    <li>• Vision-Language Models for accessibility</li>
-                    <li>• Production ML inference systems</li>
+                  <h4 className="text-sm font-semibold mb-4 text-slate-900 dark:text-white uppercase tracking-wide">AI/ML Systems</h4>
+                  <ul className="space-y-1.5 text-sm text-slate-600 dark:text-slate-400">
+                    <li>· RAG pipelines for knowledge retrieval</li>
+                    <li>· Agentic workflows for automation</li>
+                    <li>· Vision-Language Models for accessibility</li>
+                    <li>· Production ML inference systems</li>
                   </ul>
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold mb-4 text-slate-900 dark:text-white">Full-Stack Platforms</h4>
-                  <ul className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
-                    <li>• Cross-platform mobile apps (iOS, Android)</li>
-                    <li>• Scalable backend APIs (FastAPI, Node.js)</li>
-                    <li>• Real-time systems with Firebase</li>
-                    <li>• Cloud-native architectures</li>
+                  <h4 className="text-sm font-semibold mb-4 text-slate-900 dark:text-white uppercase tracking-wide">Full-Stack Platforms</h4>
+                  <ul className="space-y-1.5 text-sm text-slate-600 dark:text-slate-400">
+                    <li>· Cross-platform mobile apps (iOS, Android)</li>
+                    <li>· Scalable backend APIs (FastAPI, Node.js)</li>
+                    <li>· Real-time systems with Firebase</li>
+                    <li>· Cloud-native architectures (AWS, Docker)</li>
                   </ul>
                 </div>
               </div>
@@ -176,34 +104,27 @@ export function About() {
         </motion.div>
 
         {/* What I'm Looking For */}
-        <motion.div 
+        <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
           <div
-            className="rounded-xl p-8 text-center border"
-            style={{
-              background: 'rgba(0,212,170,0.05)',
-              borderColor: 'rgba(0,212,170,0.2)',
-            }}
+            className="rounded-xl p-8 border"
+            style={{ background: 'rgba(0,212,170,0.05)', borderColor: 'rgba(0,212,170,0.2)' }}
           >
             <TrendingUp className="w-10 h-10 mx-auto mb-4" style={{ color: '#00D4AA' }} />
-            <h3 className="text-xl font-semibold mb-4 text-slate-900 dark:text-white">What I'm Looking For Next</h3>
-            <p className="text-sm text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-6">
-              I'm seeking full-time Software Engineering, AI/ML Engineering, or Product Engineering roles where I can build intelligent systems that solve real problems.
+            <h3 className="text-xl font-semibold mb-3 text-slate-900 dark:text-white">What I'm Looking For Next</h3>
+            <p className="text-sm text-slate-600 dark:text-slate-400 max-w-xl mx-auto mb-5">
+              Full-time SWE, AI/ML Engineering, or Product Engineering roles — building systems that solve real problems.
             </p>
-            <div className="flex flex-wrap gap-2 justify-center items-center">
-              {['AI/ML Systems', 'Accessibility Tech', 'Mobile Engineering', 'Production Systems'].map((tag) => (
+            <div className="flex flex-wrap gap-2 justify-center">
+              {LOOKING_FOR.map(tag => (
                 <span
                   key={tag}
                   className="px-3 py-1 rounded-full text-xs font-medium"
-                  style={{
-                    background: 'rgba(0,212,170,0.1)',
-                    border: '1px solid rgba(0,212,170,0.3)',
-                    color: '#00D4AA',
-                  }}
+                  style={{ background: 'rgba(0,212,170,0.1)', border: '1px solid rgba(0,212,170,0.3)', color: '#00D4AA' }}
                 >
                   {tag}
                 </span>
@@ -211,7 +132,6 @@ export function About() {
             </div>
           </div>
         </motion.div>
-
       </div>
     </section>
   );
