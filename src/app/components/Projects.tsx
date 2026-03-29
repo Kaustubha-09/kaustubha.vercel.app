@@ -1,3 +1,4 @@
+import { Github } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
@@ -277,15 +278,31 @@ export function Projects() {
                         <p className="text-sm text-slate-600 dark:text-slate-400 mb-6">{project.problem}</p>
                         <div className="flex flex-wrap gap-2 mb-6">
                           {project.tags.map((tag) => (
-                            <Badge 
-                              key={tag} 
-                              variant="outline" 
+                            <Badge
+                              key={tag}
+                              variant="outline"
                               className="text-xs bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700"
                             >
                               {tag}
                             </Badge>
                           ))}
                         </div>
+                        {project.github && (
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-medium border transition-all hover:scale-[1.03]"
+                            style={{
+                              borderColor: 'rgba(0,212,170,0.35)',
+                              color: '#00D4AA',
+                              background: 'rgba(0,212,170,0.06)',
+                            }}
+                          >
+                            <Github className="w-3.5 h-3.5" />
+                            View on GitHub
+                          </a>
+                        )}
                       </div>
                     </div>
                   </Card>
@@ -328,15 +345,31 @@ export function Projects() {
                       <p className="text-xs text-slate-600 dark:text-slate-400 mb-4 line-clamp-2">{project.problem}</p>
                       <div className="flex flex-wrap gap-1.5 mb-4">
                         {project.tags.slice(0, 3).map((tag) => (
-                          <Badge 
-                            key={tag} 
-                            variant="outline" 
+                          <Badge
+                            key={tag}
+                            variant="outline"
                             className="text-xs bg-slate-50 dark:bg-slate-800"
                           >
                             {tag}
                           </Badge>
                         ))}
                       </div>
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border transition-all hover:scale-[1.03]"
+                          style={{
+                            borderColor: 'rgba(0,212,170,0.35)',
+                            color: '#00D4AA',
+                            background: 'rgba(0,212,170,0.06)',
+                          }}
+                        >
+                          <Github className="w-3 h-3" />
+                          GitHub
+                        </a>
+                      )}
                     </CardContent>
                   </Card>
                 </motion.div>
