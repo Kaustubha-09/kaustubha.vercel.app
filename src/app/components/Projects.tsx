@@ -1,4 +1,4 @@
-import { ExternalLink, Github, FileText } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Card, CardContent, CardHeader } from './ui/card';
 import { Badge } from './ui/badge';
@@ -306,7 +306,7 @@ export function Projects() {
                             </a>
                           )}
                           {project.link && (
-                            <a 
+                            <a
                               href={project.link}
                               target="_blank"
                               rel="noopener noreferrer"
@@ -316,10 +316,6 @@ export function Projects() {
                               Demo
                             </a>
                           )}
-                          <button className="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
-                            <FileText size={16} />
-                            Case Study
-                          </button>
                         </div>
                       </div>
                     </div>

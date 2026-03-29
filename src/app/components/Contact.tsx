@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Github, MapPin, Phone, Download, CheckCircle } from 'lucide-react';
+import { Mail, Linkedin, Github, MapPin, Download, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
@@ -6,7 +6,6 @@ import { Badge } from './ui/badge';
 export function Contact() {
   const contactInfo = [
     { icon: Mail, label: 'Email', value: 'kaustubha.ev@gmail.com', href: 'mailto:kaustubha.ev@gmail.com' },
-    { icon: Phone, label: 'Phone', value: '669-204-6927', href: 'tel:669-204-6927' },
     { icon: MapPin, label: 'Location', value: 'San Jose, CA', href: null },
   ];
 

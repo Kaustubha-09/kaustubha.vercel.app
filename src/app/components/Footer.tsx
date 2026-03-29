@@ -40,7 +40,7 @@ export function Footer() {
         </div>
 
         <p className="text-xs text-slate-400 dark:text-slate-500">
-          © 2026 Kaustubha Venkata Eluri · U.S. Citizen
+          © {new Date().getFullYear()} Kaustubha Venkata Eluri · U.S. Citizen
         </p>
       </div>
     </footer>
