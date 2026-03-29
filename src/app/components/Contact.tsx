@@ -35,6 +35,7 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
+          <p className="section-eyebrow mb-3">08 — Contact</p>
           <h2 className="text-4xl md:text-5xl mb-4 font-bold text-slate-900 dark:text-white">
             Let's Build Intelligent Systems Together
           </h2>

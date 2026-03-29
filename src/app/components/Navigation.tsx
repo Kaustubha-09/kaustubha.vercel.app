@@ -77,8 +77,21 @@ export function Navigation() {
             })}
           </div>
 
-          {/* Theme toggle - desktop */}
-          <div className="absolute right-6 hidden lg:block">
+          {/* Theme toggle + Resume - desktop */}
+          <div className="absolute right-6 hidden lg:flex items-center gap-3">
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs px-3 py-1.5 rounded border transition-colors hover:bg-[#00D4AA]/10"
+              style={{
+                fontFamily: "'IBM Plex Mono', ui-monospace, monospace",
+                borderColor: 'rgba(0,212,170,0.4)',
+                color: '#00D4AA',
+              }}
+            >
+              Resume
+            </a>
             <ThemeToggle />
           </div>
 

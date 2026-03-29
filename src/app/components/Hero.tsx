@@ -1,133 +1,233 @@
-import { Check, Download, ExternalLink } from 'lucide-react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { Download, Github, Linkedin, ArrowDown } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { Badge } from './ui/badge';
 
 export function Hero() {
-  const techBadges = ['Python', 'PyTorch', 'React', 'Kotlin', 'AWS', 'LLMs'];
-  
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
-    },
-  };
+  const arc = [
+    { label: 'Arch. Eng.', active: false },
+    { label: 'CS', active: false },
+    { label: 'ML / AI', active: false },
+    { label: 'Accessibility', active: true },
+  ];
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-white dark:bg-slate-900 px-6 relative overflow-hidden">
-      {/* Subtle background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 dark:from-slate-900 dark:via-slate-900 dark:to-blue-950/20"></div>
-      
-      <motion.div 
-        className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center relative z-10"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
+    <section
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      style={{ background: '#0F1923' }}
+    >
+      {/* Teal radial glow from top */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(ellipse 70% 45% at 50% 0%, rgba(0,212,170,0.13) 0%, transparent 70%)',
+        }}
+      />
+
+      {/* Horizontal rule at bottom */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-px"
+        style={{ background: 'rgba(255,255,255,0.06)' }}
+      />
+
+      <motion.div
+        className="max-w-5xl mx-auto px-6 py-28 md:py-36 relative z-10 text-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
       >
-        {/* Left side - Text content */}
-        <motion.div className="text-center md:text-left space-y-8" variants={itemVariants}>
-          {/* Availability Badge */}
-          <motion.div variants={itemVariants}>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-full">
-              <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-              <span className="text-xs font-medium text-green-700 dark:text-green-400">Open to SWE / AI / ML Roles — 2026</span>
-            </div>
-          </motion.div>
-
-          {/* Name */}
-          <motion.h1 className="text-5xl md:text-7xl font-bold leading-tight text-slate-900 dark:text-white" variants={itemVariants}>
-            Kaustubha Eluri
-          </motion.h1>
-
-          {/* Role Headline */}
-          <motion.div variants={itemVariants}>
-            <h2 className="text-xl md:text-2xl font-medium text-slate-600 dark:text-slate-400">
-              Research Software Engineer | AI/ML Systems Engineer
-            </h2>
-          </motion.div>
-
-          {/* Credibility Strip */}
-          <motion.div className="space-y-3" variants={itemVariants}>
-            <div className="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-400">
-              <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
-              <span>Research SWE @ <span className="font-semibold text-slate-900 dark:text-white">Smith-Kettlewell Eye Research Institute</span></span>
-            </div>
-            <div className="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-400">
-              <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
-              <span>Lead AI Engineer @ <span className="font-semibold text-slate-900 dark:text-white">Evenness</span></span>
-            </div>
-            <div className="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-400">
-              <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
-              <span>Built AI accessibility systems for <span className="font-semibold text-slate-900 dark:text-white">real users</span></span>
-            </div>
-          </motion.div>
-
-          {/* Tech Badges */}
-          <motion.div className="flex flex-wrap gap-2" variants={itemVariants}>
-            {techBadges.map((tech) => (
-              <Badge
-                key={tech}
-                variant="outline"
-                className="bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
-              >
-                {tech}
-              </Badge>
-            ))}
-          </motion.div>
-
-          {/* CTA Buttons */}
-          <motion.div className="flex flex-col sm:flex-row gap-3 pt-4" variants={itemVariants}>
-            <button
-              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-6 py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-lg hover:bg-slate-800 dark:hover:bg-slate-100 transition-all font-medium text-sm flex items-center justify-center gap-2"
-            >
-              <ExternalLink className="w-4 h-4" />
-              View Projects
-            </button>
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 border border-slate-300 dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-all font-medium text-sm flex items-center justify-center gap-2"
-            >
-              <Download className="w-4 h-4" />
-              Download Resume
-            </a>
-          </motion.div>
+        {/* Status chip */}
+        <motion.div
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-10 border"
+          style={{
+            background: 'rgba(0,212,170,0.08)',
+            borderColor: 'rgba(0,212,170,0.25)',
+          }}
+          initial={{ opacity: 0, y: -12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1, duration: 0.5 }}
+        >
+          <span
+            className="w-1.5 h-1.5 rounded-full animate-pulse"
+            style={{ background: '#00D4AA' }}
+          />
+          <span
+            className="text-xs tracking-wide"
+            style={{
+              fontFamily: "'IBM Plex Mono', ui-monospace, monospace",
+              color: '#00D4AA',
+            }}
+          >
+            Open to SWE · AI/ML · Accessibility Roles — 2026
+          </span>
         </motion.div>
 
-        {/* Right side - ONE visual only */}
-        <motion.div 
-          className="flex justify-center md:justify-end relative"
-          variants={itemVariants}
+        {/* Thesis line */}
+        <motion.p
+          className="text-slate-400 text-lg md:text-xl font-light mb-8 max-w-2xl mx-auto leading-relaxed"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
         >
-          <div className="relative group">
-            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/20 dark:to-purple-900/20">
-              <ImageWithFallback
-                src="/assets/photos/hero_tech_illustration.png"
-                alt="AI/ML and Mobile Engineering"
-                className="w-full h-full object-cover"
-                fallbackSrc="/assets/personal/profile_pic.jpg"
-              />
+          I build AI systems that work for everyone —
+          <br className="hidden md:block" />
+          <em className="text-slate-300 not-italic">especially those the defaults forget.</em>
+        </motion.p>
+
+        {/* Name — the statement */}
+        <motion.h1
+          className="font-black text-white leading-none tracking-tight mb-10"
+          style={{
+            fontSize: 'clamp(3.5rem, 10vw, 9rem)',
+            fontFamily: "'Bricolage Grotesque', system-ui, sans-serif",
+          }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.7 }}
+        >
+          Kaustubha Eluri
+        </motion.h1>
+
+        {/* Currently strip */}
+        <motion.div
+          className="flex flex-wrap justify-center items-center gap-x-5 gap-y-2 mb-12 text-sm"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+        >
+          <span
+            className="text-xs uppercase tracking-widest"
+            style={{
+              fontFamily: "'IBM Plex Mono', ui-monospace, monospace",
+              color: 'rgb(100,116,139)',
+            }}
+          >
+            Currently
+          </span>
+          <span className="text-slate-400">
+            Research SWE @{' '}
+            <span className="text-slate-200 font-semibold">Smith-Kettlewell</span>
+          </span>
+          <span style={{ color: 'rgb(51,65,85)' }}>·</span>
+          <span className="text-slate-400">
+            Lead AI @{' '}
+            <span className="text-slate-200 font-semibold">Evenness</span>
+          </span>
+          <span style={{ color: 'rgb(51,65,85)' }}>·</span>
+          <span className="text-slate-400">
+            TA @{' '}
+            <span className="text-slate-200 font-semibold">Northeastern</span>
+          </span>
+        </motion.div>
+
+        {/* Interdisciplinary arc */}
+        <motion.div
+          className="flex items-center justify-center gap-2 mb-14 flex-wrap"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
+        >
+          {arc.map((item, i) => (
+            <div key={item.label} className="flex items-center gap-2">
+              <span
+                className="px-3 py-1 rounded-full border text-xs font-medium"
+                style={
+                  item.active
+                    ? {
+                        fontFamily: "'IBM Plex Mono', ui-monospace, monospace",
+                        background: 'rgba(0,212,170,0.12)',
+                        borderColor: 'rgba(0,212,170,0.45)',
+                        color: '#00D4AA',
+                        fontWeight: 600,
+                      }
+                    : {
+                        fontFamily: "'IBM Plex Mono', ui-monospace, monospace",
+                        background: 'transparent',
+                        borderColor: 'rgba(255,255,255,0.08)',
+                        color: 'rgb(100,116,139)',
+                      }
+                }
+              >
+                {item.label}
+              </span>
+              {i < arc.length - 1 && (
+                <span style={{ color: 'rgb(51,65,85)', fontSize: '0.75rem' }}>→</span>
+              )}
             </div>
-            <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-          </div>
+          ))}
+        </motion.div>
+
+        {/* CTA row */}
+        <motion.div
+          className="flex flex-wrap items-center justify-center gap-3"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.75, duration: 0.5 }}
+        >
+          {/* Primary — Resume */}
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-all hover:opacity-90 hover:scale-[1.02] active:scale-100"
+            style={{ background: '#00D4AA', color: '#0F1923' }}
+          >
+            <Download className="w-4 h-4" />
+            Resume
+          </a>
+
+          {/* Secondary links */}
+          {[
+            {
+              href: 'https://github.com/Kaustubha-09',
+              icon: Github,
+              label: 'GitHub',
+              external: true,
+            },
+            {
+              href: 'https://linkedin.com/in/kaustubha-ve',
+              icon: Linkedin,
+              label: 'LinkedIn',
+              external: true,
+            },
+          ].map(({ href, icon: Icon, label, external }) => (
+            <a
+              key={label}
+              href={href}
+              target={external ? '_blank' : undefined}
+              rel={external ? 'noopener noreferrer' : undefined}
+              className="flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-medium transition-all hover:border-slate-500"
+              style={{
+                borderWidth: 1,
+                borderStyle: 'solid',
+                borderColor: 'rgba(255,255,255,0.12)',
+                color: 'rgb(203,213,225)',
+                background: 'rgba(255,255,255,0.04)',
+              }}
+            >
+              <Icon className="w-4 h-4" />
+              {label}
+            </a>
+          ))}
+
+          {/* View Work scroll */}
+          <button
+            onClick={() =>
+              document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
+            }
+            className="flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-medium transition-all hover:border-slate-500"
+            style={{
+              borderWidth: 1,
+              borderStyle: 'solid',
+              borderColor: 'rgba(255,255,255,0.12)',
+              color: 'rgb(203,213,225)',
+              background: 'rgba(255,255,255,0.04)',
+            }}
+          >
+            View Work
+            <ArrowDown className="w-4 h-4" />
+          </button>
         </motion.div>
       </motion.div>
-
     </section>
   );
 }

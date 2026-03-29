@@ -14,6 +14,9 @@ interface ExperiencePosition {
   whatIBuilt: string[];
   impact: string[];
   icons: any[];
+  promoted?: boolean;
+  stack?: string[];
+  leadStat?: string;
 }
 
 interface Experience {
@@ -78,6 +81,9 @@ export function Experience() {
           title: 'Research Software Engineer - AI & Accessibility Systems – YouDescribeX',
           period: 'Sep. 2025 - Jan. 2026',
           link: 'https://ydx.youdescribe.org/home',
+          promoted: true,
+          stack: ['React', 'iOS', 'Android', 'AI/ML', 'FastAPI', 'WCAG'],
+          leadStat: '40+ blind/low-vision users in pilot · <1% crash rate',
           problem: 'How do we transform a research prototype into a production-ready platform serving real users?',
           whatIBuilt: [
             'Promoted to lead engineering efforts across AI/ML, web, and mobile platforms, overseeing end-to-end system design, implementation, and deployment',
@@ -96,6 +102,8 @@ export function Experience() {
           period: 'Jul. 2025 - Dec. 2025',
           link: 'https://ydx.youdescribe.org/home',
           appStoreLink: 'https://apps.apple.com/us/app/youdescribe/id1177344886',
+          stack: ['Python', 'PyTorch', 'FastAPI', 'React', 'VoiceOver', 'NVDA'],
+          leadStat: '18% description relevance improvement · 86% top-3 hit rate',
           problem: 'How do we generate accurate, context-aware audio descriptions for video content at scale?',
           whatIBuilt: [
             'Developed YouDescribeX to improve accessibility for blind and visually impaired users; optimized API and client flows',
@@ -126,6 +134,9 @@ export function Experience() {
         {
           title: 'Lead AI Engineer — Data & Compliance Platform',
           period: 'Sep. 2025 - Feb. 2026',
+          promoted: true,
+          stack: ['Python', 'LangChain', 'RAG', 'FastAPI', 'WCAG', 'Docker'],
+          leadStat: '100% WCAG 2.1 coverage · 60–70% faster analysis',
           problem: 'How do we build an AI system that accurately evaluates accessibility compliance across multiple standards?',
           whatIBuilt: [
             'Led development of an AI-powered accessibility analysis platform with agent workflows and real-time evaluation across WCAG 2.0/2.1/2.2 standards',
@@ -143,6 +154,8 @@ export function Experience() {
         {
           title: 'Agentic AI Engineer (Intern) - RAG & Production Systems',
           period: 'May. 2025 - Sep. 2025',
+          stack: ['Python', 'RAG', 'LangChain', 'FastAPI', 'React', 'AWS'],
+          leadStat: '99.9% uptime · review cycle 15 min → 9 min',
           problem: 'How do we automate multi-step accessibility audit workflows using AI agents?',
           whatIBuilt: [
             'Built a RAG-backed vector knowledge base and integrated versioned compliance selection for accessibility analysis',
@@ -271,12 +284,13 @@ export function Experience() {
     <section id="experience" className="py-24 px-6 bg-white dark:bg-slate-900">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <motion.div 
+        <motion.div
           className="mb-16"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
+          <p className="section-eyebrow mb-3">02 — Experience</p>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
             Experience
           </h2>
@@ -340,16 +354,21 @@ export function Experience() {
                         <div key={posIdx} className={posIdx > 0 ? "pt-8 mt-8 border-t border-slate-200 dark:border-slate-800" : ""}>
                           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
                             <div className="flex-1">
-                              <h4 className="text-xl md:text-2xl font-semibold text-slate-900 dark:text-white mb-2">
-                                {pos.title}
-                              </h4>
+                              <div className="flex items-center gap-3 flex-wrap mb-2">
+                                <h4 className="text-xl md:text-2xl font-semibold text-slate-900 dark:text-white">
+                                  {pos.title}
+                                </h4>
+                                {pos.promoted && (
+                                  <span className="badge-promoted">↑ Promoted</span>
+                                )}
+                              </div>
                               <div className="flex items-center gap-3 flex-wrap">
                                 <div className="flex items-center gap-1.5 text-sm text-slate-600 dark:text-slate-400">
                                   <Calendar className="w-4 h-4" />
                                   <span>{pos.period}</span>
                                 </div>
                                 {pos.link && (
-                                  <a 
+                                  <a
                                     href={pos.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -360,7 +379,7 @@ export function Experience() {
                                   </a>
                                 )}
                                 {pos.appStoreLink && (
-                                  <a 
+                                  <a
                                     href={pos.appStoreLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -373,6 +392,43 @@ export function Experience() {
                               </div>
                             </div>
                           </div>
+
+                          {/* Tech stack chips */}
+                          {pos.stack && pos.stack.length > 0 && (
+                            <div className="flex flex-wrap gap-1.5 mb-4">
+                              {pos.stack.map((tech) => (
+                                <span
+                                  key={tech}
+                                  className="px-2 py-0.5 rounded text-xs font-medium"
+                                  style={{
+                                    fontFamily: "'IBM Plex Mono', ui-monospace, monospace",
+                                    background: 'rgba(148,163,184,0.08)',
+                                    border: '1px solid rgba(148,163,184,0.18)',
+                                    color: 'rgb(148,163,184)',
+                                  }}
+                                >
+                                  {tech}
+                                </span>
+                              ))}
+                            </div>
+                          )}
+
+                          {/* Lead stat callout */}
+                          {pos.leadStat && (
+                            <div
+                              className="flex items-center gap-2 px-4 py-2.5 rounded-lg mb-5 text-sm font-medium"
+                              style={{
+                                background: 'rgba(0,212,170,0.06)',
+                                border: '1px solid rgba(0,212,170,0.2)',
+                                color: '#00D4AA',
+                                fontFamily: "'IBM Plex Mono', ui-monospace, monospace",
+                                fontSize: '0.72rem',
+                              }}
+                            >
+                              <span>◆</span>
+                              <span>{pos.leadStat}</span>
+                            </div>
+                          )}
 
                           <p className="text-base text-slate-700 dark:text-slate-300 mb-6 leading-relaxed">
                             {pos.problem}

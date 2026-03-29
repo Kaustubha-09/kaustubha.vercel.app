@@ -81,6 +81,7 @@ export function Leadership() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
+          <p className="section-eyebrow mb-3">06 — Leadership</p>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
             Leadership & Involvement
           </h2>
