@@ -1,4 +1,4 @@
-import { Briefcase, Brain, Zap, Users, ChevronDown, ChevronUp, Target, TrendingUp, MapPin, ExternalLink, Calendar } from 'lucide-react';
+import { Briefcase, Brain, Zap, Users, ChevronDown, ChevronUp, Target, TrendingUp, MapPin, Calendar } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Card, CardContent, CardHeader } from './ui/card';
 import { Badge } from './ui/badge';
@@ -367,28 +367,6 @@ export function Experience() {
                                   <Calendar className="w-4 h-4" />
                                   <span>{pos.period}</span>
                                 </div>
-                                {pos.link && (
-                                  <a
-                                    href={pos.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center gap-1 text-sm text-blue-600 dark:text-blue-400 hover:underline"
-                                  >
-                                    <ExternalLink className="w-4 h-4" />
-                                    <span>View Project</span>
-                                  </a>
-                                )}
-                                {pos.appStoreLink && (
-                                  <a
-                                    href={pos.appStoreLink}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center gap-1 text-sm text-blue-600 dark:text-blue-400 hover:underline"
-                                  >
-                                    <ExternalLink className="w-4 h-4" />
-                                    <span>App Store</span>
-                                  </a>
-                                )}
                               </div>
                             </div>
                           </div>

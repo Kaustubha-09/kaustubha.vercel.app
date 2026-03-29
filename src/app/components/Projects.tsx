@@ -1,4 +1,4 @@
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Card, CardContent, CardHeader } from './ui/card';
 import { Badge } from './ui/badge';
@@ -295,30 +295,6 @@ export function Projects() {
                             </Badge>
                           ))}
                         </div>
-                        <div className="flex items-center gap-4 pt-4 border-t border-slate-200 dark:border-slate-800">
-                          {project.github && (
-                            <a 
-                              href={project.github}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
-                            >
-                              <Github size={16} />
-                              GitHub
-                            </a>
-                          )}
-                          {project.link && (
-                            <a
-                              href={project.link}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
-                            >
-                              <ExternalLink size={16} />
-                              Demo
-                            </a>
-                          )}
-                        </div>
                       </div>
                     </div>
                   </Card>
@@ -369,28 +345,6 @@ export function Projects() {
                             {tag}
                           </Badge>
                         ))}
-                      </div>
-                      <div className="flex items-center gap-4 pt-4 border-t border-slate-200 dark:border-slate-800">
-                        {project.github && (
-                          <a 
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
-                          >
-                            GitHub
-                          </a>
-                        )}
-                        {project.link && (
-                          <a 
-                            href={project.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
-                          >
-                            Demo
-                          </a>
-                        )}
                       </div>
                     </CardContent>
                   </Card>

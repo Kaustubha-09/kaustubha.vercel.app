@@ -1,4 +1,4 @@
-import { Award, ExternalLink } from 'lucide-react';
+import { Award } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
 import { motion } from 'framer-motion';
@@ -111,19 +111,7 @@ export function Certifications() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <h3 className="text-sm font-semibold text-slate-900 dark:text-white leading-snug">
-                        {cert.link ? (
-                          <a
-                            href={cert.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-[#00D4AA] transition-colors inline-flex items-center gap-1"
-                          >
-                            {cert.name}
-                            <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                          </a>
-                        ) : (
-                          cert.name
-                        )}
+                        {cert.name}
                       </h3>
                     </div>
                   </div>

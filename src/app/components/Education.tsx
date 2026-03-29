@@ -75,17 +75,6 @@ export function Education() {
                     ))}
                   </div>
                 </div>
-                <div className="pt-4 border-t border-slate-200 dark:border-slate-800">
-                  <a 
-                    href="https://siliconvalley.northeastern.edu/kaustubha-eluri-aspiring-product-manager/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-medium transition-colors group text-[#00D4AA] hover:text-[#00B896]"
-                  >
-                    <span>Featured on Northeastern Silicon Valley site</span>
-                    <span className="group-hover:translate-x-1 transition-transform">→</span>
-                  </a>
-                </div>
               </CardContent>
             </Card>
           </motion.div>

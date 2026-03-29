@@ -118,18 +118,7 @@ export function Leadership() {
                     </div>
                     <div className="flex-1">
                       <h3 className="text-lg font-semibold mb-1 text-slate-900 dark:text-white">
-                        {item.link ? (
-                          <a 
-                            href={item.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-[#00D4AA] transition-colors"
-                          >
-                            {item.organization} →
-                          </a>
-                        ) : (
-                          item.organization
-                        )}
+                        {item.organization}
                       </h3>
                       <p className="text-sm text-slate-600 dark:text-slate-400 font-medium">{item.role}</p>
                       <Badge variant="secondary" className="mt-2 text-xs">
