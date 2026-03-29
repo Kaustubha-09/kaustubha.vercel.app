@@ -41,7 +41,7 @@ export function Education() {
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold mb-1 text-slate-900 dark:text-white">Northeastern University</h3>
-                      <p className="text-base font-medium text-blue-600 dark:text-blue-400 mb-1">M.S. in Computer Science</p>
+                      <p className="text-base font-medium text-[#00D4AA] mb-1">M.S. in Computer Science</p>
                       <p className="text-sm text-slate-600 dark:text-slate-400">San Jose, CA</p>
                     </div>
                   </div>
@@ -80,7 +80,7 @@ export function Education() {
                     href="https://siliconvalley.northeastern.edu/kaustubha-eluri-aspiring-product-manager/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium transition-colors group"
+                    className="inline-flex items-center gap-2 text-sm font-medium transition-colors group text-[#00D4AA] hover:text-[#00B896]"
                   >
                     <span>Featured on Northeastern Silicon Valley site</span>
                     <span className="group-hover:translate-x-1 transition-transform">→</span>
@@ -109,7 +109,7 @@ export function Education() {
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold mb-1 text-slate-900 dark:text-white">Jawaharlal Nehru Architecture and Fine Arts University</h3>
-                      <p className="text-base font-medium text-blue-600 dark:text-blue-400 mb-1">B.Tech in Architectural Engineering</p>
+                      <p className="text-base font-medium text-[#00D4AA] mb-1">B.Tech in Architectural Engineering</p>
                       <p className="text-sm text-slate-600 dark:text-slate-400">Hyderabad, India</p>
                     </div>
                   </div>

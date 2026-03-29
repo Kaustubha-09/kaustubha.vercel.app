@@ -330,7 +330,7 @@ export function Experience() {
                               <h3 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white">
                                 {exp.company}
                               </h3>
-                              <Badge className="bg-blue-500 text-white text-xs">Featured</Badge>
+                              <span className="badge-promoted" style={{ fontSize: '0.65rem' }}>Featured</span>
                             </div>
                             <div className="flex items-center gap-4 text-sm text-slate-600 dark:text-slate-400">
                               <div className="flex items-center gap-1">

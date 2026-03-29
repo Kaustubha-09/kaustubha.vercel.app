@@ -1,5 +1,4 @@
-import { Code2, Brain, Users, User, TrendingUp, Target, Rocket } from 'lucide-react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { Brain, TrendingUp, Target, Rocket } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
 import { motion } from 'framer-motion';
@@ -120,7 +119,7 @@ export function About() {
                   className="relative pl-20"
                   variants={itemVariants}
                 >
-                  <div className="absolute left-6 top-2 w-4 h-4 bg-slate-900 dark:bg-white rounded-full border-4 border-white dark:border-slate-900"></div>
+                  <div className="absolute left-6 top-2 w-4 h-4 rounded-full border-4 border-white dark:border-slate-900" style={{ background: '#00D4AA' }}></div>
                   <Card className="border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all">
                     <CardContent className="p-6">
                       <div className="flex items-center gap-3 mb-3">
@@ -150,8 +149,8 @@ export function About() {
               <motion.div key={idx} variants={itemVariants}>
                 <Card className="h-full border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all">
                   <CardContent className="p-6">
-                    <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center mb-4">
-                      <problem.icon className="text-slate-600 dark:text-slate-400" size={20} />
+                    <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style={{ background: 'rgba(0,212,170,0.1)' }}>
+                      <problem.icon size={20} style={{ color: '#00D4AA' }} />
                     </div>
                     <h4 className="text-lg font-semibold mb-2 text-slate-900 dark:text-white">{problem.title}</h4>
                     <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{problem.description}</p>
@@ -203,21 +202,34 @@ export function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <Card className="border border-slate-200 dark:border-slate-800 bg-slate-900 dark:bg-white text-white dark:text-slate-900">
-            <CardContent className="p-8">
-              <TrendingUp className="w-10 h-10 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-4">What I'm Looking For Next</h3>
-              <p className="text-sm text-white/90 dark:text-slate-600 max-w-2xl mx-auto mb-6">
-                I'm seeking full-time Software Engineering, AI/ML Engineering, or Product Engineering roles where I can build intelligent systems that solve real problems.
-              </p>
-              <div className="flex flex-wrap gap-2 justify-center">
-                <Badge variant="outline" className="bg-white/10 dark:bg-slate-900/10 border-white/30 dark:border-slate-900/30 text-white dark:text-slate-900">AI/ML Systems</Badge>
-                <Badge variant="outline" className="bg-white/10 dark:bg-slate-900/10 border-white/30 dark:border-slate-900/30 text-white dark:text-slate-900">Accessibility Tech</Badge>
-                <Badge variant="outline" className="bg-white/10 dark:bg-slate-900/10 border-white/30 dark:border-slate-900/30 text-white dark:text-slate-900">Mobile Engineering</Badge>
-                <Badge variant="outline" className="bg-white/10 dark:bg-slate-900/10 border-white/30 dark:border-slate-900/30 text-white dark:text-slate-900">Production Systems</Badge>
-              </div>
-            </CardContent>
-          </Card>
+          <div
+            className="rounded-xl p-8 text-center border"
+            style={{
+              background: 'rgba(0,212,170,0.05)',
+              borderColor: 'rgba(0,212,170,0.2)',
+            }}
+          >
+            <TrendingUp className="w-10 h-10 mx-auto mb-4" style={{ color: '#00D4AA' }} />
+            <h3 className="text-xl font-semibold mb-4 text-slate-900 dark:text-white">What I'm Looking For Next</h3>
+            <p className="text-sm text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-6">
+              I'm seeking full-time Software Engineering, AI/ML Engineering, or Product Engineering roles where I can build intelligent systems that solve real problems.
+            </p>
+            <div className="flex flex-wrap gap-2 justify-center">
+              {['AI/ML Systems', 'Accessibility Tech', 'Mobile Engineering', 'Production Systems'].map((tag) => (
+                <span
+                  key={tag}
+                  className="px-3 py-1 rounded-full text-xs font-medium"
+                  style={{
+                    background: 'rgba(0,212,170,0.1)',
+                    border: '1px solid rgba(0,212,170,0.3)',
+                    color: '#00D4AA',
+                  }}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
         </motion.div>
 
       </div>
