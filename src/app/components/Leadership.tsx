@@ -1,5 +1,4 @@
 import { Award, Users, Lightbulb, TrendingUp, Rocket } from 'lucide-react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Card, CardContent, CardHeader } from './ui/card';
 import { Badge } from './ui/badge';
 import { motion } from 'framer-motion';
@@ -11,18 +10,15 @@ export function Leadership() {
       role: 'Founding Researcher',
       period: 'Mar. 2025 - Dec. 2025',
       icon: Lightbulb,
-      image: '/assets/photos/northeastern_team.png',
       initiative: 'Co-founded research lab focused on interpretable and responsible ML',
       ownership: 'Led code reviews, replication efforts, and experiment consistency across team',
       outcome: 'Co-authored proposal securing $2k in compute credits; established lab infrastructure',
-      link: 'https://neurai.sites.northeastern.edu/our-team/kaustubha-eluri/',
     },
     {
       organization: 'Aspiring Product Managers Club (APMC)',
       role: 'President',
       period: 'Jan. 2024 - Dec. 2025',
       icon: Users,
-      image: '/assets/photos/apmc_team.png',
       initiative: 'Led student organization focused on PM interview prep and career development',
       ownership: 'Organized workshops, mentored members, managed club operations and strategy',
       outcome: 'Received student leadership award in 2025; supported 50+ members in PM career prep',
@@ -32,7 +28,6 @@ export function Leadership() {
       role: 'Core Organizer',
       period: 'Jan. 2025 - Dec. 2025',
       icon: Rocket,
-      image: '/assets/photos/work_collaboration.png',
       initiative: 'Organized ML study sessions and hands-on workshops for students',
       ownership: 'Coordinated internal hackathons, built starter templates, facilitated learning',
       outcome: 'Reduced onboarding time for new participants; supported functional demos',
@@ -42,7 +37,6 @@ export function Leadership() {
       role: 'Campus Representative',
       period: 'May 2024 - Aug. 2025',
       icon: TrendingUp,
-      image: '/assets/photos/student_ambassador_team.png',
       initiative: 'Represented university at academic and community events',
       ownership: 'Guided prospective students, communicated program value, built relationships',
       outcome: 'Selected based on leadership and communication ability; supported admissions',
@@ -52,7 +46,6 @@ export function Leadership() {
       role: 'Vice President',
       period: 'Jan. 2024 - May 2025',
       icon: Award,
-      image: '/assets/photos/work_collaboration.png',
       initiative: 'Led workshops on Adobe creative tools and portfolio development workflows',
       ownership: 'Co-organized design challenges and cross-club creative events with faculty',
       outcome: 'Recognized by Adobe Creative Campus for student engagement initiatives',
@@ -61,10 +54,7 @@ export function Leadership() {
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 },
-    },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
   };
 
   const itemVariants = {
@@ -75,7 +65,7 @@ export function Leadership() {
   return (
     <section id="leadership" className="py-24 px-6 bg-white dark:bg-slate-900">
       <div className="max-w-6xl mx-auto">
-        <motion.div 
+        <motion.div
           className="mb-16"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -90,7 +80,7 @@ export function Leadership() {
           </p>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="grid md:grid-cols-2 gap-6"
           variants={containerVariants}
           initial="hidden"
@@ -99,18 +89,7 @@ export function Leadership() {
         >
           {leadership.map((item, idx) => (
             <motion.div key={idx} variants={itemVariants}>
-              <Card className="border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full overflow-hidden">
-                {item.image && (
-                  <div className="relative h-48 md:h-56 overflow-hidden bg-slate-100 dark:bg-slate-800">
-                    <ImageWithFallback
-                      src={item.image}
-                      alt={`${item.organization} Team`}
-                      className="w-full h-full object-cover"
-                      fallbackSrc="/assets/photos/work_collaboration.png"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-                  </div>
-                )}
+              <Card className="border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
                 <CardHeader>
                   <div className="flex items-start gap-3 mb-4">
                     <div className="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg flex-shrink-0 flex items-center justify-center">
