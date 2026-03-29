@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Hero } from '../components/Hero';
+import { MarqueeStrip } from '../components/MarqueeStrip';
 import { About } from '../components/About';
 import { Experience } from '../components/Experience';
 import { Projects } from '../components/Projects';
@@ -27,6 +28,7 @@ export function Home() {
     <>
       <div id="home">
         <Hero />
+        <MarqueeStrip />
       </div>
       <div id="about" className="scroll-mt-16">
         <SectionReveal><About /></SectionReveal>

@@ -208,7 +208,7 @@ export function Hero() {
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-all hover:opacity-90 hover:scale-[1.02] active:scale-100"
+            className="btn-shine flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-all hover:opacity-90 hover:scale-[1.02] active:scale-100"
             style={{
               background: '#00D4AA',
               color: '#0F1923',

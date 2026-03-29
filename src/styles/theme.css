@@ -328,6 +328,70 @@ body::before {
   100% { left: 110%; }
 }
 
+/* ── Marquee scrolling strip ── */
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 28s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ── Shine sweep on primary button ── */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+}
+.btn-shine:hover::before {
+  animation: shine-move 0.55s ease-in-out forwards;
+}
+@keyframes shine-move {
+  0%   { left: -75%; }
+  100% { left: 125%; }
+}
+
+/* ── Center-expand underline for nav links ── */
+.nav-link-underline {
+  position: relative;
+}
+.nav-link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  right: 50%;
+  height: 1.5px;
+  background: var(--portfolio-teal);
+  border-radius: 1px;
+  transition: left 0.22s ease, right 0.22s ease;
+}
+.nav-link-underline:hover::after,
+.nav-link-underline[data-active='true']::after {
+  left: 12px;
+  right: 12px;
+}
+
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {

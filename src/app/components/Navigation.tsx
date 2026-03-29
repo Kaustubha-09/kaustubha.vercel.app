@@ -58,20 +58,14 @@ export function Navigation() {
                 <button
                   key={id}
                   onClick={() => scrollTo(id)}
-                  className={`relative px-4 py-2 text-sm font-medium transition-colors ${
+                  data-active={isActive ? 'true' : 'false'}
+                  className={`nav-link-underline px-4 py-2 text-sm font-medium transition-colors ${
                     isActive
-                      ? 'text-slate-900 dark:text-white'
+                      ? 'text-[#00D4AA]'
                       : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
                   }`}
                 >
                   {label}
-                  {isActive && (
-                    <motion.div
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-slate-900 dark:bg-white"
-                      layoutId="navbar-indicator"
-                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                    />
-                  )}
                 </button>
               );
             })}

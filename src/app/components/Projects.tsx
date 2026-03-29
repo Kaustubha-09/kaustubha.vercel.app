@@ -262,7 +262,7 @@ export function Projects() {
                         <ImageWithFallback
                           src={project.image}
                           alt={project.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
                         />
                       </div>
                       <div className="md:col-span-2 p-8">
@@ -317,7 +317,7 @@ export function Projects() {
                       <ImageWithFallback
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
                       />
                     </div>
                     <CardContent className="p-6">
