@@ -1,5 +1,4 @@
 import { Check, Download, ExternalLink } from 'lucide-react';
-import { Link } from 'react-router';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { motion } from 'framer-motion';
 import { Badge } from './ui/badge';
@@ -78,7 +77,7 @@ export function Hero() {
 
           {/* Tech Badges */}
           <motion.div className="flex flex-wrap gap-2" variants={itemVariants}>
-            {techBadges.map((tech, idx) => (
+            {techBadges.map((tech) => (
               <Badge
                 key={tech}
                 variant="outline"
@@ -91,13 +90,13 @@ export function Hero() {
 
           {/* CTA Buttons */}
           <motion.div className="flex flex-col sm:flex-row gap-3 pt-4" variants={itemVariants}>
-            <Link
-              to="/projects"
+            <button
+              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-6 py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-lg hover:bg-slate-800 dark:hover:bg-slate-100 transition-all font-medium text-sm flex items-center justify-center gap-2"
             >
               <ExternalLink className="w-4 h-4" />
               View Projects
-            </Link>
+            </button>
             <a
               href="/resume.pdf"
               target="_blank"

@@ -1,63 +1,90 @@
-import { NavLink } from 'react-router';
 import { Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ThemeToggle } from './ThemeToggle';
 import { motion } from 'framer-motion';
 
+const navLinks = [
+  { id: 'home', label: 'Home' },
+  { id: 'about', label: 'About' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'education', label: 'Education' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'leadership', label: 'Leadership' },
+  { id: 'contact', label: 'Contact' },
+];
+
 export function Navigation() {
+  const [activeSection, setActiveSection] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navLinks = [
-    { to: '/', label: 'Home' },
-    { to: '/about', label: 'About' },
-    { to: '/experience', label: 'Experience' },
-    { to: '/projects', label: 'Projects' },
-    { to: '/education', label: 'Education' },
-    { to: '/skills', label: 'Skills' },
-    { to: '/leadership', label: 'Leadership' },
-    { to: '/contact', label: 'Contact' },
-  ];
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+
+    navLinks.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveSection(id);
+        },
+        { rootMargin: '-30% 0px -60% 0px', threshold: 0 }
+      );
+      observer.observe(el);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach(o => o.disconnect());
+  }, []);
+
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    setIsMenuOpen(false);
+  };
 
   return (
     <nav className="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-slate-200/50 dark:border-slate-800/50">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-center h-16">
-          {/* Centered Navigation */}
+        <div className="flex items-center justify-center h-16 relative">
+
+          {/* Desktop nav */}
           <div className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                className={({ isActive }) =>
-                  `relative px-4 py-2 text-sm font-medium transition-colors ${
+            {navLinks.map(({ id, label }) => {
+              const isActive = activeSection === id;
+              return (
+                <button
+                  key={id}
+                  onClick={() => scrollTo(id)}
+                  className={`relative px-4 py-2 text-sm font-medium transition-colors ${
                     isActive
                       ? 'text-slate-900 dark:text-white'
-                      : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-                  }`
-                }
-              >
-                {({ isActive }) => (
-                  <>
-                    {link.label}
-                    {isActive && (
-                      <motion.div
-                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-slate-900 dark:bg-white"
-                        layoutId="navbar-indicator"
-                        transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                      />
-                    )}
-                  </>
-                )}
-              </NavLink>
-            ))}
+                      : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                  }`}
+                >
+                  {label}
+                  {isActive && (
+                    <motion.div
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-slate-900 dark:bg-white"
+                      layoutId="navbar-indicator"
+                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </button>
+              );
+            })}
           </div>
 
-          {/* Theme Toggle - Right Side */}
-          <div className="absolute right-6">
+          {/* Theme toggle - desktop */}
+          <div className="absolute right-6 hidden lg:block">
             <ThemeToggle />
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile: initials left, controls right */}
+          <div className="lg:hidden absolute left-6 text-sm font-semibold text-slate-900 dark:text-white">
+            KE
+          </div>
           <div className="lg:hidden absolute right-6 flex items-center gap-2">
             <ThemeToggle />
             <button
@@ -70,7 +97,7 @@ export function Navigation() {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile dropdown */}
         {isMenuOpen && (
           <motion.div
             className="lg:hidden pb-4 border-t border-slate-200 dark:border-slate-800"
@@ -78,21 +105,18 @@ export function Navigation() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
           >
-            {navLinks.map((link) => (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                onClick={() => setIsMenuOpen(false)}
-                className={({ isActive }) =>
-                  `block px-4 py-3 text-sm font-medium transition-colors ${
-                    isActive
-                      ? 'text-slate-900 dark:text-white bg-slate-100 dark:bg-slate-800'
-                      : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50'
-                  }`
-                }
+            {navLinks.map(({ id, label }) => (
+              <button
+                key={id}
+                onClick={() => scrollTo(id)}
+                className={`w-full text-left px-4 py-3 text-sm font-medium transition-colors ${
+                  activeSection === id
+                    ? 'text-slate-900 dark:text-white bg-slate-100 dark:bg-slate-800'
+                    : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50'
+                }`}
               >
-                {link.label}
-              </NavLink>
+                {label}
+              </button>
             ))}
           </motion.div>
         )}
