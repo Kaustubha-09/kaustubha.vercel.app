@@ -460,7 +460,7 @@ export function Experience() {
                                 <div className="grid md:grid-cols-2 gap-6 p-6 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800/50 dark:to-slate-900/50 rounded-xl border border-slate-200 dark:border-slate-700">
                                   <div>
                                     <div className="flex items-center gap-2 mb-4">
-                                      <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
+                                      <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
                                         <Zap className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                                       </div>
                                       <h5 className="text-base font-semibold text-slate-900 dark:text-white">What I Built</h5>
@@ -476,7 +476,7 @@ export function Experience() {
                                   </div>
                                   <div>
                                     <div className="flex items-center gap-2 mb-4">
-                                      <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
+                                      <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center">
                                         <Target className="w-5 h-5 text-green-600 dark:text-green-400" />
                                       </div>
                                       <h5 className="text-base font-semibold text-slate-900 dark:text-white">Impact</h5>

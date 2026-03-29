@@ -5,7 +5,7 @@ export function Footer() {
     <footer className="px-6 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
       {/* Teal accent line */}
       <div className="h-px w-full" style={{ background: 'linear-gradient(90deg, transparent, #00D4AA, transparent)' }} />
-      <div className="max-w-6xl mx-auto py-12 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="max-w-6xl mx-auto py-12 flex flex-col items-center gap-6 text-center md:flex-row md:text-left md:items-center md:justify-between">
         <div>
           <p className="font-semibold text-slate-900 dark:text-white">Kaustubha Eluri</p>
           <p className="text-sm text-slate-500 dark:text-slate-400 mt-0.5">

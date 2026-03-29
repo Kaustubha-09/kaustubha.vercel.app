@@ -59,7 +59,7 @@ export function Education() {
                 </div>
                 <div>
                   <h4 className="text-xs font-semibold text-slate-900 dark:text-white mb-2 uppercase tracking-wide">Key Courses</h4>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 items-center">
                     {[
                       'Foundations of AI',
                       'Machine Learning',

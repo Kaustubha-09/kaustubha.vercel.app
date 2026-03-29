@@ -106,7 +106,7 @@ export function Certifications() {
               <Card className="border border-slate-200 dark:border-slate-800 hover:shadow-md transition-all h-full group">
                 <CardContent className="pt-6 flex flex-col h-full gap-3">
                   <div className="flex items-start gap-3">
-                    <div className="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg flex-shrink-0 mt-0.5">
+                    <div className="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg flex-shrink-0 flex items-center justify-center">
                       <Award className="w-4 h-4 text-slate-600 dark:text-slate-400" />
                     </div>
                     <div className="flex-1 min-w-0">
@@ -116,7 +116,7 @@ export function Certifications() {
                             href={cert.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1"
+                            className="hover:text-[#00D4AA] transition-colors inline-flex items-center gap-1"
                           >
                             {cert.name}
                             <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />

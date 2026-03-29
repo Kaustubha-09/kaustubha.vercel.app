@@ -214,7 +214,7 @@ export function About() {
             <p className="text-sm text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-6">
               I'm seeking full-time Software Engineering, AI/ML Engineering, or Product Engineering roles where I can build intelligent systems that solve real problems.
             </p>
-            <div className="flex flex-wrap gap-2 justify-center">
+            <div className="flex flex-wrap gap-2 justify-center items-center">
               {['AI/ML Systems', 'Accessibility Tech', 'Mobile Engineering', 'Production Systems'].map((tag) => (
                 <span
                   key={tag}

@@ -113,7 +113,7 @@ export function Leadership() {
                 )}
                 <CardHeader>
                   <div className="flex items-start gap-3 mb-4">
-                    <div className="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg flex-shrink-0">
+                    <div className="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg flex-shrink-0 flex items-center justify-center">
                       <item.icon className="text-slate-600 dark:text-slate-400" size={20} />
                     </div>
                     <div className="flex-1">
@@ -123,7 +123,7 @@ export function Leadership() {
                             href={item.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                            className="hover:text-[#00D4AA] transition-colors"
                           >
                             {item.organization} →
                           </a>

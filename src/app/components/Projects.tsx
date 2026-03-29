@@ -275,12 +275,12 @@ export function Projects() {
                         />
                       </div>
                       <div className="md:col-span-2 p-8">
-                        <div className="flex items-start justify-between mb-4">
-                          <div>
+                        <div className="flex items-start justify-between gap-4 mb-4">
+                          <div className="min-w-0">
                             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-2">{project.title}</h3>
                             <p className="text-sm text-slate-600 dark:text-slate-400">{project.role} · {project.organization}</p>
                           </div>
-                          <Badge variant="secondary" className="text-xs">{project.period}</Badge>
+                          <Badge variant="secondary" className="text-xs flex-shrink-0">{project.period}</Badge>
                         </div>
                         <p className="text-sm font-medium text-slate-900 dark:text-white mb-2">Problem</p>
                         <p className="text-sm text-slate-600 dark:text-slate-400 mb-6">{project.problem}</p>
@@ -354,9 +354,9 @@ export function Projects() {
                       />
                     </div>
                     <CardContent className="p-6">
-                      <div className="flex items-start justify-between mb-3">
-                        <h3 className="text-lg font-semibold text-slate-900 dark:text-white">{project.title}</h3>
-                        <Badge variant="secondary" className="text-xs">{project.period}</Badge>
+                      <div className="flex items-start justify-between gap-3 mb-3">
+                        <h3 className="text-lg font-semibold text-slate-900 dark:text-white leading-snug">{project.title}</h3>
+                        <Badge variant="secondary" className="text-xs flex-shrink-0">{project.period}</Badge>
                       </div>
                       <p className="text-xs text-slate-600 dark:text-slate-400 mb-4 line-clamp-2">{project.problem}</p>
                       <div className="flex flex-wrap gap-1.5 mb-4">

@@ -72,7 +72,9 @@ export function Contact() {
             <motion.div key={info.label} variants={itemVariants}>
               <Card className="border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all w-48">
                 <CardContent className="p-6">
-                  <info.icon className="mx-auto mb-3 text-slate-500 dark:text-slate-400" size={20} />
+                  <div className="flex justify-center mb-3">
+                    <info.icon className="text-slate-500 dark:text-slate-400" size={20} />
+                  </div>
                   <p className="text-xs text-slate-400 dark:text-slate-500 mb-1">{info.label}</p>
                   {info.href ? (
                     <a
