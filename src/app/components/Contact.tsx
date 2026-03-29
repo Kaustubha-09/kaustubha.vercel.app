@@ -77,12 +77,12 @@ export function Contact() {
                   {info.href ? (
                     <a
                       href={info.href}
-                      className="font-medium text-sm text-slate-900 dark:text-white transition-colors hover:text-[#00D4AA] dark:hover:text-[#00D4AA]"
+                      className="font-medium text-sm text-slate-900 dark:text-white transition-colors hover:text-[#00D4AA] dark:hover:text-[#00D4AA] block text-center"
                     >
                       {info.value}
                     </a>
                   ) : (
-                    <p className="text-slate-900 dark:text-white font-medium text-sm">{info.value}</p>
+                    <p className="text-slate-900 dark:text-white font-medium text-sm text-center">{info.value}</p>
                   )}
                 </CardContent>
               </Card>
