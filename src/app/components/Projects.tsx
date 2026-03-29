@@ -349,7 +349,7 @@ export function Projects() {
               ))}
             </div>
 
-            {/* TIER 2 — Secondary (2-col) */}
+            {/* TIER 2 — Secondary (2-col with images) */}
             <div className="grid md:grid-cols-2 gap-5 mb-10">
               {secondary.map((project, idx) => (
                 <motion.div
@@ -359,7 +359,14 @@ export function Projects() {
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.08 }}
                 >
-                  <Card className="group h-full border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <Card className="group h-full overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div className="aspect-video overflow-hidden bg-slate-100 dark:bg-slate-800">
+                      <ImageWithFallback
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                      />
+                    </div>
                     <CardContent className="p-5">
                       <div className="flex flex-wrap gap-1.5 mb-3">
                         {project.tracks.map(t => <TrackChip key={t} track={t} />)}
@@ -382,43 +389,38 @@ export function Projects() {
               ))}
             </div>
 
-            {/* TIER 3 — Compact list */}
-            <div className="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
+            {/* TIER 3 — Compact grid with images */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
               {compact.map((project, idx) => (
                 <motion.div
                   key={project.title}
-                  initial={{ opacity: 0, x: -12 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.06 }}
-                  className={`group flex flex-col sm:flex-row sm:items-center justify-between gap-4 px-6 py-4 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors ${
-                    idx < compact.length - 1 ? 'border-b border-slate-200 dark:border-slate-800' : ''
-                  }`}
                 >
-                  <div className="flex-1 min-w-0">
-                    <div className="flex flex-wrap items-center gap-2 mb-1">
-                      {project.tracks.map(t => <TrackChip key={t} track={t} />)}
+                  <Card className="group h-full overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div className="aspect-video overflow-hidden bg-slate-100 dark:bg-slate-800">
+                      <ImageWithFallback
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                      />
                     </div>
-                    <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-0.5">{project.title}</h3>
-                    <p
-                      className="text-xs"
-                      style={{ fontFamily: "'IBM Plex Mono', monospace", color: '#00D4AA' }}
-                    >
-                      {project.impact}
-                    </p>
-                  </div>
-                  <div className="flex flex-wrap gap-1.5 shrink-0">
-                    {project.tags.slice(0, 3).map(tag => (
-                      <Badge key={tag} variant="outline" className="text-xs bg-slate-50 dark:bg-slate-800">{tag}</Badge>
-                    ))}
-                    {project.github && (
-                      <a href={project.github} target="_blank" rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs border transition-all"
-                        style={{ borderColor: 'rgba(0,212,170,0.35)', color: '#00D4AA', background: 'rgba(0,212,170,0.06)' }}>
-                        <Github className="w-3 h-3" /> GitHub
-                      </a>
-                    )}
-                  </div>
+                    <CardContent className="p-4">
+                      <div className="flex flex-wrap gap-1.5 mb-2">
+                        {project.tracks.map(t => <TrackChip key={t} track={t} />)}
+                      </div>
+                      <h3 className="text-sm font-semibold text-slate-900 dark:text-white leading-snug mb-2">{project.title}</h3>
+                      <div className="flex flex-wrap gap-1 mb-1">
+                        {project.tags.slice(0, 3).map(tag => (
+                          <Badge key={tag} variant="outline" className="text-xs bg-slate-50 dark:bg-slate-800">{tag}</Badge>
+                        ))}
+                      </div>
+                      <ImpactStat text={project.impact} />
+                      <LinkRow project={project} />
+                    </CardContent>
+                  </Card>
                 </motion.div>
               ))}
             </div>
@@ -441,15 +443,13 @@ export function Projects() {
                   transition={{ delay: idx * 0.05 }}
                 >
                   <Card className="group h-full overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                    {project.tier !== 'compact' && (
-                      <div className="aspect-video overflow-hidden bg-slate-100 dark:bg-slate-800">
-                        <ImageWithFallback
-                          src={project.image}
-                          alt={project.title}
-                          className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
-                        />
-                      </div>
-                    )}
+                    <div className="aspect-video overflow-hidden bg-slate-100 dark:bg-slate-800">
+                      <ImageWithFallback
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                      />
+                    </div>
                     <CardContent className="p-5">
                       <div className="flex flex-wrap gap-1.5 mb-3">
                         {project.tracks.map(t => <TrackChip key={t} track={t} />)}
