@@ -6,8 +6,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { SectionHeader } from './SectionHeader';
 
-type ProjectCategory = 'All' | 'AI / ML' | 'Mobile' | 'Systems' | 'Research';
-type RoleTrack = 'AI/ML' | 'Accessibility' | 'Mobile' | 'Full Stack' | 'Research' | 'Systems';
+type ProjectCategory = 'All' | 'AI / ML' | 'Mobile' | 'Systems';
+type RoleTrack = 'AI/ML' | 'Accessibility' | 'Mobile' | 'Full Stack' | 'Systems';
 
 interface Project {
   title: string;
@@ -39,7 +39,7 @@ export function Projects() {
       organization: 'Independent Research',
       tier: 'featured',
       category: 'AI / ML',
-      tracks: ['AI/ML', 'Research'],
+      tracks: ['AI/ML'],
       problem: 'Deepfake detection requires accurate, interpretable models that can scale to real-world media.',
       description: 'Architected an end-to-end AI-powered media forensics platform for deepfake detection using CNN-based models and ensemble classification strategies.',
       highlights: [
@@ -60,7 +60,7 @@ export function Projects() {
       organization: 'Northeastern University',
       tier: 'secondary',
       category: 'AI / ML',
-      tracks: ['AI/ML', 'Research'],
+      tracks: ['AI/ML'],
       problem: 'Frame-by-frame video captioning is token-inefficient and misses temporal dynamics.',
       description: 'Introduced Semantic Diff Prompting, a prompt-engineering framework for Vision-Language Models that models temporal semantic changes instead of independent frame-level captions.',
       highlights: [
@@ -80,7 +80,7 @@ export function Projects() {
       organization: 'Northeastern University',
       tier: 'secondary',
       category: 'AI / ML',
-      tracks: ['AI/ML', 'Research'],
+      tracks: ['AI/ML'],
       problem: 'Emergency departments need faster, more accurate triage decisions based on clinical inputs.',
       description: 'Designed an AI-driven triage classification system using structured and free-text clinical-style inputs to predict patient priority levels in emergency scenarios.',
       highlights: [
@@ -168,7 +168,7 @@ export function Projects() {
       organization: 'Northeastern University',
       tier: 'compact',
       category: 'Systems',
-      tracks: ['Systems', 'Research'],
+      tracks: ['Systems'],
       problem: 'University course scheduling is complex and conflict-prone.',
       description: 'Graph coloring optimization for course scheduling using Greedy and Welsh-Powell algorithms.',
       highlights: [],
@@ -180,7 +180,7 @@ export function Projects() {
     },
   ];
 
-  const categories: ProjectCategory[] = ['All', 'AI / ML', 'Mobile', 'Systems', 'Research'];
+  const categories: ProjectCategory[] = ['All', 'AI / ML', 'Mobile', 'Systems'];
 
   const featured = projects.filter(p => p.tier === 'featured');
   const secondary = projects.filter(p => p.tier === 'secondary');
@@ -192,14 +192,13 @@ export function Projects() {
 
   const showHierarchy = selectedCategory === 'All';
 
-  const trackColors: Record<RoleTrack, string> = {
+  const trackColors: Record<RoleTrack, { bg: string; border: string; color: string }> = {
     'AI/ML':        { bg: 'rgba(0,212,170,0.1)',  border: 'rgba(0,212,170,0.3)',  color: '#00D4AA' },
     'Accessibility':{ bg: 'rgba(99,179,237,0.1)', border: 'rgba(99,179,237,0.3)', color: '#63b3ed' },
     'Mobile':       { bg: 'rgba(246,173,85,0.1)', border: 'rgba(246,173,85,0.3)', color: '#f6ad55' },
     'Full Stack':   { bg: 'rgba(154,215,255,0.08)',border:'rgba(154,215,255,0.25)',color:'#9ad7ff' },
-    'Research':     { bg: 'rgba(183,148,244,0.1)',border: 'rgba(183,148,244,0.3)', color: '#b794f4' },
     'Systems':      { bg: 'rgba(252,129,74,0.1)', border: 'rgba(252,129,74,0.3)', color: '#fc814a' },
-  } as any;
+  };
 
   function TrackChip({ track }: { track: RoleTrack }) {
     const s = trackColors[track] ?? { bg: 'transparent', border: 'rgba(100,116,139,0.3)', color: 'rgb(100,116,139)' };

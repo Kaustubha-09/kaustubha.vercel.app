@@ -98,6 +98,32 @@ export function Education() {
                   </Badge>
                 </div>
               </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <h4 className="text-xs font-semibold text-slate-900 dark:text-white mb-2 uppercase tracking-wide">Focus Areas</h4>
+                  <p className="text-sm text-slate-600 dark:text-slate-400">
+                    Systems Design, Spatial Data Analysis, Infrastructure Planning, Computational Design, Environmental Systems
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-xs font-semibold text-slate-900 dark:text-white mb-2 uppercase tracking-wide">Key Courses</h4>
+                  <div className="flex flex-wrap gap-2 items-center">
+                    {[
+                      'Data Analysis',
+                      'Computational Design',
+                      'Systems Analysis',
+                      'Structural Systems',
+                      'Building Information Modeling',
+                      'Urban Informatics',
+                      'Project Management',
+                    ].map((course) => (
+                      <Badge key={course} variant="outline" className="text-xs bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700">
+                        {course}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              </CardContent>
             </Card>
           </motion.div>
         </div>
