@@ -29,8 +29,6 @@ export function MarqueeStrip() {
       style={{
         background: '#0a1520',
         borderColor: 'rgba(0,212,170,0.12)',
-        transform: 'skewY(-0.6deg)',
-        margin: '0 0',
       }}
     >
       {/* left fade */}
@@ -50,7 +48,6 @@ export function MarqueeStrip() {
 
       <div
         className="marquee-track"
-        style={{ transform: 'skewY(0.6deg)' }}
       >
         {/* Duplicate twice for seamless loop */}
         {[...ITEMS, ...ITEMS].map((label, i) => (
