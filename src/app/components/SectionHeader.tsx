@@ -4,12 +4,13 @@ interface SectionHeaderProps {
   eyebrow: string;
   title: string;
   description: string;
+  className?: string;
 }
 
-export function SectionHeader({ eyebrow, title, description }: SectionHeaderProps) {
+export function SectionHeader({ eyebrow, title, description, className = 'mb-16' }: SectionHeaderProps) {
   return (
     <motion.div
-      className="mb-16"
+      className={className}
       initial={{ opacity: 0, y: -20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}

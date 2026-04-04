@@ -2,6 +2,7 @@ import { Brain, Target, Rocket, TrendingUp } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { motion } from 'framer-motion';
 import { SectionHeader } from './SectionHeader';
+import { ImageWithFallback } from './figma/ImageWithFallback';
 import { containerVariants, itemVariants } from '../../lib/animations';
 
 const DIFFERENTIATORS = [
@@ -20,30 +21,53 @@ export function About() {
           eyebrow="01 — About"
           title="About"
           description="From architectural engineering to building intelligent systems"
+          className="mb-6"
         />
 
-        {/* 3-paragraph narrative */}
-        <motion.div
-          className="mb-16 max-w-2xl"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
-          <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-5">
-            I started building things in CAD and Revit — designing structural systems, coordinating drawings, optimizing load paths.
-            Architectural engineering taught me to think in systems: every element has a purpose, every constraint is a design decision.
-          </p>
-          <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-5">
-            Then I asked why the software itself couldn't be smarter. That question led me to computer science, then to AI —
-            and my blueprints became pipelines. At Northeastern, I built mobile apps, trained models, and shipped production systems.
-            At Smith-Kettlewell, I helped make YouDescribeX real — a research prototype that became a product used daily by blind and
-            low-vision users. At Evenness, I built agentic AI workflows that cut compliance audit cycles by 40%.
-          </p>
-          <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed">
-            Today I build AI systems at the intersection of technical precision and human need —
-            <strong className="text-slate-900 dark:text-white"> especially for the people the defaults forget.</strong>
-          </p>
-        </motion.div>
+        {/* Narrative + Image side by side */}
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-3">
+              I started building things in CAD and Revit — designing structural systems, coordinating drawings, optimizing load paths.
+              Architectural engineering taught me to think in systems: every element has a purpose, every constraint is a design decision.
+            </p>
+            <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-3">
+              Then I asked why the software itself couldn't be smarter. That question led me to computer science, then to AI —
+              and my blueprints became pipelines. At Northeastern, I built mobile apps, trained models, and shipped production systems.
+              At Smith-Kettlewell, I helped make YouDescribeX real — a research prototype that became a product used daily by blind and
+              low-vision users. At Evenness, I built agentic AI workflows that cut compliance audit cycles by 40%.
+            </p>
+            <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+              Today I build AI systems at the intersection of technical precision and human need —
+              <strong className="text-slate-900 dark:text-white"> especially for the people the defaults forget.</strong>
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="relative"
+          >
+            <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-lg">
+              <ImageWithFallback
+                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2RpbmclMjB0ZWNoJTIwd29ya3NwYWNlJTIwZGFya3xlbnwxfHx8fDE3NzE4MDAwMDB8MA&ixlib=rb-4.1.0&q=80&w=800"
+                alt="Coding workspace"
+                className="w-full h-72 object-cover"
+              />
+            </div>
+            {/* Accent border */}
+            <div
+              className="absolute -bottom-3 -right-3 w-full h-full rounded-2xl -z-10"
+              style={{ border: '2px solid rgba(0,212,170,0.3)' }}
+            />
+          </motion.div>
+        </div>
 
         {/* Differentiators */}
         <motion.div
