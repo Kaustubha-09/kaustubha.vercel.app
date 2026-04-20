@@ -1,4 +1,4 @@
-import { Brain, Target, Rocket, TrendingUp } from 'lucide-react';
+import { Brain, Target, Rocket, TrendingUp, ExternalLink } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { motion } from 'framer-motion';
 import { SectionHeader } from './SectionHeader';
@@ -45,6 +45,16 @@ export function About() {
               Today I build AI systems at the intersection of technical precision and human need —
               <strong className="text-slate-900 dark:text-white"> especially for the people the defaults forget.</strong>
             </p>
+            <a
+              href="https://siliconvalley.northeastern.edu/kaustubha-eluri-aspiring-product-manager/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 mt-4 text-sm font-medium transition-opacity hover:opacity-75"
+              style={{ color: '#00D4AA' }}
+            >
+              <ExternalLink className="w-3.5 h-3.5" />
+              Featured on Northeastern Silicon Valley
+            </a>
           </motion.div>
 
           <motion.div
