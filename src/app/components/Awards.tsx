@@ -1,4 +1,4 @@
-import { Trophy } from 'lucide-react';
+import { Trophy, ExternalLink } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
 import { motion } from 'framer-motion';
@@ -11,6 +11,7 @@ interface Award {
   date: string;
   description: string;
   tier: 'gold' | 'silver';
+  links?: { label: string; url: string }[];
 }
 
 export function Awards() {
@@ -21,6 +22,10 @@ export function Awards() {
       date: 'Apr. 2026',
       description: 'Selected among top graduating students for outstanding academic achievement, leadership, and impact.',
       tier: 'gold',
+      links: [
+        { label: 'Inductees List', url: 'https://distinction.northeastern.edu/laurel-and-scroll-100/laurel-and-scroll-100-inductees-2026/' },
+        { label: 'NU News', url: 'https://news.northeastern.edu/2026/04/15/laurel-and-scroll-100-2026-inductees/' },
+      ],
     },
     {
       title: 'Silicon Valley Leadership Legacy Award',
@@ -99,6 +104,24 @@ export function Awards() {
                   <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mt-auto">
                     {award.description}
                   </p>
+
+                  {award.links && award.links.length > 0 && (
+                    <div className="flex flex-wrap gap-2 pt-1">
+                      {award.links.map((link) => (
+                        <a
+                          key={link.url}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-xs font-medium transition-colors hover:opacity-80"
+                          style={{ color: '#F59E0B' }}
+                        >
+                          <ExternalLink className="w-3 h-3" />
+                          {link.label}
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             </motion.div>

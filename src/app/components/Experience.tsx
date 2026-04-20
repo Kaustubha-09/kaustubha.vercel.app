@@ -1,4 +1,4 @@
-import { Briefcase, Brain, Zap, Users, ChevronDown, ChevronUp, Target, TrendingUp, MapPin, Calendar } from 'lucide-react';
+import { Briefcase, Brain, Zap, Users, ChevronDown, ChevronUp, Target, TrendingUp, MapPin, Calendar, ExternalLink } from 'lucide-react';
 import { SectionHeader } from './SectionHeader';
 import { containerVariants, itemVariants } from '../../lib/animations';
 import { ImageWithFallback } from './figma/ImageWithFallback';
@@ -12,6 +12,8 @@ interface ExperiencePosition {
   period: string;
   link?: string;
   appStoreLink?: string;
+  pressLink?: string;
+  pressLabel?: string;
   problem: string;
   whatIBuilt: string[];
   impact: string[];
@@ -83,6 +85,8 @@ export function Experience() {
           title: 'Research Software Engineer - AI & Accessibility Systems – YouDescribeX',
           period: 'Sep. 2025 - Jan. 2026',
           link: 'https://ydx.youdescribe.org/home',
+          pressLink: 'https://www.khoury.northeastern.edu/with-this-ai-driven-tool-blind-users-can-experience-youtube-and-tiktok-videos-too/',
+          pressLabel: 'Featured in Khoury College News',
           promoted: true,
           stack: ['React', 'iOS', 'Android', 'AI/ML', 'FastAPI', 'WCAG'],
           leadStat: '40+ blind/low-vision users in pilot · <1% crash rate',
@@ -374,7 +378,7 @@ export function Experience() {
                           {/* Lead stat callout */}
                           {pos.leadStat && (
                             <div
-                              className="flex items-center gap-2 px-4 py-2.5 rounded-lg mb-5 text-sm font-medium"
+                              className="flex items-center gap-2 px-4 py-2.5 rounded-lg mb-3 text-sm font-medium"
                               style={{
                                 background: 'rgba(0,212,170,0.06)',
                                 border: '1px solid rgba(0,212,170,0.2)',
@@ -385,6 +389,22 @@ export function Experience() {
                             >
                               <span>◆</span>
                               <span>{pos.leadStat}</span>
+                            </div>
+                          )}
+
+                          {/* Press link */}
+                          {pos.pressLink && (
+                            <div className="mb-5">
+                              <a
+                                href={pos.pressLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1.5 text-xs font-medium transition-opacity hover:opacity-80"
+                                style={{ color: '#63b3ed' }}
+                              >
+                                <ExternalLink className="w-3 h-3" />
+                                {pos.pressLabel ?? 'Press Coverage'}
+                              </a>
                             </div>
                           )}
 
