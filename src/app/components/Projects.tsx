@@ -190,7 +190,7 @@ export function Projects() {
       description: 'Analyzed large-scale image and text data to study gender bias across visual and linguistic modalities using computer vision features and word embeddings.',
       highlights: [],
       impact: 'Presented at class research symposium · Multimodal bias analysis · CV + NLP',
-      image: 'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlJTIwbWFjaGluZSUyMGxlYXJuaW5nfGVufDF8fHx8MTc3MTczMTAyN3ww&ixlib=rb-4.1.0&q=80&w=1080',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
       tags: ['Computer Vision', 'NLP', 'Word Embeddings', 'Bias Analysis'],
       github: null,
       link: null,
