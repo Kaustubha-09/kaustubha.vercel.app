@@ -58,7 +58,7 @@ export function Leadership() {
     <section id="leadership" className="py-24 px-6 bg-white dark:bg-slate-900">
       <div className="max-w-6xl mx-auto">
         <SectionHeader
-          eyebrow="06 — Leadership"
+          eyebrow="07 — Leadership"
           title="Leadership & Involvement"
           description="Leading initiatives that drive impact and build community"
         />

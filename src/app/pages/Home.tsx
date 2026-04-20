@@ -5,6 +5,7 @@ import { About } from '../components/About';
 import { Experience } from '../components/Experience';
 import { Projects } from '../components/Projects';
 import { Education } from '../components/Education';
+import { Awards } from '../components/Awards';
 import { Skills } from '../components/Skills';
 import { Leadership } from '../components/Leadership';
 import { Certifications } from '../components/Certifications';
@@ -41,6 +42,9 @@ export function Home() {
       </div>
       <div id="education" className="scroll-mt-16">
         <SectionReveal><Education /></SectionReveal>
+      </div>
+      <div id="awards" className="scroll-mt-16">
+        <SectionReveal><Awards /></SectionReveal>
       </div>
       <div id="skills" className="scroll-mt-16">
         <SectionReveal><Skills /></SectionReveal>

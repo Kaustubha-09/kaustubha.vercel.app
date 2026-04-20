@@ -72,7 +72,7 @@ export function Certifications() {
     <section className="py-24 px-6 bg-slate-50 dark:bg-slate-950">
       <div className="max-w-6xl mx-auto">
         <SectionHeader
-          eyebrow="07 — Certifications"
+          eyebrow="08 — Certifications"
           title="Certifications"
           description="Continuous learning across AI, cloud, and systems domains"
         />

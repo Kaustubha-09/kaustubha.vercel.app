@@ -19,10 +19,14 @@ export function Skills() {
         { name: 'PyTorch', proficiency: 'Expert' as Proficiency },
         { name: 'RAG Pipelines', proficiency: 'Expert' as Proficiency },
         { name: 'Prompt Engineering', proficiency: 'Expert' as Proficiency },
+        { name: 'LangChain', proficiency: 'Advanced' as Proficiency },
         { name: 'LLMs', proficiency: 'Advanced' as Proficiency },
         { name: 'Hugging Face', proficiency: 'Advanced' as Proficiency },
+        { name: 'scikit-learn', proficiency: 'Advanced' as Proficiency },
         { name: 'OpenAI APIs', proficiency: 'Advanced' as Proficiency },
         { name: 'TensorFlow', proficiency: 'Advanced' as Proficiency },
+        { name: 'NumPy', proficiency: 'Advanced' as Proficiency },
+        { name: 'Pandas', proficiency: 'Advanced' as Proficiency },
       ],
     },
     {
@@ -66,9 +70,14 @@ export function Skills() {
         { name: 'TypeScript', proficiency: 'Advanced' as Proficiency },
         { name: 'React', proficiency: 'Advanced' as Proficiency },
         { name: 'JavaScript', proficiency: 'Advanced' as Proficiency },
+        { name: 'HTML', proficiency: 'Advanced' as Proficiency },
+        { name: 'CSS', proficiency: 'Advanced' as Proficiency },
         { name: 'PostgreSQL', proficiency: 'Advanced' as Proficiency },
+        { name: 'Pinecone', proficiency: 'Advanced' as Proficiency },
         { name: 'SQLite', proficiency: 'Advanced' as Proficiency },
         { name: 'MongoDB', proficiency: 'Intermediate' as Proficiency },
+        { name: 'ChromaDB', proficiency: 'Intermediate' as Proficiency },
+        { name: 'Revit', proficiency: 'Intermediate' as Proficiency },
       ],
     },
     {
@@ -110,7 +119,7 @@ export function Skills() {
     <section id="skills" className="py-24 px-6 bg-white dark:bg-slate-900">
       <div className="max-w-6xl mx-auto">
         <SectionHeader
-          eyebrow="05 — Skills"
+          eyebrow="06 — Skills"
           title="Technical Skills"
           description="Technologies and tools I use to build production systems"
         />
