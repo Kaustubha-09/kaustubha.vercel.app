@@ -16,7 +16,7 @@ const PHOTOS = [
   { src: '/moments/dinner.jpg',     alt: 'Speaking at a leadership dinner',                caption: 'Silicon Valley Leadership Legacy dinner',  area: 'dinner',      imgPos: 'center'      },
   { src: '/moments/friends.jpg',    alt: 'Group photo after graduation',                   caption: 'With the crew · May 2026',                area: 'friends',     imgPos: 'center'      },
   { src: '/moments/huskymingle.jpg',alt: 'Presenting Husky Mingle product deck',           caption: 'Husky Mingle · Product Demo',             area: 'huskymingle', imgPos: 'center top'  },
-  { src: '/moments/ambassadors.jpg',alt: 'Student Ambassadors team with NU balloons',      caption: 'Student Ambassadors · Northeastern SV',   area: 'ambassadors', imgPos: 'center 30%'  },
+  { src: '/moments/ambassadors.jpg',alt: 'Student Ambassadors team with NU balloons',      caption: 'Student Ambassadors · Northeastern SV',   area: 'ambassadors', imgPos: 'center 20%'  },
   { src: '/moments/internship.jpg', alt: 'Working at internship setup with dual monitors', caption: 'Deep in the build',                        area: 'internship',  imgPos: 'center'      },
 ];
 
