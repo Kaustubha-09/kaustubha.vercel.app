@@ -1,0 +1,136 @@
+.section {
+  min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: clamp(80px, 12vh, 140px) clamp(24px, 8vw, 112px);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  line-height: 0.98;
+  margin: 0 0 3rem;
+}
+
+.heading em {
+  font-style: italic;
+  color: var(--orange);
+}
+
+/* Email link */
+.emailLink {
+  font-family: var(--font-mono);
+  font-size: clamp(0.85rem, 1.4vw, 1.05rem);
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 0.22s;
+}
+
+.emailLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.emailLink:hover {
+  color: var(--orange);
+}
+
+.emailLink:hover::after {
+  transform: scaleX(1);
+}
+
+/* Phone / location meta */
+.meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.metaLink {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: color 0.22s;
+}
+
+.metaLink:hover {
+  color: var(--orange);
+}
+
+.metaDot {
+  color: rgba(255, 255, 255, 0.18);
+}
+
+.metaText {
+  color: rgba(255, 255, 255, 0.38);
+}
+
+/* Form wrapper */
+.formWrapper {
+  width: 100%;
+}
+
+/* Social buttons */
+.socials {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 2.4rem;
+}
+
+.socialBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  transition: background 0.22s, border-color 0.22s, color 0.22s, transform 0.18s;
+}
+
+.socialBtn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.28);
+  color: var(--white);
+  transform: scale(1.08);
+}
+
+.socialBtn:active {
+  transform: scale(0.94);
+}
+
+/* Footer */
+.footer {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.18);
+  margin-top: auto;
+  padding-top: 5rem;
+}

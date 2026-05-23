@@ -1,0 +1,172 @@
+.section {
+  min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  padding: clamp(80px, 12vh, 140px) clamp(24px, 8vw, 112px);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: clamp(40px, 6vw, 100px);
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Portrait */
+.portraitCol {
+  display: flex;
+  justify-content: center;
+}
+
+.portrait {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 3 / 4;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.portraitImg {
+  object-fit: cover;
+  object-position: top center;
+}
+
+.portraitGlow {
+  position: absolute;
+  inset: -40px;
+  background: radial-gradient(ellipse at 50% 80%, rgba(255, 130, 30, 0.14) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Content */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+.rolePill {
+  display: inline-flex;
+  width: fit-content;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange);
+  border: 1px solid var(--orange-dim);
+  border-radius: 100px;
+  padding: 0.3em 1em;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  line-height: 1.06;
+  margin: 0;
+}
+
+.bio {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: clamp(0.88rem, 1.2vw, 1.0rem);
+  color: rgba(255, 255, 255, 0.62);
+  line-height: 1.75;
+  margin: 0;
+}
+
+.bioLink {
+  color: var(--orange);
+  text-decoration: none;
+  border-bottom: 1px solid var(--orange-dim);
+  transition: border-color 0.22s;
+}
+
+.bioLink:hover {
+  border-color: var(--orange);
+}
+
+/* Skills */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  font-family: var(--font-mono);
+  font-size: 0.63rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 100px;
+  padding: 0.28em 0.85em;
+  background: rgba(255, 255, 255, 0.03);
+  transition: border-color 0.22s, color 0.22s;
+}
+
+.chip:hover {
+  border-color: var(--orange-dim);
+  color: var(--orange);
+}
+
+/* Education */
+.eduRow {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.eduItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.eduInstitution {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.eduDegree {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+
+  .portrait {
+    max-width: 220px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+  }
+
+  .portraitInitials {
+    font-size: 3.5rem;
+  }
+}

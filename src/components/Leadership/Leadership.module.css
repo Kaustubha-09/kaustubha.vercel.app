@@ -1,0 +1,143 @@
+.section {
+  min-height: 100vh;
+  background: var(--bg);
+  padding: clamp(80px, 12vh, 140px) clamp(24px, 8vw, 112px);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--orange);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  line-height: 1.06;
+  margin: 0 0 4rem;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+  border-left: 1px solid rgba(255, 157, 69, 0.2);
+  max-width: 800px;
+}
+
+.entry {
+  position: relative;
+  padding: 2.4rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.entry:last-child {
+  border-bottom: none;
+}
+
+.dot {
+  position: absolute;
+  left: calc(-2rem - 4px);
+  top: 2.9rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 8px rgba(255, 157, 69, 0.6);
+}
+
+.entryHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.period {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--orange);
+  margin: 0;
+}
+
+.location {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.org {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+  line-height: 1.1;
+  margin: 0 0 0.3rem;
+}
+
+.title {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin: 0 0 1.2rem;
+}
+
+.bullets {
+  list-style: none;
+  margin: 0 0 1.2rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.bullet {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.52);
+  line-height: 1.65;
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+.bullet::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: rgba(255, 157, 69, 0.45);
+  font-size: 0.7rem;
+  top: 0.18em;
+}
+
+.achievement {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.6;
+  border-left: 2px solid rgba(255, 157, 69, 0.35);
+  padding-left: 0.9rem;
+  font-style: italic;
+}
+
+.achievementLabel {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-style: normal;
+  margin-bottom: 0.3rem;
+}
