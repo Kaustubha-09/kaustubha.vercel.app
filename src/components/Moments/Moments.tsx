@@ -7,17 +7,17 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Moments.module.css';
 
 const PHOTOS = [
-  { src: '/moments/speaking.jpg',   alt: 'Speaking at a Northeastern event',              caption: 'Addressing the cohort',                   area: 'speaking'  },
-  { src: '/moments/medal.jpg',      alt: 'Laurel & Scroll LVX VERITAS VIRTVS medal',     caption: 'Laurel & Scroll · LVX VERITAS VIRTVS',    area: 'medal'     },
-  { src: '/moments/stage.jpg',      alt: 'On stage at Convocation 2026',                 caption: 'Convocation 2026 · Northeastern',          area: 'stage'     },
-  { src: '/moments/bite.jpg',       alt: 'Biting the Laurel & Scroll medal',             caption: 'Laurel & Scroll 100 · Class of 2026',     area: 'bite'      },
-  { src: '/moments/svll-award.jpg', alt: 'Receiving the Silicon Valley Leadership award',caption: 'Silicon Valley Leadership Legacy · 2026', area: 'svllaward' },
-  { src: '/moments/svll-plaque.jpg',alt: 'Silicon Valley Leadership Legacy Award plaque',caption: 'SVLL Award · Kaustubha Eluri · 2025–26', area: 'svllplaque'},
-  { src: '/moments/dinner.jpg',       alt: 'Speaking at a leadership dinner',               caption: 'Silicon Valley Leadership Legacy dinner',  area: 'dinner'      },
-  { src: '/moments/friends.jpg',      alt: 'Group photo after graduation',                  caption: 'With the crew · May 2026',                area: 'friends'     },
-  { src: '/moments/huskymingle.jpg',  alt: 'Presenting Husky Mingle product deck',          caption: 'Husky Mingle · Product Demo',             area: 'huskymingle' },
-  { src: '/moments/ambassadors.jpg',  alt: 'Student Ambassadors team with NU balloons',     caption: 'Student Ambassadors · Northeastern SV',   area: 'ambassadors' },
-  { src: '/moments/internship.jpg',   alt: 'Working at internship setup with dual monitors', caption: 'Deep in the build',                        area: 'internship'  },
+  { src: '/moments/speaking.jpg',   alt: 'Speaking at a Northeastern event',               caption: 'Addressing the cohort',                   area: 'speaking',    imgPos: 'center'      },
+  { src: '/moments/medal.jpg',      alt: 'Laurel & Scroll LVX VERITAS VIRTVS medal',      caption: 'Laurel & Scroll · LVX VERITAS VIRTVS',    area: 'medal',       imgPos: 'center'      },
+  { src: '/moments/stage.jpg',      alt: 'On stage at Convocation 2026',                  caption: 'Convocation 2026 · Northeastern',          area: 'stage',       imgPos: 'center'      },
+  { src: '/moments/bite.jpg',       alt: 'Biting the Laurel & Scroll medal',              caption: 'Laurel & Scroll 100 · Class of 2026',     area: 'bite',        imgPos: 'center'      },
+  { src: '/moments/svll-award.jpg', alt: 'Receiving the Silicon Valley Leadership award', caption: 'Silicon Valley Leadership Legacy · 2026', area: 'svllaward',   imgPos: 'center'      },
+  { src: '/moments/svll-plaque.jpg',alt: 'Silicon Valley Leadership Legacy Award plaque', caption: 'SVLL Award · Kaustubha Eluri · 2025–26', area: 'svllplaque',  imgPos: 'center'      },
+  { src: '/moments/dinner.jpg',     alt: 'Speaking at a leadership dinner',                caption: 'Silicon Valley Leadership Legacy dinner',  area: 'dinner',      imgPos: 'center'      },
+  { src: '/moments/friends.jpg',    alt: 'Group photo after graduation',                   caption: 'With the crew · May 2026',                area: 'friends',     imgPos: 'center'      },
+  { src: '/moments/huskymingle.jpg',alt: 'Presenting Husky Mingle product deck',           caption: 'Husky Mingle · Product Demo',             area: 'huskymingle', imgPos: 'center top'  },
+  { src: '/moments/ambassadors.jpg',alt: 'Student Ambassadors team with NU balloons',      caption: 'Student Ambassadors · Northeastern SV',   area: 'ambassadors', imgPos: 'center 30%'  },
+  { src: '/moments/internship.jpg', alt: 'Working at internship setup with dual monitors', caption: 'Deep in the build',                        area: 'internship',  imgPos: 'center'      },
 ];
 
 export function Moments() {
@@ -61,6 +61,7 @@ export function Moments() {
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className={styles.img}
+              style={{ objectPosition: p.imgPos }}
             />
             <div className={styles.overlay}>
               <span className={styles.caption}>{p.caption}</span>
