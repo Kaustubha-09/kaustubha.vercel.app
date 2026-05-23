@@ -30,7 +30,7 @@
 .grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  grid-template-rows: 300px 300px 280px 260px 280px 260px;
+  grid-template-rows: 300px 300px 280px 260px 380px 260px;
   grid-template-areas:
     "speaking    medal        medal"
     "stage       stage        bite"
