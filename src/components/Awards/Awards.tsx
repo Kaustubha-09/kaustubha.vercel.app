@@ -18,6 +18,7 @@ const AWARDS: Award[] = [
     issuer: 'Northeastern University',
     year: 'Apr 2026',
     links: [
+      { label: 'Official Inductees ↗', href: 'https://distinction.northeastern.edu/laurel-and-scroll-100/laurel-and-scroll-100-inductees-2026/' },
       { label: 'Northeastern News ↗', href: 'https://news.northeastern.edu/2026/04/15/laurel-and-scroll-100-2026-inductees/' },
       { label: 'Khoury Feature ↗',    href: 'https://www.khoury.northeastern.edu/khoury-students-bring-in-record-awards-haul-at-2026-northeastern-convocation/' },
     ],
