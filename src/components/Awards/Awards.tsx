@@ -69,16 +69,18 @@ export function Awards() {
             <span className={styles.rowNumber} aria-hidden="true">
               {String(i + 1).padStart(2, '0')}
             </span>
-            <span className={styles.rowName}>{award.name}</span>
-            {award.links && (
-              <div className={styles.rowLinks}>
-                {award.links.map(l => (
-                  <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer" className={styles.rowLink}>
-                    {l.label}
-                  </a>
-                ))}
-              </div>
-            )}
+            <div className={styles.rowBody}>
+              <span className={styles.rowName}>{award.name}</span>
+              {award.links && (
+                <div className={styles.rowLinks}>
+                  {award.links.map(l => (
+                    <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer" className={styles.rowLink}>
+                      {l.label}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
             <div className={styles.rowMeta}>
               <span>{award.issuer}</span>
               <span>{award.year}</span>
