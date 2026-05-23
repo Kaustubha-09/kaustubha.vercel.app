@@ -30,14 +30,14 @@
 .grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  grid-template-rows: 300px 300px 280px 260px 380px 260px;
+  grid-template-rows: 300px 300px 280px 260px 320px 420px;
   grid-template-areas:
-    "speaking    medal        medal"
-    "stage       stage        bite"
-    "svllaward   svllaward    svllplaque"
-    "friends     friends      dinner"
-    "ambassadors ambassadors  huskymingle"
-    "internship  internship   internship";
+    "speaking   medal      medal"
+    "stage      stage      bite"
+    "svllaward  svllaward  svllplaque"
+    "friends    friends    dinner"
+    "internship internship huskymingle"
+    "ambassadors ambassadors ambassadors";
   gap: 0.6rem;
   max-width: 1100px;
 }
@@ -90,8 +90,8 @@
       "stage       stage"
       "svllaward   svllplaque"
       "friends     dinner"
-      "ambassadors huskymingle"
-      "internship  internship";
+      "internship  huskymingle"
+      "ambassadors ambassadors";
   }
 }
 
@@ -108,8 +108,8 @@
       "svllplaque"
       "friends"
       "dinner"
-      "ambassadors"
+      "internship"
       "huskymingle"
-      "internship";
+      "ambassadors";
   }
 }
