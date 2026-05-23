@@ -12,6 +12,8 @@ type Role = {
   title: string;
   bullets: string[];
   achievement: string;
+  link?: string;
+  pressLink?: { label: string; href: string };
 };
 
 const ROLES: Role[] = [
@@ -20,6 +22,7 @@ const ROLES: Role[] = [
     org: 'NEURAI Research Lab',
     location: 'Northeastern University · San Jose, CA',
     title: 'Founding Researcher',
+    link: 'https://neurai.sites.northeastern.edu/our-team/kaustubha-eluri/',
     bullets: [
       'Contributed to research on interpretable and responsible ML, implementing baseline models and reproducibility workflows.',
       'Led code reviews and replication efforts, improving experiment consistency through seeded runs and standardized documentation.',
@@ -49,6 +52,7 @@ const ROLES: Role[] = [
       'Expanded active membership and coordinated programming across multiple academic terms.',
     ],
     achievement: 'Grew APMC into a well-established campus organization; received a student leadership award in 2025.',
+    pressLink: { label: 'Featured · ProductCon SF ↗', href: 'https://siliconvalley.northeastern.edu/in-the-field-product-management-insights-at-productcon-sf/' },
   },
   {
     period: 'May 2024 – Aug 2025',
@@ -118,7 +122,13 @@ export function Leadership() {
               <span className={styles.location}>{role.location}</span>
             </div>
 
-            <p className={styles.org}>{role.org}</p>
+            <p className={styles.org}>
+              {role.link ? (
+                <a href={role.link} target="_blank" rel="noopener noreferrer" className={styles.orgLink}>
+                  {role.org} ↗
+                </a>
+              ) : role.org}
+            </p>
             <p className={styles.title}>{role.title}</p>
 
             <ul className={styles.bullets}>
@@ -131,6 +141,12 @@ export function Leadership() {
               <span className={styles.achievementLabel}>Key Achievement</span>
               {role.achievement}
             </div>
+
+            {role.pressLink && (
+              <a href={role.pressLink.href} target="_blank" rel="noopener noreferrer" className={styles.pressLink}>
+                {role.pressLink.label}
+              </a>
+            )}
           </div>
         ))}
       </div>

@@ -79,6 +79,15 @@
   color: var(--orange);
 }
 
+.rowNameLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.rowNameLink:hover {
+  color: var(--orange);
+}
+
 .rowMeta {
   display: flex;
   flex-direction: column;
