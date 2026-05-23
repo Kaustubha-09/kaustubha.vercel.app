@@ -20,6 +20,8 @@
   text-decoration: none;
   letter-spacing: -0.02em;
   line-height: 1;
+  position: relative;
+  z-index: 1001;
 }
 
 .links {
@@ -44,8 +46,84 @@
   color: var(--orange);
 }
 
+/* ── Hamburger button ─────────────────────────────────────────────────────── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 1001;
+  position: relative;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: rgba(255, 255, 255, 0.8);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburgerOpen span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.hamburgerOpen span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburgerOpen span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ── Mobile full-screen drawer ────────────────────────────────────────────── */
+.drawer {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 6, 10, 0.96);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.drawerOpen {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.drawer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.drawerLink {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 2.4rem;
+  letter-spacing: -0.01em;
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  transition: color 0.22s;
+}
+
+.drawerLink:hover {
+  color: var(--orange);
+}
+
 @media (max-width: 640px) {
   .links {
     display: none;
+  }
+
+  .hamburger {
+    display: flex;
   }
 }

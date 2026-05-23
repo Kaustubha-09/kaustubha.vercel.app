@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Nav.module.css';
@@ -8,11 +8,11 @@ import styles from './Nav.module.css';
 const LINKS = ['About', 'Experience', 'Projects', 'Awards', 'Leadership', 'Contact'];
 
 export function Nav() {
-  const navRef = useRef<HTMLElement>(null);
+  const navRef  = useRef<HTMLElement>(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
     const ctx = gsap.context(() => {
       gsap.to(navRef.current, {
         borderBottomColor: 'rgba(255,255,255,0.08)',
@@ -26,24 +26,54 @@ export function Nav() {
         },
       });
     }, navRef);
-
     return () => ctx.revert();
   }, []);
 
+  useEffect(() => {
+    const onResize = () => { if (window.innerWidth > 640) setIsOpen(false); };
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [isOpen]);
+
+  const close = () => setIsOpen(false);
+
   return (
     <nav ref={navRef} className={styles.nav} aria-label="Primary navigation">
-      <a href="#" className={styles.logo} aria-label="Back to top">
-        KE
-      </a>
+      <a href="#" className={styles.logo} aria-label="Back to top">KE</a>
+
       <ul className={styles.links} role="list">
         {LINKS.map(label => (
           <li key={label}>
-            <a href={`#${label.toLowerCase()}`} className={styles.link}>
-              {label}
-            </a>
+            <a href={`#${label.toLowerCase()}`} className={styles.link}>{label}</a>
           </li>
         ))}
       </ul>
+
+      <button
+        className={`${styles.hamburger} ${isOpen ? styles.hamburgerOpen : ''}`}
+        onClick={() => setIsOpen(o => !o)}
+        aria-label={isOpen ? 'Close menu' : 'Open menu'}
+        aria-expanded={isOpen}
+      >
+        <span /><span /><span />
+      </button>
+
+      <div className={`${styles.drawer} ${isOpen ? styles.drawerOpen : ''}`} aria-hidden={!isOpen}>
+        <ul role="list">
+          {LINKS.map(label => (
+            <li key={label}>
+              <a href={`#${label.toLowerCase()}`} className={styles.drawerLink} onClick={close}>
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 }
