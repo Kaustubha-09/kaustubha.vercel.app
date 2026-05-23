@@ -13,8 +13,10 @@ const PHOTOS = [
   { src: '/moments/bite.jpg',       alt: 'Biting the Laurel & Scroll medal',             caption: 'Laurel & Scroll 100 · Class of 2026',     area: 'bite'      },
   { src: '/moments/svll-award.jpg', alt: 'Receiving the Silicon Valley Leadership award',caption: 'Silicon Valley Leadership Legacy · 2026', area: 'svllaward' },
   { src: '/moments/svll-plaque.jpg',alt: 'Silicon Valley Leadership Legacy Award plaque',caption: 'SVLL Award · Kaustubha Eluri · 2025–26', area: 'svllplaque'},
-  { src: '/moments/dinner.jpg',     alt: 'Speaking at a leadership dinner',               caption: 'Silicon Valley Leadership Legacy dinner',  area: 'dinner'    },
-  { src: '/moments/friends.jpg',    alt: 'Group photo after graduation',                  caption: 'With the crew · May 2026',                area: 'friends'   },
+  { src: '/moments/dinner.jpg',       alt: 'Speaking at a leadership dinner',               caption: 'Silicon Valley Leadership Legacy dinner',  area: 'dinner'      },
+  { src: '/moments/friends.jpg',      alt: 'Group photo after graduation',                  caption: 'With the crew · May 2026',                area: 'friends'     },
+  { src: '/moments/huskymingle.jpg',  alt: 'Presenting Husky Mingle product deck',          caption: 'Husky Mingle · Product Demo',             area: 'huskymingle' },
+  { src: '/moments/ambassadors.jpg',  alt: 'Student Ambassadors team with NU balloons',     caption: 'Student Ambassadors · Northeastern SV',   area: 'ambassadors' },
 ];
 
 export function Moments() {
