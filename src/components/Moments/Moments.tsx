@@ -17,6 +17,7 @@ const PHOTOS = [
   { src: '/moments/friends.jpg',      alt: 'Group photo after graduation',                  caption: 'With the crew · May 2026',                area: 'friends'     },
   { src: '/moments/huskymingle.jpg',  alt: 'Presenting Husky Mingle product deck',          caption: 'Husky Mingle · Product Demo',             area: 'huskymingle' },
   { src: '/moments/ambassadors.jpg',  alt: 'Student Ambassadors team with NU balloons',     caption: 'Student Ambassadors · Northeastern SV',   area: 'ambassadors' },
+  { src: '/moments/internship.jpg',   alt: 'Working at internship setup with dual monitors', caption: 'Deep in the build',                        area: 'internship'  },
 ];
 
 export function Moments() {
