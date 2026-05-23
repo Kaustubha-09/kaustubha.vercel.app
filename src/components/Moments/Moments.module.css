@@ -83,7 +83,7 @@
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 200px 200px 200px 200px 200px 200px;
+    grid-template-rows: 200px 200px 200px 200px 200px 200px 340px;
     grid-template-areas:
       "speaking    speaking"
       "medal       bite"
@@ -98,7 +98,7 @@
 @media (max-width: 480px) {
   .grid {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(11, 240px);
+    grid-template-rows: repeat(10, 240px) 340px;
     grid-template-areas:
       "speaking"
       "medal"
