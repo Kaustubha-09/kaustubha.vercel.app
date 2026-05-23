@@ -57,6 +57,11 @@
   transform: scale(1.04);
 }
 
+.imgContain {
+  object-fit: contain;
+  background: var(--bg);
+}
+
 .overlay {
   position: absolute;
   inset: 0;

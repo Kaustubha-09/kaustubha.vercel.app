@@ -169,3 +169,17 @@
 .pressLink:hover {
   opacity: 0.7;
 }
+
+@media (max-width: 640px) {
+  .timeline {
+    padding-left: 1.2rem;
+  }
+
+  .dot {
+    left: calc(-1.2rem - 4px);
+  }
+
+  .entry {
+    padding: 1.8rem 0;
+  }
+}
