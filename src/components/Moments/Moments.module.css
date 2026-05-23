@@ -30,11 +30,12 @@
 .grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  grid-template-rows: 300px 300px 260px;
+  grid-template-rows: 300px 300px 280px 260px;
   grid-template-areas:
-    "speaking  medal   medal"
-    "stage     stage   bite"
-    "dinner    dinner  friends";
+    "speaking   medal      medal"
+    "stage      stage      bite"
+    "svllaward  svllaward  svllplaque"
+    "dinner     dinner     friends";
   gap: 0.6rem;
   max-width: 1100px;
 }
@@ -80,24 +81,27 @@
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 200px 200px 200px 200px;
+    grid-template-rows: 200px 200px 200px 200px 200px;
     grid-template-areas:
-      "speaking  speaking"
-      "medal     bite"
-      "stage     stage"
-      "dinner    friends";
+      "speaking   speaking"
+      "medal      bite"
+      "stage      stage"
+      "svllaward  svllplaque"
+      "dinner     friends";
   }
 }
 
 @media (max-width: 480px) {
   .grid {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 240px);
+    grid-template-rows: repeat(8, 240px);
     grid-template-areas:
       "speaking"
       "medal"
       "stage"
       "bite"
+      "svllaward"
+      "svllplaque"
       "dinner"
       "friends";
   }
