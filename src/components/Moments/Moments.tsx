@@ -7,12 +7,14 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Moments.module.css';
 
 const PHOTOS = [
-  { src: '/moments/speaking.jpg',  alt: 'Speaking at a Northeastern event',         caption: 'Addressing the cohort',               area: 'speaking' },
-  { src: '/moments/medal.jpg',     alt: 'Laurel & Scroll LVX VERITAS VIRTVS medal', caption: 'Laurel & Scroll · LVX VERITAS VIRTVS', area: 'medal'    },
-  { src: '/moments/stage.jpg',     alt: 'On stage at Convocation 2026',             caption: 'Convocation 2026 · Northeastern',      area: 'stage'    },
-  { src: '/moments/bite.jpg',      alt: 'Biting the Laurel & Scroll medal',         caption: 'Laurel & Scroll 100 · Class of 2026',  area: 'bite'     },
-  { src: '/moments/dinner.jpg',    alt: 'Speaking at a leadership dinner',          caption: 'Silicon Valley Leadership Legacy',     area: 'dinner'   },
-  { src: '/moments/friends.jpg',   alt: 'Group photo after graduation',             caption: 'With the crew · May 2026',             area: 'friends'  },
+  { src: '/moments/speaking.jpg',   alt: 'Speaking at a Northeastern event',              caption: 'Addressing the cohort',                   area: 'speaking'  },
+  { src: '/moments/medal.jpg',      alt: 'Laurel & Scroll LVX VERITAS VIRTVS medal',     caption: 'Laurel & Scroll · LVX VERITAS VIRTVS',    area: 'medal'     },
+  { src: '/moments/stage.jpg',      alt: 'On stage at Convocation 2026',                 caption: 'Convocation 2026 · Northeastern',          area: 'stage'     },
+  { src: '/moments/bite.jpg',       alt: 'Biting the Laurel & Scroll medal',             caption: 'Laurel & Scroll 100 · Class of 2026',     area: 'bite'      },
+  { src: '/moments/svll-award.jpg', alt: 'Receiving the Silicon Valley Leadership award',caption: 'Silicon Valley Leadership Legacy · 2026', area: 'svllaward' },
+  { src: '/moments/svll-plaque.jpg',alt: 'Silicon Valley Leadership Legacy Award plaque',caption: 'SVLL Award · Kaustubha Eluri · 2025–26', area: 'svllplaque'},
+  { src: '/moments/dinner.jpg',     alt: 'Speaking at a leadership dinner',               caption: 'Silicon Valley Leadership Legacy dinner',  area: 'dinner'    },
+  { src: '/moments/friends.jpg',    alt: 'Group photo after graduation',                  caption: 'With the crew · May 2026',                area: 'friends'   },
 ];
 
 export function Moments() {
