@@ -9,15 +9,23 @@ type Award = {
   name: string;
   issuer: string;
   year: string;
-  link?: string;
+  links?: { label: string; href: string }[];
 };
 
 const AWARDS: Award[] = [
-  { name: 'Laurel & Scroll 100',              issuer: 'Northeastern University', year: 'Apr 2026', link: 'https://news.northeastern.edu/2026/04/15/laurel-and-scroll-100-2026-inductees/' },
-  { name: 'Silicon Valley Leadership Legacy', issuer: 'Northeastern University', year: 'Apr 2026' },
-  { name: 'Khoury College Recognition',       issuer: 'Khoury CS — Nominee',     year: '2026',    link: 'https://www.khoury.northeastern.edu/khoury-students-bring-in-record-awards-haul-at-2026-northeastern-convocation/' },
-  { name: 'Top Project — RapidTriage AI',     issuer: 'Northeastern University', year: '2025'     },
-  { name: 'Hackathon — Husky Mingle',         issuer: 'Student Networking Track', year: '2024'    },
+  {
+    name: 'Laurel & Scroll 100',
+    issuer: 'Northeastern University',
+    year: 'Apr 2026',
+    links: [
+      { label: 'Northeastern News ↗', href: 'https://news.northeastern.edu/2026/04/15/laurel-and-scroll-100-2026-inductees/' },
+      { label: 'Khoury Feature ↗',    href: 'https://www.khoury.northeastern.edu/khoury-students-bring-in-record-awards-haul-at-2026-northeastern-convocation/' },
+    ],
+  },
+  { name: 'Silicon Valley Leadership Legacy', issuer: 'Northeastern University',  year: 'Apr 2026' },
+  { name: 'Khoury College Recognition',       issuer: 'Khoury CS — Nominee',      year: '2026'     },
+  { name: 'Top Project — RapidTriage AI',     issuer: 'Northeastern University',  year: '2025'     },
+  { name: 'Hackathon — Husky Mingle',         issuer: 'Student Networking Track', year: '2024'     },
 ];
 
 export function Awards() {
@@ -61,12 +69,15 @@ export function Awards() {
             <span className={styles.rowNumber} aria-hidden="true">
               {String(i + 1).padStart(2, '0')}
             </span>
-            {award.link ? (
-              <a href={award.link} target="_blank" rel="noopener noreferrer" className={`${styles.rowName} ${styles.rowNameLink}`}>
-                {award.name} ↗
-              </a>
-            ) : (
-              <span className={styles.rowName}>{award.name}</span>
+            <span className={styles.rowName}>{award.name}</span>
+            {award.links && (
+              <div className={styles.rowLinks}>
+                {award.links.map(l => (
+                  <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer" className={styles.rowLink}>
+                    {l.label}
+                  </a>
+                ))}
+              </div>
             )}
             <div className={styles.rowMeta}>
               <span>{award.issuer}</span>

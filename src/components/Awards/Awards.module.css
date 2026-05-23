@@ -35,7 +35,7 @@
 .row {
   display: grid;
   grid-template-columns: 4rem 1fr auto;
-  align-items: center;
+  align-items: start;
   gap: 1.6rem;
   padding: 1.8rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
@@ -79,13 +79,26 @@
   color: var(--orange);
 }
 
-.rowNameLink {
-  text-decoration: none;
-  color: inherit;
+.rowLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
 }
 
-.rowNameLink:hover {
+.rowLink {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
   color: var(--orange);
+  text-decoration: none;
+  border-bottom: 1px solid var(--orange-dim);
+  padding-bottom: 1px;
+  transition: opacity 0.22s;
+}
+
+.rowLink:hover {
+  opacity: 0.7;
 }
 
 .rowMeta {
