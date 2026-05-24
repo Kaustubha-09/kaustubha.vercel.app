@@ -79,7 +79,6 @@ export function VideoIntro() {
         className={styles.bgVideo}
         src="/hero.mp4"
         autoPlay
-        loop
         muted
         playsInline
         preload="auto"
@@ -98,18 +97,16 @@ export function VideoIntro() {
           className={styles.fgVideo}
           src="/hero.mp4"
           autoPlay
-          loop
           muted
           playsInline
           preload="auto"
+          onEnded={() => setPlaying(false)}
         />
         <div className={styles.fgGlow} />
       </div>
 
       {/* ── Content ───────────────────────────────────────────────────────── */}
       <div ref={contentRef} className={styles.content}>
-        <p data-enter className={styles.eyebrow}>Research Software Engineer</p>
-
         <h1 className={styles.name}>
           <span data-enter className={styles.nameFirst}>Kaustubha</span>
           <em   data-enter className={styles.nameLast}>Eluri</em>
