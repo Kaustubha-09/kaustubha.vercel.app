@@ -55,7 +55,7 @@ export function About() {
           <span data-about className={styles.eyebrow}>About</span>
 
           <span data-about className={styles.rolePill}>
-            Research SWE · AI/ML · Accessibility
+            Mobile & AI Systems Engineer
           </span>
 
           <h2 data-about className={styles.heading}>
@@ -63,11 +63,20 @@ export function About() {
           </h2>
 
           <p data-about className={styles.bio}>
-            I'm a Research Software Engineer at Smith-Kettlewell Eye Research Institute
-            working on AI-powered accessibility systems for blind and low-vision users.
-            M.S. Computer Science at Northeastern University (Silicon Valley), focused
-            on machine learning, generative AI, and accessible system design.
-            Featured by{' '}
+            I started my career designing buildings. Today, I design intelligent systems.
+          </p>
+
+          <p data-about className={styles.bio}>
+            My background in architectural engineering taught me how to think in structures —
+            how every component connects, supports, and scales. When I transitioned into
+            computer science at Northeastern University, my blueprints became algorithms,
+            APIs, and AI models — but the mindset stayed the same: build things that work
+            beautifully and reliably.
+          </p>
+
+          <p data-about className={styles.bio}>
+            Now, I&apos;m a Mobile &amp; AI Systems Engineer focused on building
+            production-ready, accessibility-first platforms. Featured by{' '}
             <a
               href="https://siliconvalley.northeastern.edu/kaustubha-eluri-aspiring-product-manager/"
               target="_blank"
