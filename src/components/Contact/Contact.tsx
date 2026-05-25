@@ -89,7 +89,7 @@ export function Contact() {
 
         {/* Portfolio */}
         <a
-          href="https://kaustubha-09.github.io/"
+          href="https://kaustubha.vercel.app/"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.socialBtn}
