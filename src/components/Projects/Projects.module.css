@@ -77,6 +77,30 @@
   background: rgba(255, 255, 255, 0.04);
 }
 
+/* Thumbnail at top of card — full-bleed to card edges */
+.cardThumb {
+  width: calc(100% + 2 * clamp(24px, 3vw, 40px));
+  height: clamp(140px, 18vh, 200px);
+  margin: calc(-1 * clamp(24px, 3vw, 40px)) calc(-1 * clamp(24px, 3vw, 40px)) 0;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  flex-shrink: 0;
+}
+
+.cardThumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.card:hover .cardThumb img {
+  transform: scale(1.03);
+}
+
 .cardHeader {
   display: flex;
   justify-content: space-between;

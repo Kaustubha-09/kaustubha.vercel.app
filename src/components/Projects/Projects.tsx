@@ -12,13 +12,14 @@ type Project = {
   bullets: string[];
   tech: string[];
   metric: string;
-  link?: string; // to be added once GitHub is ready
+  link?: string;
+  image?: string; // path relative to /public; rendered as card thumbnail
 };
 
 const PROJECTS: Project[] = [
   {
     name: 'HuskyMingle',
-    period: 'Jan 2024 – present',
+    period: 'Jan – Apr 2024',
     description: 'Campus social super-app for Northeastern: cross-platform Web, native Android, and native iOS clients against one backend.',
     bullets: [
       'Architected a polyglot stack: Next.js 15 + NestJS web, Kotlin + Jetpack Compose Android, Swift + SwiftUI iOS, all against a shared Postgres + JWT auth surface.',
@@ -29,6 +30,7 @@ const PROJECTS: Project[] = [
     tech: ['Next.js 15', 'NestJS', 'Postgres', 'Kotlin Compose', 'SwiftUI', 'Keychain', 'JWT'],
     metric: 'Hackathon winner · 4 repos · polyglot stack',
     link: 'https://github.com/Kaustubha-09/HuskyMingle',
+    image: '/projects/huskymingle.png',
   },
   {
     name: 'voya',
@@ -43,6 +45,7 @@ const PROJECTS: Project[] = [
     tech: ['Swift 5.9', 'SwiftUI', 'Combine', 'Keychain', 'CoreLocation', 'iOS 17+'],
     metric: '0 third-party deps · 11 features · 100 files',
     link: 'https://github.com/Kaustubha-09/voya',
+    image: '/projects/voya.png',
   },
   {
     name: 'Echolin.ai',
@@ -57,6 +60,7 @@ const PROJECTS: Project[] = [
     tech: ['React 19', 'TypeScript', 'Flask', 'PyTorch', 'Hugging Face Transformers', 'Supabase', 'OpenAI / GMI Cloud'],
     metric: '0.5s/image · 9 ADRs · honest scope',
     link: 'https://github.com/Kaustubha-09/Echolin.ai',
+    image: '/projects/echolin.png',
   },
   {
     name: 'RapidTriage',
@@ -71,6 +75,7 @@ const PROJECTS: Project[] = [
     tech: ['React Native', 'Expo', 'Go 1.23', 'multi-provider LLM', 'goroutines'],
     metric: '~3.7s response · 4 AI providers · safety-biased',
     link: 'https://github.com/Kaustubha-09/RapidTriage',
+    image: '/projects/rapidtriage.png',
   },
   {
     name: 'Semantic Diff Prompting',
@@ -85,6 +90,7 @@ const PROJECTS: Project[] = [
     tech: ['Python', 'GPT-4o', 'tiktoken', 'OpenCV', 'matplotlib'],
     metric: '50–70% token reduction · 18 unit tests',
     link: 'https://github.com/Kaustubha-09/SemanticVideoUnderstanding',
+    image: '/projects/semantic-diff.png',
   },
   {
     name: 'patient-intake-agent',
@@ -99,6 +105,7 @@ const PROJECTS: Project[] = [
     tech: ['Python 3.12', 'Poetry', 'GPT-4o', 'OpenAI function calling', 'Google Maps Geocoding'],
     metric: 'Single file · 2 modes · 2-layer safety gate',
     link: 'https://github.com/Kaustubha-09/patient-intake-agent',
+    image: '/projects/patient-intake.png',
   },
   {
     name: 'utility-ai-assistant',
@@ -113,6 +120,7 @@ const PROJECTS: Project[] = [
     tech: ['FastAPI', 'Streamlit', 'Gemini 2.5 Flash', 'scikit-learn TF-IDF', 'Python'],
     metric: '4 patterns · 0 vector DBs · 1-file vendor swap',
     link: 'https://github.com/Kaustubha-09/utility-ai-assistant',
+    image: '/projects/utility-ai.png',
   },
   {
     name: 'AIChatAssistant',
@@ -127,6 +135,7 @@ const PROJECTS: Project[] = [
     tech: ['Java 17', 'Material 3', 'Room', 'OkHttp', 'Retrofit', 'ViewBinding'],
     metric: '31 Java files · 3-layer clean arch · 0 Hilt',
     link: 'https://github.com/Kaustubha-09/AIChatAssistant',
+    image: '/projects/aichat.png',
   },
   {
     name: 'NEUQuest',
@@ -141,6 +150,7 @@ const PROJECTS: Project[] = [
     tech: ['Android Java', 'SwiftUI', 'Firebase', 'Gemini 1.5 Flash', 'Material 3'],
     metric: '2 clients · 1 backend · 30 unit tests',
     link: 'https://github.com/Kaustubha-09/NEUQuest',
+    image: '/projects/neuquest.png',
   },
   {
     name: 'Notification Urgency Classifier',
@@ -155,6 +165,7 @@ const PROJECTS: Project[] = [
     tech: ['NLP', 'TF-IDF', 'Naïve Bayes', 'DistilBART', 'scikit-learn'],
     metric: 'Accuracy 0.41 → 0.93',
     link: 'https://github.com/Kaustubha-09/notification_classifier',
+    image: '/projects/notification.png',
   },
   {
     name: 'Spambase',
@@ -169,6 +180,7 @@ const PROJECTS: Project[] = [
     tech: ['Python', 'scikit-learn', 'NLTK', 'NumPy', 'matplotlib'],
     metric: '4 models · 16 unit tests · 97% precision',
     link: 'https://github.com/Kaustubha-09/Spambase',
+    image: '/projects/spambase.png',
   },
   {
     name: 'CourseScheduling',
@@ -183,6 +195,7 @@ const PROJECTS: Project[] = [
     tech: ['Python', 'NetworkX', 'matplotlib', 'graph coloring', 'NP-completeness'],
     metric: '8 students × 7 courses → 3 slots · 13 unit tests',
     link: 'https://github.com/Kaustubha-09/CourseScheduling',
+    image: '/projects/coursescheduling.png',
   },
   {
     name: 'Gender Bias in Online Images — Research Review',
@@ -197,6 +210,7 @@ const PROJECTS: Project[] = [
     tech: ['Literature review', 'multimodal bias', 'NLP', 'computer vision', 'AI ethics'],
     metric: '15-slide class presentation · 5-person team',
     link: 'https://github.com/Kaustubha-09/GenderBiasStudy',
+    image: '/projects/genderbias.png',
   },
 ];
 
@@ -256,6 +270,12 @@ export function Projects() {
         {/* Project cards */}
         {PROJECTS.map(project => (
           <article key={project.name} className={styles.card}>
+            {project.image && (
+              <div className={styles.cardThumb}>
+                <img src={project.image} alt={`${project.name} screenshot`} loading="lazy" />
+              </div>
+            )}
+
             <div className={styles.cardHeader}>
               <span className={styles.cardYear}>{project.period}</span>
               {project.link ? (
