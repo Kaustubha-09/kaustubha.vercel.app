@@ -46,7 +46,7 @@ const PROJECTS: Project[] = [
   },
   {
     name: 'Echolin.ai',
-    period: 'Jan – Mar 2026',
+    period: 'Jun – Jul 2025',
     description: 'Deepfake detection platform — React 19 + Flask + PyTorch Vision Transformer with optional LLM-generated explanations.',
     bullets: [
       'Pretrained ViT (`ashish-001/deepfake-detection-using-ViT` via Hugging Face) loaded as a module-level singleton; image pipeline runs at ~0.5s/image on CPU with no warm-up cost.',
@@ -106,10 +106,9 @@ const PROJECTS: Project[] = [
     description: 'Four production-grade LLM-app patterns in one small codebase: MCP-style tool calling · TF-IDF RAG · keyword routing · grounded synthesis.',
     bullets: [
       'Two surfaces (FastAPI REST + Streamlit chat) share one router/tools/RAG/LLM core — same code, two presentation skins.',
-      'Keyword router instead of LLM classifier: auditable, near-zero-latency, free. When something misroutes you can read the score and know exactly why — LLM routers are black boxes.',
-      'TF-IDF retrieval (not embeddings) over a 7-section policy corpus — no embedding API, no vector DB, no warm-up cost. Same retrieval contract scales to FAISS later.',
+      'Keyword router (not LLM classifier) + TF-IDF retrieval (not embeddings) — auditable, near-zero-latency, free, and scales to FAISS without changing the contract.',
       'Explicit `CONFIDENCE: HIGH/MEDIUM/LOW` parsed from every LLM response and surfaced as a color-coded badge — `LOW` confidence is a first-class reachable state, not a fabricated answer.',
-      'Vendor swap (Anthropic → Gemini 2.5 Flash) was a one-file diff because `llm.py` is the boundary. Mock mode runs every code path except the actual LLM call.',
+      'Vendor swap (Anthropic → Gemini 2.5 Flash) was a one-file diff because `llm.py` is the boundary; mock mode runs every code path except the LLM call.',
     ],
     tech: ['FastAPI', 'Streamlit', 'Gemini 2.5 Flash', 'scikit-learn TF-IDF', 'Python'],
     metric: '4 patterns · 0 vector DBs · 1-file vendor swap',
@@ -159,7 +158,7 @@ const PROJECTS: Project[] = [
   },
   {
     name: 'Spambase',
-    period: 'Oct – Dec 2024',
+    period: 'Oct – Nov 2023',
     description: 'Four-model spam-classification study — hand-rolled Naive Bayes vs. scikit-learn Bernoulli NB / Logistic Regression / SVM.',
     bullets: [
       'Manual Naïve Bayes with log-space arithmetic (numerical stability under ~10,000 token multiplications) and Laplace smoothing (handles unseen tokens) — the algorithm is the lesson.',
