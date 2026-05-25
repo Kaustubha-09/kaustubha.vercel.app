@@ -171,6 +171,34 @@ const PROJECTS: Project[] = [
     metric: '4 models · 16 unit tests · 97% precision',
     link: 'https://github.com/Kaustubha-09/Spambase',
   },
+  {
+    name: 'CourseScheduling',
+    period: 'Mar – Apr 2024',
+    description: 'CS 5002 group project — university course scheduling modeled as a graph coloring problem in Python + NetworkX.',
+    bullets: [
+      'Modeled student-course conflicts as a graph: courses are vertices, an edge between two courses means at least one shared student. A valid k-coloring = a conflict-free k-slot timetable.',
+      'Implemented `is_valid_coloring` (no-adjacent-same-color invariant) and `greedy_coloring` (smallest-available-color heuristic) from scratch; cross-checked against `networkx.greedy_color`.',
+      '5-person team (Yao Chong Chow, Kaustubha Eluri, Yuneng Li, Jonathan Mowat, Nicholas Ung). Authored the 8-page written report; contributed to the 21-slide class presentation.',
+      'Honestly documented limitations: greedy is a heuristic, not optimal; backtracking and genetic algorithms named as next-step approaches in the conclusion.',
+    ],
+    tech: ['Python', 'NetworkX', 'matplotlib', 'graph coloring', 'NP-completeness'],
+    metric: '8 students × 7 courses → 3 slots · 13 unit tests',
+    link: 'https://github.com/Kaustubha-09/CourseScheduling',
+  },
+  {
+    name: 'Gender Bias in Online Images — Research Review',
+    period: 'Jan – Apr 2024',
+    description: 'CS 5002 group research-review presentation of Guilbeault et al. 2024 (Nature) — "Online images amplify gender bias."',
+    bullets: [
+      'Read, synthesized, and presented Guilbeault et al. 2024 (Nature) on multimodal gender-bias measurement.',
+      'Walked an audience through the paper\'s methodology: WordNet category sourcing, Google + Wikipedia image scraping, OpenCV face extraction, MTurk gender classification, word-embedding gender-direction scoring, and a Prolific-recruited IAT experiment.',
+      'Discussed implications for AI/ML responsible-AI work, text-to-image generation safety, and multimodal content moderation.',
+      'Honest framing: this is a literature-review presentation, not original research. The bias-measurement methodology in the slides is from the paper, not implemented by the team.',
+    ],
+    tech: ['Literature review', 'multimodal bias', 'NLP', 'computer vision', 'AI ethics'],
+    metric: '15-slide class presentation · 5-person team',
+    link: 'https://github.com/Kaustubha-09/GenderBiasStudy',
+  },
 ];
 
 export function Projects() {
