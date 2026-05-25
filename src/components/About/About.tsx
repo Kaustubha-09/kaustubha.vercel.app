@@ -8,6 +8,44 @@ import styles from './About.module.css';
 
 const SKILLS = ['Python', 'PyTorch', 'React', 'Android', 'FastAPI', 'WCAG AA+'];
 
+type CourseGroup = { label: string; courses: string[] };
+
+const COURSEWORK: CourseGroup[] = [
+  {
+    label: 'Bridge',
+    courses: [
+      'CS 5001 Intensive Foundations of CS',
+      'CS 5002 Discrete Structures',
+      'CS 5004 Object-Oriented Design',
+      'CS 5008 Data Structures & Algorithms in Systems',
+    ],
+  },
+  {
+    label: 'Core',
+    courses: ['CS 5800 Algorithms'],
+  },
+  {
+    label: 'Breadth',
+    courses: [
+      'CS 5520 Mobile Application Development',
+      'CS 5610 Web Development',
+    ],
+  },
+  {
+    label: 'AI / Systems',
+    courses: [
+      'CS 5100 Foundations of Artificial Intelligence',
+      'CS 6140 Machine Learning',
+      'CS 6180 Foundations of Generative AI',
+      'CS 6620 Fundamentals of Cloud Computing',
+    ],
+  },
+  {
+    label: 'Co-op',
+    courses: ['CS 6954 Work Experience'],
+  },
+];
+
 export function About() {
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -103,6 +141,26 @@ export function About() {
               <span className={styles.eduInstitution}>JNAFAU</span>
               <span className={styles.eduDegree}>B.Tech Architectural Engineering · 2017–2021</span>
             </div>
+          </div>
+
+          {/* NEU Coursework */}
+          <div data-about className={styles.coursework}>
+            <span className={styles.courseworkEyebrow}>NEU M.S. coursework</span>
+            <div className={styles.courseGroups}>
+              {COURSEWORK.map(group => (
+                <div key={group.label} className={styles.courseGroup}>
+                  <span className={styles.courseGroupLabel}>{group.label}</span>
+                  <div className={styles.courseChips}>
+                    {group.courses.map(c => (
+                      <span key={c} className={styles.courseChip}>{c}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className={styles.courseworkFocus}>
+              Focused on AI/ML, Generative AI, mobile &amp; web development, cloud computing, and scalable system design.
+            </p>
           </div>
         </div>
 

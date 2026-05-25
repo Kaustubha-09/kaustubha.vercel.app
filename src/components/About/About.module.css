@@ -154,6 +154,68 @@
   color: rgba(255, 255, 255, 0.35);
 }
 
+/* NEU Coursework */
+.coursework {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.courseworkEyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.courseGroups {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.courseGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.courseGroupLabel {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+.courseChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.courseChip {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 400;
+  padding: 0.32rem 0.62rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.courseworkFocus {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0.4rem 0 0;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .inner {
