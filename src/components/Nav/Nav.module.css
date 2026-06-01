@@ -10,6 +10,21 @@
   padding: 1.4rem clamp(24px, 6vw, 80px);
   border-bottom: 1px solid transparent;
   background: transparent;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.navScrolled {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+  background: rgba(7, 6, 10, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.navMenuOpen {
+  background: transparent;
+  border-bottom-color: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .logo {
@@ -21,7 +36,7 @@
   letter-spacing: -0.02em;
   line-height: 1;
   position: relative;
-  z-index: 1001;
+  z-index: 1102;
 }
 
 .links {
@@ -46,7 +61,7 @@
   color: var(--orange);
 }
 
-/* ── Hamburger button ─────────────────────────────────────────────────────── */
+/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -56,7 +71,7 @@
   border: none;
   cursor: pointer;
   padding: 6px;
-  z-index: 1001;
+  z-index: 1102;
   position: relative;
 }
 
@@ -64,57 +79,74 @@
   display: block;
   width: 22px;
   height: 1.5px;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.9);
   transition: transform 0.3s ease, opacity 0.3s ease;
   transform-origin: center;
 }
 
-.hamburgerOpen span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-.hamburgerOpen span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.hamburgerOpen span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.hamburgerOpen span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
 
-/* ── Mobile full-screen drawer ────────────────────────────────────────────── */
+.hamburgerOpen span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburgerOpen span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* Full-screen drawer — portaled to body so fixed positioning is never trapped in nav */
 .drawer {
   position: fixed;
   inset: 0;
-  background: rgba(7, 6, 10, 0.96);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  z-index: 999;
+  z-index: 1100;
+  background: var(--bg);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.28s ease, visibility 0.28s ease;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .drawerOpen {
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
 }
 
 .drawer ul {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: clamp(80px, 14vh, 120px) clamp(24px, 6vw, 48px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.4rem;
+  justify-content: center;
+  gap: clamp(1.6rem, 4vh, 2.4rem);
+  width: 100%;
+  max-height: 100%;
+  overflow-y: auto;
 }
 
 .drawerLink {
   font-family: var(--font-display);
   font-weight: 300;
-  font-size: 2.4rem;
+  font-size: clamp(2rem, 8vw, 2.6rem);
   letter-spacing: -0.01em;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.88);
   text-decoration: none;
   transition: color 0.22s;
+  text-align: center;
 }
 
-.drawerLink:hover {
+.drawerLink:hover,
+.drawerLink:focus-visible {
   color: var(--orange);
 }
 

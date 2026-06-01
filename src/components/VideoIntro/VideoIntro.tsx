@@ -54,6 +54,25 @@ export function VideoIntro() {
     return () => clearTimeout(timer);
   }, []);
 
+  // iOS / mobile: programmatic play (autoplay attribute alone is unreliable)
+  useEffect(() => {
+    const tryPlay = (el: HTMLVideoElement | null) => {
+      if (!el) return;
+      el.play().catch(() => {});
+    };
+    tryPlay(bgVideoRef.current);
+    tryPlay(fgVideoRef.current);
+
+    const onVisibility = () => {
+      if (document.visibilityState === 'visible') {
+        tryPlay(bgVideoRef.current);
+        tryPlay(fgVideoRef.current);
+      }
+    };
+    document.addEventListener('visibilitychange', onVisibility);
+    return () => document.removeEventListener('visibilitychange', onVisibility);
+  }, []);
+
   // ── Controls ───────────────────────────────────────────────────────────────
   const toggleMute = () => {
     const next = !muted;
@@ -80,8 +99,10 @@ export function VideoIntro() {
         src="/hero.mp4"
         autoPlay
         muted
+        loop
         playsInline
         preload="auto"
+        aria-hidden
       />
 
       {/* ── Dark gradient overlay ─────────────────────────────────────────── */}
@@ -98,9 +119,9 @@ export function VideoIntro() {
           src="/hero.mp4"
           autoPlay
           muted
+          loop
           playsInline
           preload="auto"
-          onEnded={() => setPlaying(false)}
         />
         <div className={styles.fgGlow} />
       </div>

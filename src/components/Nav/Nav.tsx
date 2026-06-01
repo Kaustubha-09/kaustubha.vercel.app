@@ -1,79 +1,107 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { createPortal } from 'react-dom';
 import styles from './Nav.module.css';
 
 const LINKS = ['About', 'Experience', 'Projects', 'Awards', 'Leadership', 'Contact'];
 
 export function Nav() {
-  const navRef  = useRef<HTMLElement>(null);
+  const navRef = useRef<HTMLElement>(null);
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const ctx = gsap.context(() => {
-      gsap.to(navRef.current, {
-        borderBottomColor: 'rgba(255,255,255,0.08)',
-        backgroundColor: 'rgba(7,6,10,0.82)',
-        backdropFilter: 'blur(20px)',
-        duration: 0,
-        scrollTrigger: {
-          trigger: document.body,
-          start: '80px top',
-          toggleActions: 'play none none reverse',
-        },
-      });
-    }, navRef);
-    return () => ctx.revert();
+    setMounted(true);
   }, []);
 
   useEffect(() => {
-    const onResize = () => { if (window.innerWidth > 640) setIsOpen(false); };
+    const onScroll = () => setScrolled(window.scrollY > 48);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth > 640) setIsOpen(false);
+    };
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
   }, []);
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, [isOpen]);
 
   const close = () => setIsOpen(false);
 
+  const drawer = mounted
+    ? createPortal(
+        <div
+          id="mobile-nav-drawer"
+          className={`${styles.drawer} ${isOpen ? styles.drawerOpen : ''}`}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Site navigation"
+          aria-hidden={!isOpen}
+        >
+          <ul role="list">
+            {LINKS.map(label => (
+              <li key={label}>
+                <a
+                  href={`#${label.toLowerCase()}`}
+                  className={styles.drawerLink}
+                  onClick={close}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>,
+        document.body,
+      )
+    : null;
+
   return (
-    <nav ref={navRef} className={styles.nav} aria-label="Primary navigation">
-      <a href="#" className={styles.logo} aria-label="Back to top">KE</a>
-
-      <ul className={styles.links} role="list">
-        {LINKS.map(label => (
-          <li key={label}>
-            <a href={`#${label.toLowerCase()}`} className={styles.link}>{label}</a>
-          </li>
-        ))}
-      </ul>
-
-      <button
-        className={`${styles.hamburger} ${isOpen ? styles.hamburgerOpen : ''}`}
-        onClick={() => setIsOpen(o => !o)}
-        aria-label={isOpen ? 'Close menu' : 'Open menu'}
-        aria-expanded={isOpen}
+    <>
+      <nav
+        ref={navRef}
+        className={`${styles.nav} ${scrolled ? styles.navScrolled : ''} ${isOpen ? styles.navMenuOpen : ''}`}
+        aria-label="Primary navigation"
       >
-        <span /><span /><span />
-      </button>
+        <a href="#" className={styles.logo} aria-label="Back to top" onClick={close}>
+          KE
+        </a>
 
-      <div className={`${styles.drawer} ${isOpen ? styles.drawerOpen : ''}`} aria-hidden={!isOpen}>
-        <ul role="list">
+        <ul className={styles.links} role="list">
           {LINKS.map(label => (
             <li key={label}>
-              <a href={`#${label.toLowerCase()}`} className={styles.drawerLink} onClick={close}>
+              <a href={`#${label.toLowerCase()}`} className={styles.link}>
                 {label}
               </a>
             </li>
           ))}
         </ul>
-      </div>
-    </nav>
+
+        <button
+          type="button"
+          className={`${styles.hamburger} ${isOpen ? styles.hamburgerOpen : ''}`}
+          onClick={() => setIsOpen(o => !o)}
+          aria-label={isOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={isOpen}
+          aria-controls="mobile-nav-drawer"
+        >
+          <span /><span /><span />
+        </button>
+      </nav>
+
+      {drawer}
+    </>
   );
 }

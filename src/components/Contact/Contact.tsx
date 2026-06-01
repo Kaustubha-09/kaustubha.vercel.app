@@ -37,21 +37,10 @@ export function Contact() {
         <em>something.</em>
       </h2>
 
-      <a
-        data-contact
-        href="mailto:kaustubha.ev@gmail.com"
-        className={styles.emailLink}
-        aria-label="Send email to Kaustubha"
-      >
-        kaustubha.ev@gmail.com
-      </a>
-
       <div data-contact className={styles.meta}>
         <a href="tel:6692046927" className={styles.metaLink}>669-204-6927</a>
         <span className={styles.metaDot} aria-hidden="true">·</span>
         <span className={styles.metaText}>San Jose, CA</span>
-        <span className={styles.metaDot} aria-hidden="true">·</span>
-        <span className={styles.metaText}>U.S. Citizen</span>
       </div>
 
       <div data-contact className={styles.formWrapper}>

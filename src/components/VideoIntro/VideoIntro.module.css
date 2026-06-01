@@ -260,24 +260,80 @@
 
 /* ── Responsive ───────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
+  .section {
+    min-height: 100svh;
+    align-items: flex-start;
+    padding-top: 5.5rem;
+  }
+
+  .bgVideo {
+    filter: blur(18px) brightness(0.42) saturate(1.25);
+  }
+
+  .overlay {
+    background:
+      radial-gradient(ellipse 90% 60% at 50% 85%, rgba(255, 120, 30, 0.12) 0%, transparent 65%),
+      linear-gradient(to bottom, rgba(7, 6, 10, 0.72) 0%, rgba(7, 6, 10, 0.35) 45%, rgba(7, 6, 10, 0.88) 100%);
+  }
+
   .fgWrapper {
-    right: 0;
-    width: 60vw;
-    opacity: 0.35;
+    left: 50%;
+    right: auto;
+    bottom: 4.5rem;
+    transform: translateX(-50%);
+    width: min(78vw, 320px);
+    height: min(48vh, 420px);
+    opacity: 1;
+  }
+
+  .fgVideo {
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, black 18%);
+    mask-image: linear-gradient(to top, transparent 0%, black 18%);
   }
 
   .content {
-    max-width: 85%;
+    max-width: 100%;
+    width: 100%;
     padding-left: clamp(20px, 6vw, 40px);
+    padding-right: clamp(20px, 6vw, 40px);
+    padding-bottom: min(48vh, 420px);
+  }
+
+  .name {
+    margin-bottom: 1rem;
+  }
+
+  .tagline {
+    margin-bottom: 1.25rem;
+  }
+
+  .controls {
+    bottom: 1.4rem;
+    right: 1rem;
+  }
+
+  .scrollIndicator {
+    bottom: 1.2rem;
+  }
+
+  .tapBadge {
+    bottom: 4.8rem;
   }
 }
 
 @media (max-width: 480px) {
   .fgWrapper {
-    display: none;
+    width: min(88vw, 300px);
+    height: min(44vh, 380px);
+    bottom: 4rem;
   }
 
   .content {
-    max-width: 92%;
+    padding-bottom: min(44vh, 380px);
+  }
+
+  .nameFirst,
+  .nameLast {
+    font-size: clamp(2.6rem, 12vw, 3.6rem);
   }
 }

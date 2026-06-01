@@ -218,14 +218,27 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .section {
+    align-items: flex-start;
+  }
+
   .inner {
     grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .portraitCol {
+    width: 100%;
+    order: -1;
   }
 
   .portrait {
-    max-width: 220px;
+    width: 220px;
+    max-width: 72vw;
+    margin: 0 auto;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
+    min-height: 220px;
   }
 
   .portraitInitials {

@@ -22,45 +22,13 @@
   color: var(--orange);
 }
 
-/* Email link */
-.emailLink {
-  font-family: var(--font-mono);
-  font-size: clamp(0.85rem, 1.4vw, 1.05rem);
-  color: rgba(255, 255, 255, 0.65);
-  text-decoration: none;
-  position: relative;
-  padding-bottom: 2px;
-  transition: color 0.22s;
-}
-
-.emailLink::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: var(--orange);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
-
-.emailLink:hover {
-  color: var(--orange);
-}
-
-.emailLink:hover::after {
-  transform: scaleX(1);
-}
-
 /* Phone / location meta */
 .meta {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: 0.9rem;
+  margin: -1.5rem 0 2.5rem;
   font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.08em;

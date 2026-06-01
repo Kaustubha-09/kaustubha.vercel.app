@@ -73,8 +73,8 @@ export function About() {
     <section id="about" ref={sectionRef} className={styles.section}>
       <div className={styles.inner}>
 
-        {/* Portrait */}
-        <div data-about className={styles.portraitCol}>
+        {/* Portrait — always visible; not tied to scroll fade (mobile-safe) */}
+        <div className={styles.portraitCol}>
           <div className={styles.portrait}>
             <Image
               src="/portrait.jpg"
