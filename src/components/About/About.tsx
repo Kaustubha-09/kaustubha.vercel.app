@@ -135,7 +135,7 @@ export function About() {
           <div data-about className={styles.eduRow}>
             <div className={styles.eduItem}>
               <span className={styles.eduInstitution}>Northeastern University</span>
-              <span className={styles.eduDegree}>M.S. Computer Science · 2023–2025</span>
+              <span className={styles.eduDegree}>M.S. Computer Science · 2023–2026</span>
             </div>
             <div className={styles.eduItem}>
               <span className={styles.eduInstitution}>JNAFAU</span>
