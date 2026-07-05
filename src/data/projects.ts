@@ -18,6 +18,24 @@ export const PROJECT_CATEGORIES: ProjectCategory[] = ['Mobile', 'AI', 'Research'
 /** Copy sourced from each repo's README (Resume Bullets / portfolio framing). */
 export const PROJECTS: Project[] = [
   {
+    name: 'LifeLaw',
+    period: 'Jul 2026',
+    category: 'AI',
+    tagline: 'Retrieval is real, synthesis is structured — no LLM freewheeling in the answer path.',
+    featured: true,
+    description:
+      'Personalized legal intelligence platform — Next.js 15 + FastAPI + pgvector RAG, live Congress.gov/LegiScan bill feeds, and a weekly email digest via Resend.',
+    bullets: [
+      'Built a jurisdiction-aware legal feed pulling live federal bills (Congress.gov) and state bills (LegiScan, all 50 states + DC), auto-tagged against user profile categories.',
+      'Designed a hallucination-free Q&A engine: free local sentence-transformer embeddings + pgvector cosine retrieval, with answers assembled from retrieved structured fields instead of LLM-generated text.',
+      'Shipped a weekly email digest (Resend) computing new-since-last-send feed items per profile, with HTML-escaping on all upstream bill content before it reaches an inbox.',
+      'Found and fixed a real httpx bug where dict-based query params silently broke Congress.gov\'s sort order by urlencoding a literal `+` to `%2B`.',
+    ],
+    tech: ['Next.js 15', 'FastAPI', 'PostgreSQL', 'pgvector', 'sentence-transformers', 'Resend'],
+    link: 'https://github.com/Kaustubha-09/legal-impact-ai',
+    image: '/projects/lifelaw.png',
+  },
+  {
     name: 'HuskyMingle',
     period: 'Jan – Apr 2024',
     category: 'Campus',
