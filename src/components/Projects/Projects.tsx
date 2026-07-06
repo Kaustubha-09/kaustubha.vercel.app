@@ -45,16 +45,28 @@ function ProjectTile({
             <span key={t} className={styles.chip}>{t}</span>
           ))}
         </div>
-        {project.link && (
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.repoLink}
-          >
-            View repo →
-          </a>
-        )}
+        <div className={styles.linkRow}>
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.repoLink}
+            >
+              View repo →
+            </a>
+          )}
+          {project.paper && (
+            <a
+              href={project.paper}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.repoLink}
+            >
+              Read paper →
+            </a>
+          )}
+        </div>
       </div>
     </article>
   );

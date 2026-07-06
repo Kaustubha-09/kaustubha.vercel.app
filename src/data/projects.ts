@@ -11,6 +11,7 @@ export type Project = {
   tech: string[];
   link?: string;
   image?: string;
+  paper?: string;
 };
 
 export const PROJECT_CATEGORIES: ProjectCategory[] = ['Mobile', 'AI', 'Research', 'Campus'];
@@ -34,6 +35,7 @@ export const PROJECTS: Project[] = [
     tech: ['Next.js 15', 'FastAPI', 'PostgreSQL', 'pgvector', 'sentence-transformers', 'Resend'],
     link: 'https://github.com/Kaustubha-09/legal-impact-ai',
     image: '/projects/lifelaw.png',
+    paper: '/papers/LifeLaw.pdf',
   },
   {
     name: 'ResumeForge',
@@ -52,6 +54,7 @@ export const PROJECTS: Project[] = [
     tech: ['Next.js 15', 'TypeScript', 'Ollama', 'Groq', 'Tectonic'],
     link: 'https://github.com/Kaustubha-09/resume-forge',
     image: '/projects/resumeforge.png',
+    paper: '/papers/ResumeForge.pdf',
   },
   {
     name: 'HuskyMingle',
@@ -70,6 +73,7 @@ export const PROJECTS: Project[] = [
     tech: ['Next.js 15', 'NestJS', 'PostgreSQL', 'Redis', 'Kotlin', 'SwiftUI'],
     link: 'https://github.com/Kaustubha-09/HuskyMingle',
     image: '/projects/huskymingle.png',
+    paper: '/papers/HuskyMingle.pdf',
   },
   {
     name: 'voya',
@@ -88,6 +92,7 @@ export const PROJECTS: Project[] = [
     tech: ['Swift 5.9', 'SwiftUI', 'Combine', 'Keychain', 'CoreLocation'],
     link: 'https://github.com/Kaustubha-09/voya',
     image: '/projects/voya.png',
+    paper: '/papers/voya.pdf',
   },
   {
     name: 'Echolin.ai',
@@ -106,6 +111,7 @@ export const PROJECTS: Project[] = [
     tech: ['React 19', 'Flask', 'PyTorch', 'Supabase', 'OpenCV'],
     link: 'https://github.com/Kaustubha-09/Echolin.ai',
     image: '/projects/echolin.png',
+    paper: '/papers/Echolin.ai.pdf',
   },
   {
     name: 'RapidTriage',
@@ -123,6 +129,7 @@ export const PROJECTS: Project[] = [
     tech: ['React Native', 'Expo', 'Go 1.23', 'Gemini', 'Claude', 'OpenAI'],
     link: 'https://github.com/Kaustubha-09/RapidTriage',
     image: '/projects/rapidtriage.png',
+    paper: '/papers/RapidTriage.pdf',
   },
   {
     name: 'Semantic Diff Prompting',
@@ -140,6 +147,7 @@ export const PROJECTS: Project[] = [
     tech: ['Python', 'GPT-4o', 'tiktoken', 'OpenCV'],
     link: 'https://github.com/Kaustubha-09/SemanticVideoUnderstanding',
     image: '/projects/semantic-diff.png',
+    paper: '/papers/SemanticVideoUnderstanding.pdf',
   },
   {
     name: 'patient-intake-agent',
@@ -157,6 +165,7 @@ export const PROJECTS: Project[] = [
     tech: ['Python 3.12', 'GPT-4o', 'Google Maps', 'Poetry'],
     link: 'https://github.com/Kaustubha-09/patient-intake-agent',
     image: '/projects/patient-intake.png',
+    paper: '/papers/PatientIntakeAgent.pdf',
   },
   {
     name: 'utility-ai-assistant',
@@ -174,6 +183,7 @@ export const PROJECTS: Project[] = [
     tech: ['FastAPI', 'Streamlit', 'Gemini 2.5', 'scikit-learn'],
     link: 'https://github.com/Kaustubha-09/utility-ai-assistant',
     image: '/projects/utility-ai.png',
+    paper: '/papers/UtilityAIAssistant.pdf',
   },
   {
     name: 'AIChatAssistant',
@@ -191,6 +201,7 @@ export const PROJECTS: Project[] = [
     tech: ['Java 17', 'Material 3', 'Room', 'OkHttp', 'Retrofit'],
     link: 'https://github.com/Kaustubha-09/AIChatAssistant',
     image: '/projects/aichat.png',
+    paper: '/papers/AIChatAssistant.pdf',
   },
   {
     name: 'NEUQuest',
@@ -208,6 +219,7 @@ export const PROJECTS: Project[] = [
     tech: ['Android', 'SwiftUI', 'Firebase', 'Gemini 1.5 Flash'],
     link: 'https://github.com/Kaustubha-09/NEUQuest',
     image: '/projects/neuquest.png',
+    paper: '/papers/NEUQuest.pdf',
   },
   {
     name: 'Notification Urgency Classifier',
@@ -225,6 +237,7 @@ export const PROJECTS: Project[] = [
     tech: ['Python', 'scikit-learn', 'TF-IDF', 'DistilBART', 'HuggingFace'],
     link: 'https://github.com/Kaustubha-09/notification_classifier',
     image: '/projects/notification.png',
+    paper: '/papers/NotificationClassifier.pdf',
   },
   {
     name: 'Spambase',
@@ -242,6 +255,7 @@ export const PROJECTS: Project[] = [
     tech: ['Python', 'scikit-learn', 'NLTK', 'matplotlib'],
     link: 'https://github.com/Kaustubha-09/Spambase',
     image: '/projects/spambase.png',
+    paper: '/papers/Spambase.pdf',
   },
   {
     name: 'CourseScheduling',
@@ -259,6 +273,7 @@ export const PROJECTS: Project[] = [
     tech: ['Python', 'NetworkX', 'graph coloring'],
     link: 'https://github.com/Kaustubha-09/CourseScheduling',
     image: '/projects/coursescheduling.png',
+    paper: '/papers/CourseScheduling.pdf',
   },
   {
     name: 'Gender Bias in Online Images',
@@ -276,6 +291,7 @@ export const PROJECTS: Project[] = [
     tech: ['Literature review', 'multimodal bias', 'AI ethics'],
     link: 'https://github.com/Kaustubha-09/GenderBiasStudy',
     image: '/projects/genderbias.png',
+    paper: '/papers/GenderBiasStudy.pdf',
   },
 ];
 
