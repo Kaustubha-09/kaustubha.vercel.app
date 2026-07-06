@@ -36,6 +36,24 @@ export const PROJECTS: Project[] = [
     image: '/projects/lifelaw.png',
   },
   {
+    name: 'ResumeForge',
+    period: 'Jul 2026',
+    category: 'AI',
+    tagline: 'Tailor the truth, win the interview — resume generation grounded only in what you actually did.',
+    featured: true,
+    description:
+      'Local-first resume tailoring tool — Next.js 15, dual LLM backends (local Ollama or cloud Groq), server-side PDF export via Tectonic, and ATS keyword scoring.',
+    bullets: [
+      'Built a resume tailoring pipeline that generates ATS-ready one-page drafts from a single saved master resume, instructed to draw only from real experience with no invented metrics or titles.',
+      'Wired dual LLM backends — local Ollama for full privacy, opt-in Groq API for ~3s generation instead of a minute-plus — switching automatically based on whether an API key is configured.',
+      'Shipped server-side PDF export via Tectonic (a self-contained LaTeX engine), fixing a paragraph-escaping bug where a naive two-pass regex produced invalid LaTeX on any input with a blank-line paragraph break.',
+      'Found and fixed a history-restore bug via a full QA pass: clicking a saved application only updated the resume output, leaving the Company/Role fields and heading showing the previous entry.',
+    ],
+    tech: ['Next.js 15', 'TypeScript', 'Ollama', 'Groq', 'Tectonic'],
+    link: 'https://github.com/Kaustubha-09/resume-forge',
+    image: '/projects/resumeforge.png',
+  },
+  {
     name: 'HuskyMingle',
     period: 'Jan – Apr 2024',
     category: 'Campus',
