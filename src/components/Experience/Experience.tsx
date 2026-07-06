@@ -13,6 +13,7 @@ type Entry = {
   badge?: string;
   bullets: string[];
   metrics: string[];
+  paper?: string;
 };
 
 const ENTRIES: Entry[] = [
@@ -29,6 +30,7 @@ const ENTRIES: Entry[] = [
       'Conducted usability sessions with 25 BVI users, reducing task time for common actions by 28%.',
     ],
     metrics: ['40+ BLV pilot users', '15% faster page loads', '20% higher 30-day retention'],
+    paper: '/papers/SKERI_YouDescribeX.pdf',
   },
   {
     period: 'May 2025 – Nov 2025',
@@ -44,6 +46,7 @@ const ENTRIES: Entry[] = [
       'Developed monitoring dashboards to track agent execution and system health, reducing MTTR by 30%.',
     ],
     metrics: ['4 production microservices', '99.9% uptime', '~120 hrs/quarter saved'],
+    paper: '/papers/Evenness_AgenticAI.pdf',
   },
   {
     period: 'Sep 2024 – Aug 2025',
@@ -57,6 +60,7 @@ const ENTRIES: Entry[] = [
       'Redesigned two major assignments aligned with industry patterns (offline-first design, push notifications), increasing completion rates by 12 percentage points.',
     ],
     metrics: ['30+ students mentored', '40% faster grading', '90% project completion'],
+    paper: '/papers/NEU_TA_MobileDev.pdf',
   },
   {
     period: 'Dec 2023 – Jul 2024',
@@ -70,6 +74,7 @@ const ENTRIES: Entry[] = [
       'Translated user feedback and product requirements into shipped functionality for an AI-powered internship-matching platform used by 200+ fellows.',
     ],
     metrics: ['~400ms startup improvement', '35% crash reduction', '6 production releases'],
+    paper: '/papers/FolioWorks_ProductEngineering.pdf',
   },
   {
     period: 'Nov 2020 – Mar 2022',
@@ -81,6 +86,7 @@ const ENTRIES: Entry[] = [
       'Promoted from intern to full-time engineer within 12 months.',
     ],
     metrics: ['12+ BIM models', '99% spec accuracy', 'Promoted in 12 months'],
+    paper: '/papers/BimgrafX_BIM.pdf',
   },
 ];
 
@@ -147,6 +153,17 @@ export function Experience() {
                 <span key={m} className={styles.metric}>{m}</span>
               ))}
             </div>
+
+            {entry.paper && (
+              <a
+                href={entry.paper}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.paperLink}
+              >
+                Read case study →
+              </a>
+            )}
           </div>
         ))}
       </div>

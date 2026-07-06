@@ -165,3 +165,19 @@
   border-radius: 4px;
   padding: 0.25em 0.7em;
 }
+
+.paperLink {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange);
+  text-decoration: none;
+  margin-top: 0.75rem;
+  transition: opacity 0.2s;
+}
+
+.paperLink:hover {
+  opacity: 0.75;
+}
