@@ -3,14 +3,10 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import {
-  FEATURED_PROJECTS,
-  GRID_PROJECTS,
-  type Project,
-} from '@/data/projects';
+import { PROJECTS, type Project } from '@/data/projects';
 import styles from './Projects.module.css';
 
-function HeroCard({
+function ProjectTile({
   project,
   innerRef,
 }: {
@@ -18,75 +14,19 @@ function HeroCard({
   innerRef?: (el: HTMLElement | null) => void;
 }) {
   return (
-    <article ref={innerRef} className={styles.heroCard}>
+    <article ref={innerRef} className={styles.tile} data-cat={project.category}>
       {project.image && project.link && (
         <a
           href={project.link}
           target="_blank"
           rel="noopener noreferrer"
-          className={styles.heroImgWrap}
-          aria-label={`${project.name} on GitHub`}
-        >
-          <img src={project.image} alt="" className={styles.heroImg} loading="lazy" />
-          <span className={styles.heroBadge}>Featured</span>
-        </a>
-      )}
-      <div className={styles.heroBody}>
-        <div className={styles.meta}>
-          <span className={styles.period}>{project.period}</span>
-          <span className={styles.catTag} data-cat={project.category}>
-            {project.category}
-          </span>
-        </div>
-        <h3 className={styles.name}>{project.name}</h3>
-        <p className={styles.tagline}>{project.tagline}</p>
-        <p className={styles.description}>{project.description}</p>
-        <ul className={styles.bullets}>
-          {project.bullets.slice(0, 3).map((b, j) => (
-            <li key={j}>{b}</li>
-          ))}
-        </ul>
-        <div className={styles.tech}>
-          {project.tech.map(t => (
-            <span key={t} className={styles.chip}>{t}</span>
-          ))}
-        </div>
-        {project.link && (
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.repoLink}
-          >
-            View repo →
-          </a>
-        )}
-      </div>
-    </article>
-  );
-}
-
-function CompactCard({
-  project,
-  innerRef,
-}: {
-  project: Project;
-  innerRef?: (el: HTMLElement | null) => void;
-}) {
-  return (
-    <article ref={innerRef} className={styles.compactCard} data-cat={project.category}>
-      {project.image && project.link && (
-        <a
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.compactThumb}
+          className={styles.tileThumb}
           aria-label={`${project.name} on GitHub`}
         >
           <img src={project.image} alt="" loading="lazy" />
         </a>
       )}
-      <div className={styles.compactBody}>
+      <div className={styles.tileBody}>
         <div className={styles.meta}>
           <span className={styles.period}>{project.period}</span>
           <span className={styles.catTag} data-cat={project.category}>
@@ -95,14 +35,13 @@ function CompactCard({
         </div>
         <h3 className={styles.compactName}>{project.name}</h3>
         <p className={styles.tagline}>{project.tagline}</p>
-        <p className={styles.compactDesc}>{project.description}</p>
         <ul className={styles.bulletsCompact}>
-          {project.bullets.map((b, j) => (
+          {project.bullets.slice(0, 2).map((b, j) => (
             <li key={j}>{b}</li>
           ))}
         </ul>
         <div className={styles.tech}>
-          {project.tech.map(t => (
+          {project.tech.slice(0, 4).map(t => (
             <span key={t} className={styles.chip}>{t}</span>
           ))}
         </div>
@@ -145,8 +84,6 @@ export function Projects() {
     return () => ctx.revert();
   }, []);
 
-  let cardIndex = 0;
-
   return (
     <section id="projects" ref={sectionRef} className={styles.section}>
       <header className={styles.header}>
@@ -159,31 +96,14 @@ export function Projects() {
         </p>
       </header>
 
-      <div className={styles.heroGrid}>
-        {FEATURED_PROJECTS.map(project => {
-          const i = cardIndex++;
-          return (
-            <HeroCard
-              key={project.name}
-              project={project}
-              innerRef={el => { cardRefs.current[i] = el; }}
-            />
-          );
-        })}
-      </div>
-
-      <h3 className={styles.gridLabel}>More work</h3>
-      <div className={styles.compactGrid}>
-        {GRID_PROJECTS.map(project => {
-          const i = cardIndex++;
-          return (
-            <CompactCard
-              key={project.name}
-              project={project}
-              innerRef={el => { cardRefs.current[i] = el; }}
-            />
-          );
-        })}
+      <div className={styles.tileGrid}>
+        {PROJECTS.map((project, i) => (
+          <ProjectTile
+            key={project.name}
+            project={project}
+            innerRef={el => { cardRefs.current[i] = el; }}
+          />
+        ))}
       </div>
     </section>
   );

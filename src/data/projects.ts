@@ -279,5 +279,3 @@ export const PROJECTS: Project[] = [
   },
 ];
 
-export const FEATURED_PROJECTS = PROJECTS.filter(p => p.featured);
-export const GRID_PROJECTS = PROJECTS.filter(p => !p.featured);

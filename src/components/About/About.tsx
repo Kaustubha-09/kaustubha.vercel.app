@@ -113,8 +113,8 @@ export function About() {
           </p>
 
           <p data-about className={styles.bio}>
-            Now, I&apos;m a Mobile &amp; AI Systems Engineer focused on building
-            production-ready, accessibility-first platforms. Featured by{' '}
+            I ship production-ready, accessibility-first systems — not demos that fall
+            apart the moment a real user shows up. Featured by{' '}
             <a
               href="https://siliconvalley.northeastern.edu/kaustubha-eluri-aspiring-product-manager/"
               target="_blank"
@@ -159,7 +159,7 @@ export function About() {
               ))}
             </div>
             <p className={styles.courseworkFocus}>
-              Focused on AI/ML, Generative AI, mobile &amp; web development, cloud computing, and scalable system design.
+              AI/ML, generative AI, mobile &amp; web, cloud — the full stack a real product needs to ship.
             </p>
           </div>
         </div>

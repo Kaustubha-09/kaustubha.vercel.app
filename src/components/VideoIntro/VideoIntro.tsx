@@ -134,7 +134,7 @@ export function VideoIntro() {
         </h1>
 
         <p data-enter className={styles.tagline}>
-          AI/ML · Accessibility · Building systems that work for everyone
+          I build AI that doesn&apos;t leave anyone behind.
         </p>
 
         <div data-enter className={styles.pills}>
