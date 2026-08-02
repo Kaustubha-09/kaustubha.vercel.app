@@ -168,6 +168,23 @@ export const PROJECTS: Project[] = [
     paper: '/papers/PatientIntakeAgent.pdf',
   },
   {
+    name: 'news-research-agent',
+    period: 'Aug 2026',
+    category: 'AI',
+    tagline: 'A reflection loop that knows when to search again — and when to stop.',
+    description:
+      'LangGraph research agent — Groq LLM + Tavily search with reflection-loop routing, Pydantic structured output, and multimodal image generation, deployed to Azure Container Apps.',
+    bullets: [
+      'Built a LangGraph agent with a genuine reflection loop: a second LLM call judges search-result sufficiency and conditionally re-searches, capped to prevent runaway API cost.',
+      'Forced final output through a Pydantic schema via with_structured_output — headline, key developments, sources, image prompt — instead of parsed free text.',
+      'Designed a dual-mode image pipeline: uploads to Azure Blob Storage when configured, falls back to local disk otherwise, with zero branching in the calling code.',
+      'Deployed FastAPI + React to Azure (Container Apps, Blob Storage, Static Web Apps), debugging a real arm64/amd64 Docker mismatch and a `:latest`-tag redeploy caching gotcha along the way.',
+    ],
+    tech: ['LangGraph', 'Groq', 'Tavily', 'FastAPI', 'React', 'Docker', 'Azure'],
+    link: 'https://github.com/Kaustubha-09/news-research-agent',
+    image: '/projects/news-research-agent.png',
+  },
+  {
     name: 'utility-ai-assistant',
     period: 'Mar – Apr 2026',
     category: 'AI',
