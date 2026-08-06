@@ -19,6 +19,24 @@ export const PROJECT_CATEGORIES: ProjectCategory[] = ['Mobile', 'AI', 'Research'
 /** Copy sourced from each repo's README (Resume Bullets / portfolio framing). */
 export const PROJECTS: Project[] = [
   {
+    name: 'News Research Agent',
+    period: 'Jul – Aug 2026',
+    category: 'AI',
+    tagline: 'A search-then-summarize script isn\'t an agent until it can decide it hasn\'t searched enough.',
+    featured: true,
+    description:
+      'LangGraph research agent with a bounded reflection loop, Pydantic-validated structured output, and multimodal cover-image generation — containerized and deployed to Azure.',
+    bullets: [
+      'Built an autonomous research agent in Python + LangGraph + Groq (Llama 3.3 70B) + Tavily, with a state machine spanning search, analysis, summarization, and image generation.',
+      'Implemented a reflection loop — a second LLM call judges search-result sufficiency and conditionally re-searches, capped at 3 attempts to prevent runaway execution.',
+      'Forced final output through a Pydantic schema (headline, bullets, sources, image prompt), isolating all LLM calls behind a single swappable client.',
+      'Deployed to Azure Container Apps, Container Registry, Blob Storage, and Static Web Apps; debugged a cross-architecture Docker build, a malformed secret, and a stale-tag redeploy cache issue.',
+    ],
+    tech: ['Python', 'LangGraph', 'Groq', 'Tavily', 'FastAPI', 'React', 'Docker', 'Azure'],
+    link: 'https://github.com/Kaustubha-09/news-research-agent',
+    paper: '/papers/NewsResearchAgent.pdf',
+  },
+  {
     name: 'LifeLaw',
     period: 'Jul 2026',
     category: 'AI',
