@@ -46,10 +46,16 @@
 /* Unified project tile grid */
 .tileGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 1fr;
-  gap: clamp(0.85rem, 2vw, 1.25rem);
-  max-width: 1200px;
+  gap: clamp(0.85rem, 1.6vw, 1.25rem);
+  max-width: 1440px;
+}
+
+@media (max-width: 1200px) {
+  .tileGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (max-width: 900px) {
