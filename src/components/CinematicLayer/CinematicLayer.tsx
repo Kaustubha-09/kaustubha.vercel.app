@@ -7,6 +7,15 @@ import styles from './CinematicLayer.module.css';
 const PARTICLE_COUNT = 260;
 const DEPTH_RANGE = 6;
 
+function isWebGLAvailable(): boolean {
+  try {
+    const canvas = document.createElement('canvas');
+    return !!(canvas.getContext('webgl2') || canvas.getContext('webgl'));
+  } catch {
+    return false;
+  }
+}
+
 function buildGlowTexture(): THREE.CanvasTexture {
   const size = 128;
   const canvas = document.createElement('canvas');
@@ -32,10 +41,15 @@ export function CinematicLayer() {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas || typeof window === 'undefined') return;
+    if (!canvas || typeof window === 'undefined' || !isWebGLAvailable()) return;
 
     // ── Renderer ────────────────────────────────────────────────────────────
-    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: false, powerPreference: 'low-power' });
+    let renderer: THREE.WebGLRenderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: false, powerPreference: 'low-power' });
+    } catch {
+      return;
+    }
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setClearColor(0x000000, 0);
